@@ -1,0 +1,115 @@
+/* H1 */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("~/assets/fonts/BricolageGrotesque/BricolageGrotesque_48pt-ExtraBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* H2 */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("~/assets/fonts/BricolageGrotesque/BricolageGrotesque_48pt-Bold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* H3 */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("~/assets/fonts/BricolageGrotesque/BricolageGrotesque_36pt-Bold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* H4 */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("~/assets/fonts/BricolageGrotesque/BricolageGrotesque_24pt-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* eyebrow */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("~/assets/fonts/BricolageGrotesque/BricolageGrotesque_24pt-Medium.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* body-lg */
+@font-face {
+  font-family: "Open Sans";
+  src: url("~/assets/fonts/OpenSans/OpenSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* body */
+@font-face {
+  font-family: "Open Sans";
+  src: url("~/assets/fonts/OpenSans/OpenSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* caption */
+@font-face {
+  font-family: "Open Sans";
+  src: url("~/assets/fonts/OpenSans/OpenSans-Light.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* caption */
+@font-face {
+  font-family: "Montserrat";
+  src: url("~/assets/fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-heading: "Bricolage Grotesque", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --font-ui: "Montserrat", sans-serif;
+
+  --font-size-base: 1rem;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: var(--font-heading);
+}
+
+.font-body {
+    font-size: 20px;
+    font-family: var(--font-body);
+}
+
+.eyebrow {
+    font-size: 20px;
+    font-family: var(--font-heading);
+}
+
+.text-white {
+    color: var(--color-text-white);
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}

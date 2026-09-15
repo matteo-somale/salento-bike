@@ -1,0 +1,46 @@
+/* Breakpointsin uso con classi mobile first
+    tablet:
+        md: 768px
+
+    desktop:
+        lg: 992px
+
+    large desktop:
+        xl: 1200px
+        xxl: 1400px
+*/
+
+
+.btn {
+    font-family: var(--font-ui);
+
+    &.btn-lg {
+        font-size: 20px;
+    }
+
+    &.btn-sm {
+        font-size: 12px;
+    }
+
+    &.btn-primary {
+        background-color: var(--color-primary);
+        color: var(--color-text-white);
+    }
+
+    &.btn-secondary {
+        background-color: var(--color-primary);
+        color: var(--color-text-white);
+    }
+}
+
+@media (min-width: 768px) {
+  
+}
+
+@media (min-width: 992px) {
+  
+}
+
+@media (min-width: 1200px) {
+  
+}
