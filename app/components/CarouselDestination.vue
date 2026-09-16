@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
 <template>
     <section class="py-5">
         <div class="container"> <!-- Carousel -->
-            <div ref="carousel" class="overflow-auto">
+            <div ref="carousel" class="overflow-auto carousel-track">
                 <div class="row flex-nowrap g-4"> <!-- Card 1 -->
                     <div class="col-12 col-lg-6 destination-item">
                         <article class="h-100 d-flex flex-column align-items-center text-center">
@@ -84,3 +84,13 @@ onBeforeUnmount(() => {
         </div>
     </section>
 </template>
+
+<style scoped>
+.carousel-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+</style>

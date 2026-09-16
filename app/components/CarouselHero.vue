@@ -1,23 +1,23 @@
 <script setup>
 const slides = [
   {
-    eyebrow: 'Sopratitolo',
-    title: 'Un titolo importante per il tuo progetto',
+    eyebrow: 'salento.bike',
+    title: 'Salento, pedalare nella meraviglia',
     text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
     button: 'Scopri di più',
     video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'
   },
   {
-    eyebrow: 'Un altro sopratitolo',
-    title: 'Una seconda proposta da raccontare',
-    text: 'Un altro testo descrittivo per presentare il servizio, il prodotto o il progetto.',
+    eyebrow: 'Il Salento',
+    title: 'Salento, la punta estrema della Puglia',
+    text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
     button: 'Approfondisci',
     video: 'https://vjs.zencdn.net/v/oceans.mp4'
   },
   {
-    eyebrow: 'Ultimo sopratitolo',
-    title: 'Un ultimo messaggio importante',
-    text: 'Il testo della terza slide può essere utilizzato per concludere la presentazione.',
+    eyebrow: 'salento.bike',
+    title: 'Salento, pedalare nella meraviglia',
+    text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
     button: 'Contattaci',
     video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'
   }
@@ -48,7 +48,7 @@ const slides = [
             <div class="col-12 col-lg-6">
               <div class="d-flex flex-column align-items-start">
 
-                <p class="text-uppercase fw-semibold mb-2">
+                <p class="text-orange eyebrow fw-semibold mb-2">
                   {{ slide.eyebrow }}
                 </p>
 
