@@ -10,9 +10,10 @@
         xxl: 1400px
 */
 
-
+/* bottoni */
 .btn {
     font-family: var(--font-ui);
+    border-radius: 999px;
 
     &.btn-lg {
         font-size: 20px;
@@ -28,10 +29,27 @@
     }
 
     &.btn-secondary {
-        background-color: var(--color-primary);
+        background-color: var(--color-secondary);
         color: var(--color-text-white);
     }
 }
+
+/* sfondi */
+.background-primary {
+    background-color: var(--color-primary);
+}
+.background-secondary {
+    background-color: var(--color-secondary);
+}
+.background-orange {
+    background-color: var(--color-accent-orange);
+}
+.background-giallo {
+    background-color: var(--color-accent-giallo);
+}
+
+/* angoli */
+
 
 @media (min-width: 768px) {
   

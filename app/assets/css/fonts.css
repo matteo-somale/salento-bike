@@ -43,16 +43,16 @@
   font-display: swap;
 }
 
-/* body-lg */
+/* light */
 @font-face {
   font-family: "Open Sans";
-  src: url("~/assets/fonts/OpenSans/OpenSans-SemiBold.woff2") format("woff2");
-  font-weight: 600;
+  src: url("~/assets/fonts/OpenSans/OpenSans-Light.woff2") format("woff2");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
-/* body */
+/* regular */
 @font-face {
   font-family: "Open Sans";
   src: url("~/assets/fonts/OpenSans/OpenSans-Regular.woff2") format("woff2");
@@ -61,20 +61,56 @@
   font-display: swap;
 }
 
-/* caption */
+/* medium */
 @font-face {
   font-family: "Open Sans";
-  src: url("~/assets/fonts/OpenSans/OpenSans-Light.woff2") format("woff2");
+  src: url("~/assets/fonts/OpenSans/OpenSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* semibold */
+@font-face {
+  font-family: "Open Sans";
+  src: url("~/assets/fonts/OpenSans/OpenSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* bold */
+@font-face {
+  font-family: "Open Sans";
+  src: url("~/assets/fonts/OpenSans/OpenSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* regular */
+@font-face {
+  font-family: "Montserrat";
+  src: url("~/assets/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-/* caption */
+/* semibold */
 @font-face {
   font-family: "Montserrat";
   src: url("~/assets/fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2");
-  font-weight: 400;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* bold */
+@font-face {
+  font-family: "Montserrat";
+  src: url("~/assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -88,19 +124,57 @@
 }
 
 h1 {
+    font-size: 60px;
+    font-family: var(--font-heading);
+}
+h2 {
     font-size: 40px;
     font-family: var(--font-heading);
 }
-
-.font-body {
+h4 {
+    font-size: 32px;
+    font-family: var(--font-heading);
+}
+h4 {
     font-size: 20px;
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
 }
 
 .eyebrow {
     font-size: 20px;
     font-family: var(--font-heading);
 }
+
+.body-large {
+    font-size: 18px;
+    font-family: var(--font-body);
+}
+.body-regular {
+    font-size: 20px;
+    font-family: var(--font-body);
+}
+.body-small {
+    font-size: 14px;
+    font-family: var(--font-body);
+}
+
+.weight-light {
+    font-weight: 300;
+}
+.weight-regular {
+    font-weight: 400;
+}
+.weight-medium {
+    font-weight: 500;
+}
+.weight-semibold {
+    font-weight: 600;
+}
+.weight-bold {
+    font-weight: 700;
+}
+
+
 
 .text-white {
     color: var(--color-text-white);
@@ -112,4 +186,8 @@ h1 {
 
 .text-secondary {
     color: var(--color-secondary);
+}
+
+.text-orange {
+    color: var(--color-accent-orange);
 }
