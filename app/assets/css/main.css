@@ -49,6 +49,9 @@
 }
 
 /* angoli */
+.rounded-sm {
+    border-radius: 12px;
+}
 
 
 @media (min-width: 768px) {

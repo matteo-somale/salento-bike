@@ -131,7 +131,7 @@ h2 {
     font-size: 40px;
     font-family: var(--font-heading);
 }
-h4 {
+h3 {
     font-size: 32px;
     font-family: var(--font-heading);
 }
@@ -143,6 +143,7 @@ h4 {
 .eyebrow {
     font-size: 20px;
     font-family: var(--font-heading);
+    text-transform: uppercase;
 }
 
 .body-large {
