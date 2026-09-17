@@ -4,23 +4,23 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 const destinations = [
     {
         logo: '/logo/logo-ciclonica-vert.svg',
-        copertina: 'https://picsum.photos/800/450?random=1',
+        copertina: '/img/destinazioni/ciclovia-salento-hero.jpg',
         titolo: 'La ciclovia del salento ionico',
         testo: 'Dalle spiagge dorate ai borghi del Barocco, dalle antiche masserie alla natura selvaggia dei parchi naturali: 305 km di pura bellezza tra i profumi della macchia mediterranea.',
-        link: '/',
+        link: '/ciclonica',
         colore: '#119660',
     },
     {
         logo: '/logo/logo-ladriatica-vert-color.svg',
-        copertina: 'https://picsum.photos/800/450?random=2',
+        copertina: '/img/destinazioni/foto-dest-salento.png',
         titolo: 'La ciclovia del salento orientale',
         testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a Finibus Terrae.',
-        link: '/',
+        link: '/ladriatica',
         colore: '#007FC3',
     },
     {
         logo: '/logo/logo-ciclonica-vert.svg',
-        copertina: 'https://picsum.photos/800/450?random=3',
+        copertina: '/img/destinazioni/foto-dest-lecce.jpg',
         titolo: 'La ciclovia del salento ionico',
         testo: "Un'ultima descrizione per completare il contenuto della terza card.",
         link: '/',
@@ -51,7 +51,7 @@ const updateActiveDot = () => {
 const scrollToCard = (index) => {
     if (!carousel.value) return
     const items = carousel.value.querySelectorAll('.destination-item')
-    items[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    items[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
 }
 
 onMounted(() => {
@@ -64,29 +64,33 @@ onBeforeUnmount(() => {
 <template>
     <section class="py-5">
         <div class="container"> <!-- Carousel -->
+            <div class="text-center py-3">
+                <p class="eyebrow">DESTINAZIONI</p>
+                <h1 class="">I percorsi principali</h1>
+            </div>
             <div ref="carousel" class="overflow-auto carousel-track">
                 <div class="row flex-nowrap g-4 px-4">
-                    <div v-for="(destination, index) in destinations" :key="index" class="col-12 col-lg-6 destination-item">
-                        <article
-                            class="p-5 rounded h-100 d-flex flex-column align-items-center text-center"
-                            :style="{ backgroundColor: destination.colore + '55' }"
-                        >
+                    <div v-for="(destination, index) in destinations" :key="index"
+                        class="col-12 col-lg-6 destination-item">
+                        <article class="p-5 rounded h-100 d-flex flex-column align-items-center text-center"
+                            :style="{ backgroundColor: destination.colore + '55' }">
                             <div class="rounded d-flex align-items-center justify-content-center mb-3">
-                                <img :src="destination.logo" :alt="`Logo ${destination.titolo}`" class="my-1" style="height: 140px;">
+                                <img :src="destination.logo" :alt="`Logo ${destination.titolo}`" class="my-1"
+                                    style="height: 140px;">
                             </div>
-                            <img :src="destination.copertina" class="rounded-md img-fluid w-100 mb-4" alt="">
+                            <img :src="destination.copertina" class="rounded-md w-100 mb-4 destination-cover" alt="">
                             <h3 class="fw-bold"> {{ destination.titolo }} </h3>
                             <p class="body-large"> {{ destination.testo }} </p>
-                            <NuxtLink :to="destination.link" class="btn btn-primary btn-lg mt-auto"> Scopri i percorsi </NuxtLink>
+                            <NuxtLink :to="destination.link" class="btn btn-primary btn-lg mt-auto"> Scopri i percorsi
+                            </NuxtLink>
                         </article>
                     </div>
                 </div>
             </div> <!-- Indicators -->
             <div class="d-flex justify-content-center gap-2 mt-4" aria-label="Navigazione carousel">
-                <button
-                    v-for="(_, index) in destinations" :key="index" type="button" class="rounded-circle border-0 p-0"
-                    :class="activeIndex === index ? 'bg-dark' : 'bg-secondary'" style="width: 10px; height: 10px;"
-                    :aria-label="`Vai alla card ${index + 1}`"
+                <button v-for="(_, index) in destinations" :key="index" type="button"
+                    class="rounded-circle border-0 p-0" :class="activeIndex === index ? 'bg-dark' : 'bg-secondary'"
+                    style="width: 10px; height: 10px;" :aria-label="`Vai alla card ${index + 1}`"
                     :aria-current="activeIndex === index ? 'true' : undefined" @click="scrollToCard(index)" />
             </div>
         </div>
@@ -97,8 +101,19 @@ onBeforeUnmount(() => {
 .carousel-track {
     scrollbar-width: none;
     -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
 }
+
 .carousel-track::-webkit-scrollbar {
     display: none;
+}
+
+.destination-item {
+    scroll-snap-align: start;
+}
+
+.destination-cover {
+    height: 420px;
+    object-fit: cover;
 }
 </style>

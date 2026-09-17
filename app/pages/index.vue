@@ -16,7 +16,5 @@
 </template>
 
 <script setup>
-function handleClick() {
-  console.log('cliccato')
-}
+
 </script>
