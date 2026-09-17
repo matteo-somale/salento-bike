@@ -7,7 +7,7 @@
                     <h2 class="fw-bold">Titolo della sezione</h2>
                 </div>
                 <div class="col-12 col-md-6 d-flex justify-content-end">
-                    <div class="d-flex align-items-center gap-2 text-orange">
+                    <div class="d-flex align-items-center fw-bold gap-2 text-orange">
                         <span>Scopri tutti gli articoli</span>
                         <span aria-hidden="true">&rarr;</span>
                     </div>

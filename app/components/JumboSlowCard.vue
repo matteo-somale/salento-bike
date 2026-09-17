@@ -1,7 +1,7 @@
 <template>
     <section class="py-5">
         <div class="container ">
-            <div class="slow-background rounded p-4 p-md-5">
+            <div class="slow-background rounded px-5 py-2">
                 <div class="row align-items-center g-5"> <!-- Logo -->
                     <div class="col-12 col-md-5">
                         <div class=" w-100 d-flex align-items-center justify-content-center"
@@ -11,7 +11,7 @@
                     </div> <!-- Content -->
                     <div class="col-12 col-md-7">
                         <div class="d-flex flex-column align-items-start gap-4">
-                            <h3 class="display-4 fw-bold mb-0 text-orange">Con la slowcard tante offerte lungo la
+                            <h3 class="fw-bold mb-0 text-orange">Con la slowcard tante offerte lungo la
                                 Ciclonica e Ladriatica</h3>
                             <NuxtLink to="/about" class="btn btn-primary btn-lg">Scopri di più su SlowMap.tours
                             </NuxtLink>
