@@ -4,22 +4,22 @@ const slides = [
     eyebrow: 'salento.bike',
     title: 'Salento,<br> pedalare nella meraviglia',
     text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
-    button: 'Scopri di più',
-    video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'
+    button: 'Guarda il video',
+    video: 'https://www.youtube.com/embed/yRV_RfbSl8k?start=12&autoplay=1&mute=1&loop=1&playlist=yRV_RfbSl8k&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0'
   },
   {
     eyebrow: 'Il Salento',
     title: 'Salento,<br> la punta estrema della&nbsp;Puglia',
     text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
-    button: 'Approfondisci',
-    video: 'https://vjs.zencdn.net/v/oceans.mp4'
+    button: 'Guarda il video',
+    video: 'https://www.youtube.com/embed/yRV_RfbSl8k?start=12&autoplay=1&mute=1&loop=1&playlist=yRV_RfbSl8k&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0'
   },
   {
     eyebrow: 'salento.bike',
     title: 'Salento,<br> pedalare nella meraviglia',
     text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
-    button: 'Contattaci',
-    video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'
+    button: 'Guarda il video',
+    video: 'https://www.youtube.com/embed/yRV_RfbSl8k?start=12&autoplay=1&mute=1&loop=1&playlist=yRV_RfbSl8k&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0'
   }
 ]
 </script>
@@ -98,15 +98,15 @@ const slides = [
             <!-- Colonna destra -->
             <div class="col-12 col-lg-6">
               <div class="ratio ratio-1x1">
-                <video
-                  class="w-100 h-100 object-fit-cover rounded-4"
-                  autoplay
-                  muted
-                  loop
-                  playsinline
-                >
-                  <source :src="slide.video" type="video/mp4">
-                </video>
+                <div class="video-cover rounded-4">
+                  <iframe
+                    class="video-cover-frame"
+                    :src="slide.video"
+                    title="Video Salento Bike"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                  ></iframe>
+                </div>
               </div>
             </div>
 
@@ -117,3 +117,18 @@ const slides = [
     </div>
   </section>
 </template>
+
+<style scoped>
+.video-cover {
+  overflow: hidden;
+}
+.video-cover-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.78%; /* copre l'altezza intera del box 1:1 con un video 16:9, tagliando ai lati */
+  height: 100%;
+  border: 0;
+  transform: translate(-50%, -50%);
+}
+</style>
