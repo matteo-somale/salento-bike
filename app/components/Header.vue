@@ -1,4 +1,3 @@
-```vue
 <template>
   <header>
     <nav class="navbar navbar-expand-lg">
@@ -9,7 +8,7 @@
           to="/"
           class="navbar-brand"
         >
-          LOGO
+          <img src="/logo/salento-bike-colore.svg" style="height: 5em;" alt="Logo salento.bike" class="my-1">
         </NuxtLink>
 
 
@@ -36,39 +35,16 @@
           <!-- Pagine -->
           <ul class="navbar-nav mx-auto">
 
-            <li class="nav-item">
+            <li
+              v-for="(pagina, index) in pagine"
+              :key="index"
+              class="nav-item"
+            >
               <NuxtLink
-                to="/"
+                :to="pagina.route"
                 class="nav-link"
               >
-                Home
-              </NuxtLink>
-            </li>
-
-            <li class="nav-item">
-              <NuxtLink
-                to="/about"
-                class="nav-link"
-              >
-                Chi siamo
-              </NuxtLink>
-            </li>
-
-            <li class="nav-item">
-              <NuxtLink
-                to="/services"
-                class="nav-link"
-              >
-                Servizi
-              </NuxtLink>
-            </li>
-
-            <li class="nav-item">
-              <NuxtLink
-                to="/contact"
-                class="nav-link"
-              >
-                Contatti
+                <h5>{{ pagina.nome }}</h5>
               </NuxtLink>
             </li>
 
@@ -80,9 +56,9 @@
 
             <NuxtLink
               to="/contact"
-              class="btn btn-primary"
+              class="btn btn-orange btn-lg fw-bold"
             >
-              Contattaci
+              ENG
             </NuxtLink>
 
           </div>
@@ -93,11 +69,17 @@
     </nav>
   </header>
 </template>
-```
 
 
 <script setup>
-  // JavaScript / logica
+const pagine = [
+  { nome: 'Home', route: '' },
+  { nome: 'Chi siamo', route: '' },
+  { nome: 'Percorsi', route: '' },
+  { nome: 'Servizi', route: '' },
+  { nome: 'Eventi', route: '' },
+  { nome: 'Contatti', route: '' },
+]
 </script>
 
 <style scoped>

@@ -2,21 +2,21 @@
 const slides = [
   {
     eyebrow: 'salento.bike',
-    title: 'Salento, pedalare nella meraviglia',
+    title: 'Salento,<br> pedalare nella meraviglia',
     text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
     button: 'Scopri di più',
     video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'
   },
   {
     eyebrow: 'Il Salento',
-    title: 'Salento, la punta estrema della Puglia',
+    title: 'Salento,<br> la punta estrema della&nbsp;Puglia',
     text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
     button: 'Approfondisci',
     video: 'https://vjs.zencdn.net/v/oceans.mp4'
   },
   {
     eyebrow: 'salento.bike',
-    title: 'Salento, pedalare nella meraviglia',
+    title: 'Salento,<br> pedalare nella meraviglia',
     text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
     button: 'Contattaci',
     video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'
@@ -41,7 +41,7 @@ const slides = [
         class="carousel-item"
         :class="{ active: index === 0 }"
       >
-        <div class="container py-5">
+        <div class="container py-3">
           <div class="row align-items-center g-5 min-vh-100">
 
             <!-- Colonna sinistra -->
@@ -52,9 +52,7 @@ const slides = [
                   {{ slide.eyebrow }}
                 </p>
 
-                <h1 class="display-4 fw-bold mb-4">
-                  {{ slide.title }}
-                </h1>
+                <h1 v-html="slide.title " class="fw-bold mb-4"></h1>
 
                 <p class="lead mb-4">
                   {{ slide.text }}

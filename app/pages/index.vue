@@ -7,6 +7,7 @@
     <JumboMap></JumboMap>
 
     <CarouselDestination></CarouselDestination>
+    <BannerApp></BannerApp>
 
     <CheckArticles></CheckArticles>
 

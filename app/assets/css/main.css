@@ -14,6 +14,8 @@
 .btn {
     font-family: var(--font-ui);
     border-radius: 999px;
+    padding-right: 30px;
+    padding-left: 30px;
 
     &.btn-lg {
         font-size: 20px;
@@ -26,11 +28,19 @@
     &.btn-primary {
         background-color: var(--color-primary);
         color: var(--color-text-white);
+        outline: none;
     }
 
     &.btn-secondary {
         background-color: var(--color-secondary);
         color: var(--color-text-white);
+        outline: none;
+    }
+
+    &.btn-orange {
+        background-color: var(--color-accent-orange);
+        color: var(--color-text-white);
+        outline: none;
     }
 }
 
@@ -47,8 +57,14 @@
 .background-giallo {
     background-color: var(--color-accent-giallo);
 }
+.background-giallo-light {
+    background-color: color-mix(in srgb, var(--color-accent-giallo) 60%, transparent);
+}
 
 /* angoli */
+.rounded-md {
+    border-radius: 20px;
+}
 .rounded-sm {
     border-radius: 12px;
 }

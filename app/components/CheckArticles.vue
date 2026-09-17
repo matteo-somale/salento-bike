@@ -1,6 +1,18 @@
 <template>
     <section class="py-5">
         <div class="container">
+            <div class="row align-items-end g-4 mb-4">
+                <div class="col-12 col-md-6 d-flex flex-column">
+                    <p class="eyebrow text-orange">SOPRATITOLO</p>
+                    <h2 class="fw-bold">Titolo della sezione</h2>
+                </div>
+                <div class="col-12 col-md-6 d-flex justify-content-end">
+                    <div class="d-flex align-items-center gap-2 text-orange">
+                        <span>Scopri tutti gli articoli</span>
+                        <span aria-hidden="true">&rarr;</span>
+                    </div>
+                </div>
+            </div>
             <div class="row g-4"> <!-- Item 1 -->
                 <div class="col-12 col-md-4">
                     <div> <img src="https://picsum.photos/800/500?random=1" class="rounded-sm img-fluid w-100 mb-3" alt="">

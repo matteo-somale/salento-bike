@@ -1,9 +1,35 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
+const destinations = [
+    {
+        logo: '/logo/logo-ciclonica-vert.svg',
+        copertina: 'https://picsum.photos/800/450?random=1',
+        titolo: 'La ciclovia del salento ionico',
+        testo: 'Dalle spiagge dorate ai borghi del Barocco, dalle antiche masserie alla natura selvaggia dei parchi naturali: 305 km di pura bellezza tra i profumi della macchia mediterranea.',
+        link: '/',
+        colore: '#119660',
+    },
+    {
+        logo: '/logo/logo-ladriatica-vert-color.svg',
+        copertina: 'https://picsum.photos/800/450?random=2',
+        titolo: 'La ciclovia del salento orientale',
+        testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a Finibus Terrae.',
+        link: '/',
+        colore: '#007FC3',
+    },
+    {
+        logo: '/logo/logo-ciclonica-vert.svg',
+        copertina: 'https://picsum.photos/800/450?random=3',
+        titolo: 'La ciclovia del salento ionico',
+        testo: "Un'ultima descrizione per completare il contenuto della terza card.",
+        link: '/',
+        colore: '#F5BA29',
+    },
+]
+
 const carousel = ref(null)
 const activeIndex = ref(0)
-const cards = 3
 
 const updateActiveDot = () => {
     if (!carousel.value) return
@@ -39,47 +65,29 @@ onBeforeUnmount(() => {
     <section class="py-5">
         <div class="container"> <!-- Carousel -->
             <div ref="carousel" class="overflow-auto carousel-track">
-                <div class="row flex-nowrap g-4"> <!-- Card 1 -->
-                    <div class="col-12 col-lg-6 destination-item">
-                        <article class="h-100 d-flex flex-column align-items-center text-center">
-                            <div class="bg-light d-flex align-items-center justify-content-center mb-4"
-                                style="width: 120px; height: 60px;"> <span class="text-secondary fw-bold"> LOGO </span>
-                            </div> <img src="https://picsum.photos/800/450?random=1" class="img-fluid w-100 mb-4"
-                                alt="">
-                            <h3 class="h4 fw-bold"> Titolo della card </h3>
-                            <p> Un testo descrittivo della card con alcune informazioni relative al contenuto. </p>
-                            <NuxtLink to="/" class="btn btn-primary mt-auto"> Scopri di più </NuxtLink>
-                        </article>
-                    </div> <!-- Card 2 -->
-                    <div class="col-12 col-lg-6 destination-item">
-                        <article class="h-100 d-flex flex-column align-items-center text-center">
-                            <div class="bg-light d-flex align-items-center justify-content-center mb-4"
-                                style="width: 120px; height: 60px;"> <span class="text-secondary fw-bold"> LOGO </span>
-                            </div> <img src="https://picsum.photos/800/450?random=2" class="img-fluid w-100 mb-4"
-                                alt="">
-                            <h3 class="h4 fw-bold"> Un altro titolo </h3>
-                            <p> Una seconda descrizione della card con del testo dimostrativo. </p>
-                            <NuxtLink to="/" class="btn btn-primary mt-auto"> Scopri di più </NuxtLink>
-                        </article>
-                    </div> <!-- Card 3 -->
-                    <div class="col-12 col-lg-6 destination-item">
-                        <article class="h-100 d-flex flex-column align-items-center text-center">
-                            <div class="bg-light d-flex align-items-center justify-content-center mb-4"
-                                style="width: 120px; height: 60px;"> <span class="text-secondary fw-bold"> LOGO </span>
-                            </div> <img src="https://picsum.photos/800/450?random=3" class="img-fluid w-100 mb-4"
-                                alt="">
-                            <h3 class="h4 fw-bold"> Terzo titolo </h3>
-                            <p> Un'ultima descrizione per completare il contenuto della terza card. </p>
-                            <NuxtLink to="/" class="btn btn-primary mt-auto"> Scopri di più </NuxtLink>
+                <div class="row flex-nowrap g-4 px-4">
+                    <div v-for="(destination, index) in destinations" :key="index" class="col-12 col-lg-6 destination-item">
+                        <article
+                            class="p-5 rounded h-100 d-flex flex-column align-items-center text-center"
+                            :style="{ backgroundColor: destination.colore + '55' }"
+                        >
+                            <div class="rounded d-flex align-items-center justify-content-center mb-3">
+                                <img :src="destination.logo" :alt="`Logo ${destination.titolo}`" class="my-1" style="height: 140px;">
+                            </div>
+                            <img :src="destination.copertina" class="rounded-md img-fluid w-100 mb-4" alt="">
+                            <h3 class="fw-bold"> {{ destination.titolo }} </h3>
+                            <p class="body-large"> {{ destination.testo }} </p>
+                            <NuxtLink :to="destination.link" class="btn btn-primary btn-lg mt-auto"> Scopri i percorsi </NuxtLink>
                         </article>
                     </div>
                 </div>
             </div> <!-- Indicators -->
-            <div class="d-flex justify-content-center gap-2 mt-4" aria-label="Navigazione carousel"> <button
-                    v-for="index in cards" :key="index" type="button" class="rounded-circle border-0 p-0"
-                    :class="activeIndex === index - 1 ? 'bg-dark' : 'bg-secondary'" style="width: 10px; height: 10px;"
-                    :aria-label="`Vai alla card ${index}`"
-                    :aria-current="activeIndex === index - 1 ? 'true' : undefined" @click="scrollToCard(index - 1)" />
+            <div class="d-flex justify-content-center gap-2 mt-4" aria-label="Navigazione carousel">
+                <button
+                    v-for="(_, index) in destinations" :key="index" type="button" class="rounded-circle border-0 p-0"
+                    :class="activeIndex === index ? 'bg-dark' : 'bg-secondary'" style="width: 10px; height: 10px;"
+                    :aria-label="`Vai alla card ${index + 1}`"
+                    :aria-current="activeIndex === index ? 'true' : undefined" @click="scrollToCard(index)" />
             </div>
         </div>
     </section>
