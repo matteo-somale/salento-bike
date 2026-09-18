@@ -15,11 +15,11 @@
                     </p>
 
                     <div class="d-flex flex-wrap gap-3">
-                        <NuxtLink to="/about" class="btn btn-secondary btn-lg">
+                        <NuxtLink to="/ciclonica" class="btn btn-secondary btn-lg">
                             Vai a Ciclonica
                         </NuxtLink>
 
-                        <NuxtLink to="/about" class="btn btn-primary btn-lg">
+                        <NuxtLink to="/ladriatica" class="btn btn-primary btn-lg">
                             Vai a Ladriatica
                         </NuxtLink>
                     </div>

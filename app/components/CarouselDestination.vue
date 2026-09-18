@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
                 <div class="row flex-nowrap g-4 px-4">
                     <div v-for="(destination, index) in destinations" :key="index"
                         class="col-12 col-lg-6 destination-item">
-                        <article class="p-5 rounded h-100 d-flex flex-column align-items-center text-center"
+                        <article class="p-md-5 p-3 rounded h-100 d-flex flex-column align-items-center text-center"
                             :style="{ backgroundColor: destination.colore + '55' }">
                             <div class="rounded d-flex align-items-center justify-content-center mb-3">
                                 <img :src="destination.logo" :alt="`Logo ${destination.titolo}`" class="my-1"
@@ -113,7 +113,8 @@ onBeforeUnmount(() => {
 }
 
 .destination-cover {
-    height: 420px;
+    height: 35vh;
     object-fit: cover;
 }
+
 </style>

@@ -1,12 +1,12 @@
 <script setup>
 const hero = {
-  image: 'https://picsum.photos/1600/900',
+  image: '/img/destinazioni/hero-salento-segnaposto.jpg',
   overlayColor: '#119660',
   logo: '/logo/logo-ciclonica-vert-white.svg',
-  title: 'Un titolo importante per questa sezione',
-  text: 'Una breve descrizione del progetto o del contenuto che vuoi presentare.',
-  buttonText: 'Scopri di più',
-  buttonLink: '/about'
+  title: 'Scopri il Salento Ionico in bici',
+  text: 'La straordinaria avventura di pedalare nelle terre del Salento tra parchi costieri, borghi e spiagge selvagge',
+  buttonText: 'Vedi i percorsi',
+  buttonLink: '/percorsi'
 }
 
 const overlayOpacity = 0.6
