@@ -1,6 +1,5 @@
 <template>
-    <PercorsiList></PercorsiList>
-
+    
 </template>
 
 <script setup>

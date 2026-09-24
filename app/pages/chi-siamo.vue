@@ -1,3 +1,7 @@
 <template>
-  <div></div>
+  <ChiSiamoHero></ChiSiamoHero>
+
+  <CardScroll></CardScroll>
+
+  <MainVideo></MainVideo>
 </template>

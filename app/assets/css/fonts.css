@@ -196,3 +196,7 @@ h5 {
 .text-orange {
     color: var(--color-accent-orange);
 }
+
+.text-celeste {
+    color: var(--color-accent-celeste);
+}

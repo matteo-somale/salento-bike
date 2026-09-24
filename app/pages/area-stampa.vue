@@ -1,6 +1,7 @@
 <template>
-    <PercorsiList></PercorsiList>
 
+    <ContattiStampa></ContattiStampa>
+    
 </template>
 
 <script setup>
