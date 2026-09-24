@@ -1,38 +1,41 @@
 <template>
-  <footer class="py-5 background-orange">
+  <footer class="py-5 background-primary">
     <div class="container"> <!-- Contenuto principale -->
       <div class="row g-5"> <!-- Colonna 4/12 -->
         <div class="col-12 col-lg-4">
-          <div class="d-flex flex-column align-items-start gap-3">
+          <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-3">
             <div class="d-flex align-items-center justify-content-center">
               <img src="/logo/logo-vivilitalia-bianco.svg" style="height: 4em;" alt="Logo Vivilitalia" class="my-1"></div>
-            <h3 class="h5 mb-0"> Vivilitalia </h3>
-            <p class="mb-0"> Green Community Ionico-Adriatica, finanziata a valere sui fondi del PNRR — Misura M2C1 Inv. 3.2. </p>
+            <p class="mb-0"> in collaborazione con </p>
+            <div class="d-flex flex-column flex-sm-row flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3">
+              <img src="/logo/green-community-logo-white.png" alt="Logo Ciclonica" class="footer-logo">
+              <img src="/logo/costa-otranto-logo-white.png" alt="Logo L'Adriatica" class="footer-logo">
+            </div>
           </div>
         </div> <!-- Colonna 8/12 -->
         <div class="col-12 col-lg-8">
           <div class="row g-4"> <!-- Sezione 1 -->
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="d-flex flex-column gap-2">
-                <h4 class="fw-bold mb-2"> Progetto </h4> <span>Chi siamo</span> <span>Il progetto</span>
+              <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
+                <h4 class="fw-bold mb-2 text-orange"> Progetto </h4> <span>Chi siamo</span> <span>Il progetto</span>
                 <span>Mission</span> <span>Contatti</span>
               </div>
             </div> <!-- Sezione 2 -->
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="d-flex flex-column gap-2">
-                <h4 class="fw-bold mb-2"> Servizi </h4> <span>Consulenza</span> <span>Soluzioni</span>
+              <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
+                <h4 class="fw-bold mb-2 text-orange"> Servizi </h4> <span>Consulenza</span> <span>Soluzioni</span>
                 <span>Supporto</span> <span>Assistenza</span>
               </div>
             </div> <!-- Sezione 3 -->
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="d-flex flex-column gap-2">
-                <h4 class="fw-bold mb-2"> Risorse </h4> <span>Blog</span> <span>Guide</span>
+              <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
+                <h4 class="fw-bold mb-2 text-orange"> Risorse </h4> <span>Blog</span> <span>Guide</span>
                 <span>Documentazione</span> <span>FAQ</span>
               </div>
             </div> <!-- Sezione 4 -->
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="d-flex flex-column gap-2">
-                <h4 class="fw-bold mb-2"> Seguici </h4> <span>Instagram</span> <span>LinkedIn</span>
+              <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
+                <h4 class="fw-bold mb-2 text-orange"> Seguici </h4> <span>Instagram</span> <span>LinkedIn</span>
                 <span>Facebook</span> <span>YouTube</span>
               </div>
             </div>
@@ -40,7 +43,7 @@
         </div>
       </div> <!-- Separatore -->
       <hr class="my-5"> <!-- Copyright -->
-      <p class="small text-secondary mb-0"> © 2026 Salento.Bike — Un progetto della Green Community Ionico-Adriatica </p>
+      <p class="small text-secondary mb-0 text-center text-lg-start"> © 2026 Salento.Bike — Un progetto della Green Community Ionico-Adriatica </p>
     </div>
   </footer>
 </template>
@@ -57,6 +60,11 @@ footer {
 
   span {
     font-size: 14px;
+  }
+
+  .footer-logo {
+    max-height: 100px;
+    width: auto;
   }
 }
 </style>
