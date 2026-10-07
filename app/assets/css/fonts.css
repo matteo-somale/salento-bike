@@ -200,3 +200,7 @@ h5 {
 .text-celeste {
     color: var(--color-accent-celeste);
 }
+
+.text-petrolio {
+    color: var(--color-accent-petrolio);
+}

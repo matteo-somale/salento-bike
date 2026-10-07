@@ -10,23 +10,22 @@
             <div class="h-100 d-flex flex-column align-items-start justify-content-center p-5">
 
               <p class="eyebrow mb-2">
-                Sopratitolo
+                il passaporto della ciclonica
               </p>
 
               <h2 class="display-5 fw-bold mb-4">
-                Un titolo importante per raccontare il progetto
+                Trova qui i punti timbro nei comuni tappa
               </h2>
 
               <p class="body-regular mb-4">
-                Un breve testo descrittivo per spiegare il contenuto
-                della sezione e fornire qualche informazione in più.
+                Tutte le tappe lungo la Ciclonica hanno il loro timbro personalizzato: basta recarsi in uno dei punti timbro ufficiali e timbrare il proprio passaporto.
               </p>
 
               <NuxtLink
                 to="/about"
                 class="btn btn-orange btn-lg"
               >
-                Scopri di più
+                Scopri dove timbrare
               </NuxtLink>
 
             </div>

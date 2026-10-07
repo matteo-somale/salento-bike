@@ -60,6 +60,12 @@
 .background-giallo-light {
     background-color: color-mix(in srgb, var(--color-accent-giallo) 60%, transparent);
 }
+.background-menta {
+    background-color: var(--color-accent-menta);
+}
+.background-light-gray {
+    background-color: var(--color-neutral-light-gray);
+}
 
 /* angoli */
 .rounded-md {

@@ -3,5 +3,7 @@
 
   <CardScroll></CardScroll>
 
+  <ReteBikeFriendly></ReteBikeFriendly>
+
   <MainVideo></MainVideo>
 </template>

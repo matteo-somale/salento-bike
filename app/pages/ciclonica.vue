@@ -5,6 +5,8 @@
     
     <BannerPassport></BannerPassport>
 
+    <BannerGuidaCiclonica></BannerGuidaCiclonica>
+
     <PercorsoParagrafo></PercorsoParagrafo>
 </template>
 
