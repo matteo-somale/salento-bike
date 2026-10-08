@@ -112,7 +112,7 @@ watch(immaginiFiltrate, async () => {
 
             <div class="text-center mb-5">
                 <h4 class="text-orange eyebrow mb-2">photo gallery</h4>
-                <h1 class="text-celeste fw-bold mb-3">Immagini dalle ciclovie del Salento</h1>
+                <h1 class="text-primary fw-bold mb-3">Immagini dalle ciclovie del Salento</h1>
             </div>
 
             <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">

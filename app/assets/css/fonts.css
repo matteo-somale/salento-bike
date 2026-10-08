@@ -186,11 +186,11 @@ h5 {
 }
 
 .text-primary {
-    color: var(--color-primary);
+    color: var(--color-primary) !important;
 }
 
 .text-secondary {
-    color: var(--color-secondary);
+    color: var(--color-secondary) !important;
 }
 
 .text-orange {

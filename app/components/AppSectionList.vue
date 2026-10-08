@@ -39,7 +39,7 @@ const section = {
                                         stroke-linejoin="round" />
                                 </svg>
                             </span>
-                            <p class="mb-0">{{ voce.testo }}</p>
+                            <p class="mb-0 body-large">{{ voce.testo }}</p>
                         </div>
                     </div>
                 </div>
