@@ -1,6 +1,4 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
 const destinations = [
     {
         logo: '/logo/logo-ciclonica-vert.svg',
@@ -28,49 +26,17 @@ const destinations = [
     },
 ]
 
-const carousel = ref(null)
-const activeIndex = ref(0)
-
-const updateActiveDot = () => {
-    if (!carousel.value) return
-    const items = carousel.value.querySelectorAll('.destination-item')
-    let closestIndex = 0
-    let closestDistance = Infinity
-    const containerCenter = carousel.value.scrollLeft + carousel.value.clientWidth / 2
-    items.forEach((item, index) => {
-        const itemCenter = item.offsetLeft + item.offsetWidth / 2
-        const distance = Math.abs(containerCenter - itemCenter)
-        if (distance < closestDistance) {
-            closestDistance = distance
-            closestIndex = index
-        }
-    })
-    activeIndex.value = closestIndex
-}
-
-const scrollToCard = (index) => {
-    if (!carousel.value) return
-    const items = carousel.value.querySelectorAll('.destination-item')
-    items[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
-}
-
-onMounted(() => {
-    carousel.value?.addEventListener('scroll', updateActiveDot)
-})
-onBeforeUnmount(() => {
-    carousel.value?.removeEventListener('scroll', updateActiveDot)
-})
 </script>
 <template>
     <section class="py-5">
         <div class="container"> <!-- Carousel -->
             <div class="text-center py-3">
-                <p class="eyebrow">DESTINAZIONI</p>
+                <p class="eyebrow text-secondary">DESTINAZIONI</p>
                 <h1 class="">I percorsi principali</h1>
             </div>
-            <div ref="carousel" class="overflow-auto carousel-track">
-                <div class="row flex-nowrap g-4 px-4">
-                    <div v-for="(destination, index) in destinations" :key="index"
+            <div class="carousel-track">
+                <div class="row g-4 px-4">
+                    <div v-for="(destination, index) in destinations.slice(0, 2)" :key="index"
                         class="col-12 col-lg-6 destination-item">
                         <article class="p-md-5 p-3 rounded h-100 d-flex flex-column align-items-center text-center"
                             :style="{ backgroundColor: destination.colore + '55' }">
@@ -86,12 +52,6 @@ onBeforeUnmount(() => {
                         </article>
                     </div>
                 </div>
-            </div> <!-- Indicators -->
-            <div class="d-flex justify-content-center gap-2 mt-4" aria-label="Navigazione carousel">
-                <button v-for="(_, index) in destinations" :key="index" type="button"
-                    class="rounded-circle border-0 p-0" :class="activeIndex === index ? 'bg-dark' : 'bg-secondary'"
-                    style="width: 10px; height: 10px;" :aria-label="`Vai alla card ${index + 1}`"
-                    :aria-current="activeIndex === index ? 'true' : undefined" @click="scrollToCard(index)" />
             </div>
         </div>
     </section>

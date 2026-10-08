@@ -6,7 +6,7 @@
                     class="col-12 col-lg-6 order-2 order-lg-1 d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-3">
                     <img src="/logo/ediciclo-editore-green.svg" alt="Logo Ciclonica" class="banner-logo">
 
-                    <h1 class="fw-bold mb-0">Scopri la guida di Ciclonicaal Salento Ionico</h1>
+                    <h1 class="fw-bold mb-0 text-primary">Scopri la guida di Ciclonicaal Salento Ionico</h1>
 
                     <p class="body-large mb-0">TNel cuore del Sud, tra mare, borghi e natura</p>
 
@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="col-lg-6 d-none d-lg-flex order-1 justify-content-center">
-                    <img src="/img/destinazioni/ciclovia-salento-hero.jpg" alt="Ciclonica" class="banner-image">
+                    <img src="/img/guida-ciclonica-mockup.png" alt="Ciclonica" class="banner-image">
                 </div>
             </div>
         </div>

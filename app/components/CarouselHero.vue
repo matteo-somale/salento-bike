@@ -52,7 +52,7 @@ const slides = [
                   {{ slide.eyebrow }}
                 </p>
 
-                <h1 v-html="slide.title " class="fw-bold mb-4"></h1>
+                <h1 v-html="slide.title " class="fw-bold mb-4 text-primary"></h1>
 
                 <p class="lead mb-4">
                   {{ slide.text }}
@@ -60,8 +60,9 @@ const slides = [
 
                 <NuxtLink
                   to="/"
-                  class="btn btn-primary btn-lg mb-5"
+                  class="btn btn-orange btn-lg mb-5 d-inline-flex align-items-center gap-2"
                 >
+                  <Icon name="lucide:bike" />
                   {{ slide.button }}
                 </NuxtLink>
 

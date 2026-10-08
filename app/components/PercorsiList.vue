@@ -8,10 +8,10 @@ const destinations = [
         colore: '#119660',
         jumbomap: {
             titolo: 'Le ciclovie del Salento ionico',
-            testo: 'Testo descrittivo segnaposto per la ciclonica, da sostituire con contenuti reali.',
+            testo: 'Dalle spiagge dorate ai borghi del Barocco, dalle antiche masserie alla natura selvaggia dei parchi naturali: 305 km di pura bellezza tra i profumi della macchia mediterranea.',
             immagine: '/img/salento-map.png',
             bottoni: [
-                { testo: 'Scopri Ciclonica', link: '/ciclonica' },
+                { testo: 'Scopri il percorso completo', link: '/ciclonica' },
             ],
         },
     },
@@ -21,10 +21,10 @@ const destinations = [
         colore: '#007FC3',
         jumbomap: {
             titolo: 'Le ciclovie del Salento orientale',
-            testo: 'Testo descrittivo segnaposto per la ladriatica, da sostituire con contenuti reali.',
+            testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a Finibus Terrae.',
             immagine: '/img/salento-map.png',
             bottoni: [
-                { testo: 'Scopri Ladriatica', link: '/ladriatica' },
+                { testo: 'Scopri il percorso completo', link: '/ladriatica' },
             ],
         },
     },
@@ -37,10 +37,8 @@ const percorsi = [
         destinazione: 'ciclonica',
         titolo: 'Percorso uno',
         testo: 'Testo descrittivo segnaposto per il percorso uno, da sostituire con contenuti reali.',
-        bottoni: [
-            { testo: 'Scarica GPX', link: '/' },
-            { testo: 'Vedi mappa', link: '/' },
-        ],
+        linkPercorso: '/',
+        linkGpx: '/',
     },
     {
         immagine: '/img/destinazioni/hero-salento-segnaposto.jpg',
@@ -48,9 +46,8 @@ const percorsi = [
         destinazione: 'ciclonica',
         titolo: 'Percorso due',
         testo: 'Testo descrittivo segnaposto per il percorso due, da sostituire con contenuti reali.',
-        bottoni: [
-            { testo: 'Scarica GPX', link: '/' },
-        ],
+        linkPercorso: '/',
+        linkGpx: '/',
     },
     {
         immagine: '/img/destinazioni/hero-salento-segnaposto.jpg',
@@ -58,10 +55,8 @@ const percorsi = [
         destinazione: 'ladriatica',
         titolo: 'Percorso tre',
         testo: 'Testo descrittivo segnaposto per il percorso tre, da sostituire con contenuti reali.',
-        bottoni: [
-            { testo: 'Scarica GPX', link: '/' },
-            { testo: 'Vedi mappa', link: '/' },
-        ],
+        linkPercorso: '/',
+        linkGpx: '/',
     },
     {
         immagine: '/img/destinazioni/hero-salento-segnaposto.jpg',
@@ -69,9 +64,8 @@ const percorsi = [
         destinazione: 'ladriatica',
         titolo: 'Percorso quattro',
         testo: 'Testo descrittivo segnaposto per il percorso quattro, da sostituire con contenuti reali.',
-        bottoni: [
-            { testo: 'Scarica GPX', link: '/' },
-        ],
+        linkPercorso: '/',
+        linkGpx: '/',
     },
     {
         immagine: '/img/destinazioni/hero-salento-segnaposto.jpg',
@@ -79,10 +73,8 @@ const percorsi = [
         destinazione: 'ciclonica',
         titolo: 'Percorso cinque',
         testo: 'Testo descrittivo segnaposto per il percorso cinque, da sostituire con contenuti reali.',
-        bottoni: [
-            { testo: 'Scarica GPX', link: '/' },
-            { testo: 'Vedi mappa', link: '/' },
-        ],
+        linkPercorso: '/',
+        linkGpx: '/',
     },
 ]
 
@@ -103,9 +95,11 @@ const destinazioneAttiva = computed(() =>
 
             <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
                 <button v-for="(destination, index) in destinations" :key="index" type="button"
-                    class="btn btn-outline-primary btn-large d-inline-flex align-items-center gap-2"
+                    class="btn btn-lg d-inline-flex align-items-center gap-2"
+                    :class="selectedDestinazione === destination.destinazione ? 'btn-accent' : 'btn-accent-outline'"
+                    :style="{ '--btn-accent': destination.colore }"
                     @click="selectedDestinazione = destination.destinazione">
-                    <Icon name="material-symbols:pedal-bike-rounded" />
+                    <Icon name="lucide:bike" />
                     {{ destination.testo }}
                 </button>
             </div>
@@ -124,7 +118,7 @@ const destinazioneAttiva = computed(() =>
 
                         <div class="d-flex flex-wrap gap-3">
                             <NuxtLink v-for="(bottone, i) in destinazioneAttiva.jumbomap.bottoni" :key="i" :to="bottone.link"
-                                class="btn btn-light btn-lg">
+                                class="btn btn-primary btn-lg">
                                 {{ bottone.testo }}
                             </NuxtLink>
                         </div>
@@ -151,15 +145,16 @@ const destinazioneAttiva = computed(() =>
                         </span>
                     </div>
                     <div class="col-12 col-md-7 d-flex flex-column justify-content-center p-4 p-md-5">
-                        <h3 class="fw-bold mb-3">{{ percorso.titolo }}</h3>
-                        <p class="body-large mb-4">{{ percorso.testo }}</p>
+                        <h3 class="fw-bold mb-3 text-primary">{{ percorso.titolo }}</h3>
+                        <p class="body-large mb-4 text-primary">{{ percorso.testo }}</p>
                         <div class="d-flex flex-wrap gap-3">
-                            <NuxtLink v-for="(bottone, i) in percorso.bottoni" :key="i" :to="bottone.link"
-                                class="btn btn-primary">
-                                {{ bottone.testo }}
+                            <NuxtLink :to="percorso.linkPercorso" class="btn btn-lg btn-primary d-inline-flex align-items-center gap-2">
+                                <Icon name="lucide:bike" />
+                                Vai al percorso
                             </NuxtLink>
-                            <NuxtLink to="/percorsi" class="btn btn-outline-primary">
-                                Scarica gpx
+                            <NuxtLink :to="percorso.linkGpx" class="btn btn-lg btn-orange d-inline-flex align-items-center gap-2">
+                                <Icon name="lucide:download" />
+                                Scarica GPX
                             </NuxtLink>
                         </div>
                     </div>

@@ -10,6 +10,20 @@
         xxl: 1400px
 */
 
+/* reset outline/focus-ring su tutti i bottoni */
+.btn,
+button,
+.navbar-toggler {
+    outline: none;
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
 /* bottoni */
 .btn {
     font-family: var(--font-ui);
@@ -27,20 +41,98 @@
 
     &.btn-primary {
         background-color: var(--color-primary);
+        border-color: var(--color-primary);
         color: var(--color-text-white);
-        outline: none;
+
+        &:hover,
+        &:focus {
+            background-color: color-mix(in srgb, var(--color-primary) 85%, black);
+            border-color: color-mix(in srgb, var(--color-primary) 85%, black);
+            color: var(--color-text-white);
+        }
     }
 
     &.btn-secondary {
         background-color: var(--color-secondary);
+        border-color: var(--color-secondary);
         color: var(--color-text-white);
-        outline: none;
+
+        &:hover,
+        &:focus {
+            background-color: color-mix(in srgb, var(--color-secondary) 85%, black);
+            border-color: color-mix(in srgb, var(--color-secondary) 85%, black);
+            color: var(--color-text-white);
+        }
     }
 
     &.btn-orange {
         background-color: var(--color-accent-orange);
+        border-color: var(--color-accent-orange);
         color: var(--color-text-white);
-        outline: none;
+
+        &:hover,
+        &:focus {
+            background-color: color-mix(in srgb, var(--color-accent-orange) 85%, black);
+            border-color: color-mix(in srgb, var(--color-accent-orange) 85%, black);
+            color: var(--color-text-white);
+        }
+    }
+
+    /* varianti outline: sfondo vuoto, bordo e testo del colore del brand */
+    &.btn-outline-primary {
+        background-color: transparent;
+        border: 2px solid var(--color-primary);
+        color: var(--color-primary);
+
+        &:hover,
+        &:focus {
+            background-color: var(--color-primary);
+            color: var(--color-text-white);
+        }
+    }
+
+    &.btn-outline-secondary {
+        background-color: transparent;
+        border: 2px solid var(--color-secondary);
+        color: var(--color-secondary);
+
+        &:hover,
+        &:focus {
+            background-color: var(--color-secondary);
+            color: var(--color-text-white);
+        }
+    }
+
+    &.btn-outline-orange {
+        background-color: transparent;
+        border: 2px solid var(--color-accent-orange);
+        color: var(--color-accent-orange);
+
+        &:hover,
+        &:focus {
+            background-color: var(--color-accent-orange);
+            color: var(--color-text-white);
+        }
+    }
+
+    /* varianti ad accent dinamico: il colore va passato inline con --btn-accent (es. :style="{ '--btn-accent': colore }") */
+    &.btn-accent {
+        background-color: var(--btn-accent);
+        border: 2px solid var(--btn-accent);
+        color: var(--color-text-white);
+
+        &:hover,
+        &:focus {
+            background-color: color-mix(in srgb, var(--btn-accent) 85%, black);
+            border-color: color-mix(in srgb, var(--btn-accent) 85%, black);
+            color: var(--color-text-white);
+        }
+    }
+
+    &.btn-accent-outline {
+        background-color: transparent;
+        border: 2px solid var(--btn-accent);
+        color: var(--btn-accent);
     }
 }
 

@@ -1,8 +1,16 @@
 <script setup>
+function hexToRgba(hex, alpha) {
+  const valoreHex = hex.replace('#', '')
+  const r = parseInt(valoreHex.substring(0, 2), 16)
+  const g = parseInt(valoreHex.substring(2, 4), 16)
+  const b = parseInt(valoreHex.substring(4, 6), 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
+
 const paragrafoInfo = {
   immagine: '/img/destinazioni/foto-lecce-segnaposto.jpg',
   logo: '/logo/logo-ciclonica-simple.svg',
-  coloreSfondo: '#94EADD',
+  coloreSfondo: '#119660',
   altLayout: false,
 
   sopratitolo: 'BAROCCO E TRADIZIONE',
@@ -24,7 +32,7 @@ const paragrafoInfo = {
 
       <div
         class="rounded-4 overflow-hidden"
-        :style="{ backgroundColor: paragrafoInfo.coloreSfondo }"
+        :style="{ backgroundColor: hexToRgba(paragrafoInfo.coloreSfondo, 0.35) }"
       >
 
         <div class="row g-0 align-items-stretch">
@@ -69,7 +77,10 @@ const paragrafoInfo = {
               class="h-100 d-flex flex-column align-items-start justify-content-center p-5"
             >
 
-              <p class="eyebrow mb-2">
+              <p
+                class="eyebrow mb-2"
+                :style="{ color: paragrafoInfo.coloreSfondo }"
+              >
                 {{ paragrafoInfo.sopratitolo }}
               </p>
 

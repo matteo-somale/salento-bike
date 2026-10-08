@@ -49,40 +49,6 @@ const hexToRgba = (hex, opacity) => {
         In cosa crediamo
       </h2>
 
-      <div id="bikeFriendlyHero" class="rounded-4 overflow-hidden" :style="{
-        backgroundImage: `
-            linear-gradient(
-              ${hexToRgba(overlayColor, overlayOpacity)},
-              ${hexToRgba(overlayColor, overlayOpacity)}
-            ),
-            url(${hero.image})
-          `,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }">
-
-        <div class="d-flex flex-column align-items-center justify-content-center text-center text-white p-5"
-          style="min-height: 450px;">
-
-          <h1 class="display-4 fw-bold mb-3">
-            {{ hero.title }}
-          </h1>
-
-          <p class="lead mb-4">
-            {{ hero.text }}
-          </p>
-
-          <div class="d-flex flex-row flex-wrap justify-content-center gap-3">
-            <NuxtLink v-for="button in hero.buttons" :key="button.link" :to="button.link"
-              class="btn btn-orange btn-lg">
-              {{ button.text }}
-            </NuxtLink>
-          </div>
-
-        </div>
-
-      </div>
-
       <div id="bikeFriendlyNetwork" class="background-light-gray rounded-4 p-4 p-lg-5 mt-5">
         <div class="row g-4 align-items-stretch">
 
@@ -116,6 +82,40 @@ const hexToRgba = (hex, opacity) => {
           </div>
 
         </div>
+      </div>
+
+      <div id="bikeFriendlyHero" class="rounded-4 overflow-hidden" :style="{
+        backgroundImage: `
+            linear-gradient(
+              ${hexToRgba(overlayColor, overlayOpacity)},
+              ${hexToRgba(overlayColor, overlayOpacity)}
+            ),
+            url(${hero.image})
+          `,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }">
+
+        <div class="d-flex flex-column align-items-center justify-content-center text-center text-white p-5"
+          style="min-height: 450px;">
+
+          <h1 class="display-4 fw-bold mb-3">
+            {{ hero.title }}
+          </h1>
+
+          <p class="lead mb-4">
+            {{ hero.text }}
+          </p>
+
+          <div class="d-flex flex-row flex-wrap justify-content-center gap-3">
+            <NuxtLink v-for="button in hero.buttons" :key="button.link" :to="button.link"
+              class="btn btn-orange btn-lg">
+              {{ button.text }}
+            </NuxtLink>
+          </div>
+
+        </div>
+
       </div>
 
     </div>

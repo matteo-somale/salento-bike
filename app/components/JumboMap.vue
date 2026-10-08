@@ -5,7 +5,8 @@
                 <img src="/img/salento-map.png" alt="Mappa del Salento" class="img-fluid mb-4 mb-md-0 jumbo-map-image">
 
                 <div class="jumbo-map-text">
-                    <h2 class="display-4 fw-bold">
+                    <p class="eyebrow text-orange">il territorio</p>
+                    <h2 class="display-4 fw-bold text-primary">
                         Le ciclovie del Salento
                     </h2>
                     <p class="lead">
