@@ -78,7 +78,7 @@ const pagine = [
   { nome: 'Area Stampa', route: '/area-stampa' },
   { nome: 'News', route: '/news' },
   { nome: 'Chi Siamo', route: '/chi-siamo' },
-  { nome: 'Gallery', route: '/galley' },
+  { nome: 'Gallery', route: '/galleria' },
 ]
 </script>
 

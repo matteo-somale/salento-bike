@@ -103,7 +103,9 @@ const destinazioneAttiva = computed(() =>
 
             <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
                 <button v-for="(destination, index) in destinations" :key="index" type="button"
-                    class="btn btn-outline-primary" @click="selectedDestinazione = destination.destinazione">
+                    class="btn btn-outline-primary btn-large d-inline-flex align-items-center gap-2"
+                    @click="selectedDestinazione = destination.destinazione">
+                    <Icon name="material-symbols:pedal-bike-rounded" />
                     {{ destination.testo }}
                 </button>
             </div>
