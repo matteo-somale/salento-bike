@@ -37,7 +37,7 @@ const hexToRgba = (hex, opacity) => {
       }">
 
         <div class="d-flex flex-column align-items-center justify-content-center text-center text-white p-5"
-          style="min-height: 450px;">
+          style="min-height: 450px;" data-aos="fade" data-aos-duration="800">
 
           <h1 class="display-4 fw-bold mb-3">
             {{ hero.title }}

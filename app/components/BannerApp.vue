@@ -1,5 +1,5 @@
 <template>
-    <section class="background-giallo py-5">
+    <section class="background-giallo py-5" data-aos="fade-up">
         <div class="container py-5">
             <div class="banner-app-grid">
 

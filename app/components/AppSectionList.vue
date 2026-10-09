@@ -18,13 +18,13 @@ const section = {
         <div class="container">
             <div class="row g-4 g-lg-5 align-items-center">
 
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-5" data-aos="fade-left">
                     <div class="rounded-4 position-relative app-visual" :style="{ backgroundColor: section.colore }">
                         <img :src="section.immagine" class="rounded-4 app-visual-image" alt="">
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7">
+                <div class="col-12 col-md-7" data-aos="fade-right" data-aos-delay="150">
                     <h4 class="text-orange eyebrow mb-2">{{ section.sopratitolo }}</h4>
                     <h2 class="fw-bold mb-4">{{ section.titolo }}</h2>
 

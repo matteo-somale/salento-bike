@@ -1,5 +1,6 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, nextTick, watch } from 'vue'
+import AOS from 'aos'
 
 const destinazioni = [
     { slug: 'ciclonica', nome: 'Ciclonica', colore: '#119660' },
@@ -71,13 +72,18 @@ function sfondoRassegna(rassegna) {
     const colore = dest.length === 1 ? dest[0].colore : 'var(--color-accent-giallo)'
     return { backgroundColor: `color-mix(in srgb, ${colore} 50%, transparent)` }
 }
+
+watch(rassegneFiltrate, async () => {
+    await nextTick()
+    AOS.refreshHard()
+})
 </script>
 
 <template>
     <section class="py-5">
         <div class="container">
 
-            <div class="d-flex flex-column align-items-center text-center mb-5">
+            <div class="d-flex flex-column align-items-center text-center mb-5" data-aos="fade-up">
                 <h4 class="eyebrow text-orange mb-2">Area stampa</h4>
                 <h1 class="fw-bold mb-4 text-primary">Materiali stampa</h1>
 
@@ -102,7 +108,8 @@ function sfondoRassegna(rassegna) {
 
             <div class="d-flex flex-column gap-4">
                 <article v-for="(rassegna, index) in rassegneFiltrate" :key="index"
-                    class="rounded-4 p-4 p-md-5" :style="sfondoRassegna(rassegna)">
+                    class="rounded-4 p-4 p-md-5" data-aos="fade-up" :data-aos-delay="Math.min(index, 3) * 100"
+                    :style="sfondoRassegna(rassegna)">
 
                     <div v-if="destinazioniDiRassegna(rassegna).length" class="d-flex flex-row gap-2 mb-3">
                         <span v-for="destinazione in destinazioniDiRassegna(rassegna)" :key="destinazione.slug"

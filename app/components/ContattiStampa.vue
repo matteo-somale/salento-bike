@@ -20,8 +20,8 @@ const contatti = [
         <div class="container">
             <div class="row g-4">
 
-                <div v-for="contatto in contatti" :key="contatto.email" class="col-12 col-md-6">
-                    <div class="rounded-4 p-4 p-lg-5 background-giallo h-100 text-center">
+                <div v-for="(contatto, index) in contatti" :key="contatto.email" class="col-12 col-md-6">
+                    <div class="rounded-4 p-4 p-lg-5 background-giallo h-100 text-center" data-aos="fade-up" :data-aos-delay="index * 150">
                         <h3 class="mb-2">{{ contatto.titolo }}</h3>
                         <p class="eyebrow mb-4">{{ contatto.sottotitolo }}</p>
 

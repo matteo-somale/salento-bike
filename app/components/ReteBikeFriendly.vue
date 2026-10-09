@@ -49,7 +49,7 @@ const hexToRgba = (hex, opacity) => {
         In cosa crediamo
       </h2>
 
-      <div id="bikeFriendlyNetwork" class="background-light-gray rounded-4 p-4 p-lg-5 mt-5">
+      <div id="bikeFriendlyNetwork" class="background-light-gray rounded-4 p-4 p-lg-5 mt-5" data-aos="fade-up">
         <div class="row g-4 align-items-stretch">
 
           <div class="col-12 col-lg-4 order-3 order-lg-1">
@@ -84,7 +84,7 @@ const hexToRgba = (hex, opacity) => {
         </div>
       </div>
 
-      <div id="bikeFriendlyHero" class="rounded-4 overflow-hidden" :style="{
+      <div id="bikeFriendlyHero" class="rounded-4 overflow-hidden" data-aos="fade-up" data-aos-delay="150" :style="{
         backgroundImage: `
             linear-gradient(
               ${hexToRgba(overlayColor, overlayOpacity)},

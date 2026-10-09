@@ -1,5 +1,5 @@
 <template>
-    <section class="background-menta py-5">
+    <section class="background-menta py-5" data-aos="fade-up">
         <div class="container">
             <div class="row align-items-center g-4">
                 <div

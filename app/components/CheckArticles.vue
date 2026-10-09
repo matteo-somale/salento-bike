@@ -14,21 +14,21 @@
                 </div>
             </div>
             <div class="row g-4"> <!-- Item 1 -->
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4" data-aos="fade-up">
                     <div> <img src="/img/articoli/nard-centro.jpg" class="rounded-sm w-100 mb-3 article-cover" alt="">
                         <p class="eyebrow text-orange">ARTICOLI</p>
                         <h3 class="fw-bold">In sella da Lecce al mare: il racconto di un weekend in Ciclonica</h3>
-                        
+
                     </div>
                 </div> <!-- Item 2 -->
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div> <img src="/img/articoli/portoselvaggio-tramonto-anello-3.jpg" class="rounded-sm w-100 mb-3 article-cover" alt="">
                         <p class="eyebrow text-orange">CONSIGLI TECNICI</p>
                         <h3 class=" fw-bold">Cosa mettere nelle borse: la checklist per il cicloturista</h3>
-                        
+
                     </div>
                 </div> <!-- Item 3 -->
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div> <img src="/img/articoli/salento-territorio-min.png" class="rounded-sm w-100 mb-3 article-cover" alt="">
                         <p class="eyebrow text-orange">EVENTI</p>
                         <h3 class=" fw-bold">Ciclo-raduno d'autunno: appuntamento nei borghi ionici</h3>

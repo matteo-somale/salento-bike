@@ -9,27 +9,29 @@ const mainVideo = {
 </script>
 
 <template>
-    <section class="py-5">
+    <section class="py-5" data-aos="fade-up">
         <div class="container d-flex flex-column align-items-center text-center">
 
             <h4 class="text-orange eyebrow mb-2">
                 {{ mainVideo.subtitle }}
             </h4>
 
-            <h2 class="fw-bold mb-3">
+            <h1 class="fw-bold mb-3 text-primary">
                 {{ mainVideo.title }}
-            </h2>
+            </h1>
 
             <p class="lead mb-4 col-12 col-lg-8 py-3">
                 {{ mainVideo.text }}
             </p>
 
-            <div class="ratio ratio-16x9 w-100 mx-auto rounded-4 overflow-hidden mb-4" style="max-width: 800px;">
+            <div class="ratio ratio-16x9 w-100 mx-auto rounded-4 overflow-hidden mb-4" style="max-width: 800px;"
+                data-aos="fade-up" data-aos-delay="150">
                 <iframe :src="mainVideo.youtubeLink" title="Video Salento Bike" allow="autoplay; encrypted-media"
                     allowfullscreen></iframe>
             </div>
 
-            <NuxtLink :to="mainVideo.buttonLink" class="btn btn-orange btn-lg">
+            <NuxtLink :to="mainVideo.buttonLink" class="btn btn-orange btn-lg d-inline-flex align-items-center gap-2">
+                <Icon name="bi:camera-video-fill" />
                 Guarda il video completo su Youtube
             </NuxtLink>
 

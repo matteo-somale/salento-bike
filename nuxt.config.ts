@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     'bootstrap/dist/css/bootstrap.min.css',
     '~/assets/css/variables.css',
     '~/assets/css/fonts.css',
+    'aos/dist/aos.css',
     '~/assets/css/main.css',
   ],
 

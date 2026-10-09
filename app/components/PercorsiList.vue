@@ -1,5 +1,6 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, nextTick, watch } from 'vue'
+import AOS from 'aos'
 
 const destinations = [
     {
@@ -87,6 +88,11 @@ const percorsiFiltrati = computed(() =>
 const destinazioneAttiva = computed(() =>
     destinations.find((destination) => destination.destinazione === selectedDestinazione.value)
 )
+
+watch(percorsiFiltrati, async () => {
+    await nextTick()
+    AOS.refreshHard()
+})
 </script>
 
 <template>
@@ -105,7 +111,7 @@ const destinazioneAttiva = computed(() =>
             </div>
 
             <div id="jumbomap" class="position-relative mb-5" v-if="destinazioneAttiva">
-                <div class="rounded p-4 p-md-5 jumbo-map-card" :style="{ backgroundColor: destinazioneAttiva.colore }">
+                <div class="rounded p-4 p-md-5 jumbo-map-card" data-aos="fade-up" :style="{ backgroundColor: destinazioneAttiva.colore }">
                     <img :src="destinazioneAttiva.jumbomap.immagine" alt="" class="img-fluid mb-4 mb-md-0 jumbo-map-image">
 
                     <div class="jumbo-map-text">
@@ -137,6 +143,7 @@ const destinazioneAttiva = computed(() =>
             <div class="d-flex flex-column gap-4">
                 <article v-for="(percorso, index) in percorsiFiltrati" :key="index"
                     class="row g-0 rounded-4 overflow-hidden percorso-card mx-auto"
+                    data-aos="fade-up" :data-aos-delay="Math.min(index, 3) * 100"
                     :style="{ backgroundColor: destinazioneAttiva.colore + '66' }">
                     <div class="col-12 col-md-5 position-relative">
                         <img :src="percorso.immagine" class="w-100 percorso-card-image" alt="">

@@ -7,32 +7,34 @@ function hexToRgba(hex, alpha) {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
 
-const paragrafoInfo = {
-  immagine: '/img/destinazioni/foto-lecce-segnaposto.jpg',
-  logo: '/logo/logo-ciclonica-simple.svg',
-  coloreSfondo: '#119660',
-  altLayout: false,
-
-  sopratitolo: 'BAROCCO E TRADIZIONE',
-  titolo: 'Fra borghi, mare e campagna',
-  testo: 'Si parte da Lecce e si arriva al mare seguendo un percorso ciclabile su strade a bassa intensità di traffico che attraversano il Salento ionico. Un viaggio in sei tappe tra spiagge selvagge e fitte pinete, centri storici, piccole frazioni e la rete dei parchi naturali che si affacciano sulla costa ionica. Dal rosa dei fenicotteri al verde intenso dei pini marittimi, dal giallo delle ginestre in fiore all\'azzurro del mare: preparati a pedalare tra i colori!',
-
-  bottoni: [
-    {
-      testoBottone: 'Scopri le location',
-      linkBottone: '/about'
-    },
-  ]
-}
+const {
+  immagine,
+  logo,
+  coloreSfondo,
+  altLayout,
+  sopratitolo,
+  titolo,
+  testo,
+  bottoni
+} = defineProps({
+  immagine: { type: String, required: true },
+  logo: { type: String, required: true },
+  coloreSfondo: { type: String, default: '#119660' },
+  altLayout: { type: Boolean, default: false },
+  sopratitolo: { type: String, required: true },
+  titolo: { type: String, required: true },
+  testo: { type: String, required: true },
+  bottoni: { type: Array, default: () => [] }
+})
 </script>
 
 <template>
-  <section class="py-5">
+  <section class="">
     <div class="container p-5">
 
       <div
         class="rounded-4 overflow-hidden"
-        :style="{ backgroundColor: hexToRgba(paragrafoInfo.coloreSfondo, 0.35) }"
+        :style="{ backgroundColor: hexToRgba(coloreSfondo, 0.35) }"
       >
 
         <div class="row g-0 align-items-stretch">
@@ -40,14 +42,15 @@ const paragrafoInfo = {
           <!-- Immagine -->
           <div
             class="col-12 col-lg-6 p-5"
-            :class="paragrafoInfo.altLayout
+            :class="altLayout
               ? 'order-2 order-lg-1'
               : 'order-1 order-lg-2'"
+            :data-aos="altLayout ? 'fade-left' : 'fade-right'"
           >
             <div class="position-relative h-100 rounded-4 overflow-hidden">
 
               <img
-                :src="paragrafoInfo.immagine"
+                :src="immagine"
                 alt=""
                 class="w-100 h-100 object-fit-cover"
                 style="max-height: 500px;"
@@ -58,7 +61,7 @@ const paragrafoInfo = {
 
               <!-- Logo -->
               <img
-                :src="paragrafoInfo.logo"
+                :src="logo"
                 alt=""
                 class="image-logo"
               >
@@ -69,9 +72,11 @@ const paragrafoInfo = {
           <!-- Contenuto -->
           <div
             class="col-12 col-lg-6"
-            :class="paragrafoInfo.altLayout
+            :class="altLayout
               ? 'order-1 order-lg-2'
               : 'order-2 order-lg-1'"
+            :data-aos="altLayout ? 'fade-right' : 'fade-left'"
+            data-aos-delay="150"
           >
             <div
               class="h-100 d-flex flex-column align-items-start justify-content-center p-5"
@@ -79,27 +84,27 @@ const paragrafoInfo = {
 
               <p
                 class="eyebrow mb-2"
-                :style="{ color: paragrafoInfo.coloreSfondo }"
+                :style="{ color: coloreSfondo }"
               >
-                {{ paragrafoInfo.sopratitolo }}
+                {{ sopratitolo }}
               </p>
 
-              <h2 class="fw-bold mb-4">
-                {{ paragrafoInfo.titolo }}
+              <h2 class="fw-bold mb-4 text-primary">
+                {{ titolo }}
               </h2>
 
               <p class="mb-4">
-                {{ paragrafoInfo.testo }}
+                {{ testo }}
               </p>
 
               <!-- Bottoni -->
               <div class="d-flex flex-wrap gap-3">
 
                 <NuxtLink
-                  v-for="(bottone, index) in paragrafoInfo.bottoni"
+                  v-for="(bottone, index) in bottoni"
                   :key="index"
                   :to="bottone.linkBottone"
-                  class="btn btn-secondary"
+                  class="btn btn-primary btn-lg"
                 >
                   {{ bottone.testoBottone }}
                 </NuxtLink>

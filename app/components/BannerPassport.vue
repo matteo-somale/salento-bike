@@ -1,5 +1,5 @@
 <template>
-  <section class="py-5">
+  <section class="py-5" data-aos="fade-up">
     <div class="container">
 
       <div class="bg-warning rounded-4 overflow-hidden">

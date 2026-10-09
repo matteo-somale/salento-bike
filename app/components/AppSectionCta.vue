@@ -15,7 +15,7 @@ const section = {
         <div class="container">
             <div class="row g-4 g-lg-5 align-items-center">
 
-                <div class="col-12 col-md-7">
+                <div class="col-12 col-md-7" data-aos="fade-left">
                     <h4 class="text-orange eyebrow mb-2">{{ section.sopratitolo }}</h4>
                     <h2 class="fw-bold mb-3">{{ section.titolo }}</h2>
                     <p class="body-large mb-4">{{ section.testo }}</p>
@@ -24,7 +24,7 @@ const section = {
                     </NuxtLink>
                 </div>
 
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-5" data-aos="fade-right" data-aos-delay="150">
                     <div class="rounded-4 position-relative app-visual" :style="{ backgroundColor: section.colore }">
                         <img :src="section.immagine" class="rounded-4 app-visual-image" alt="">
                     </div>

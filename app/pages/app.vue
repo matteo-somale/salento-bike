@@ -1,5 +1,5 @@
 <template>
-    <div id="titoloIniziale" class="container text-center">
+    <div id="titoloIniziale" class="container text-center" data-aos="fade-up">
         <p class="eyebrow text-orange">SCARICA L’app salento bike</p>
         <h1 class="text-celeste">Il percorso nel tuo device</h1>
         <h3 class="mx-auto text-primary" style="max-width: 800px;">Puoi seguire il percorso dalla nostra app:

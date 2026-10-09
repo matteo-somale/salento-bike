@@ -31,6 +31,8 @@ const slides = [
     data-bs-ride="carousel"
     data-bs-interval="15000"
     data-bs-wrap="true"
+    data-aos="fade"
+    data-aos-duration="800"
   >
     <div class="carousel-inner">
 

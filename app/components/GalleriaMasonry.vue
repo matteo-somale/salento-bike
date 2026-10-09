@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount, nextTick, watch } from 'vue'
+import AOS from 'aos'
 
 const destinazioni = [
     {
@@ -109,7 +110,10 @@ onMounted(async () => {
         percentPosition: true,
     })
 
-    imagesLoaded(grid.value, () => masonry.layout())
+    imagesLoaded(grid.value, () => {
+        masonry.layout()
+        AOS.refreshHard()
+    })
 })
 
 onBeforeUnmount(() => {
@@ -127,12 +131,12 @@ watch(immaginiFiltrate, async () => {
     <section class="py-5">
         <div class="container">
 
-            <div class="text-center mb-5">
+            <div class="text-center mb-5" data-aos="fade-up">
                 <h4 class="text-orange eyebrow mb-2">photo gallery</h4>
                 <h1 class="text-primary fw-bold mb-3">Immagini dalle ciclovie del Salento</h1>
             </div>
 
-            <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+            <div class="d-flex flex-wrap justify-content-center gap-3 mb-5" data-aos="fade-up" data-aos-delay="150">
                 <button type="button" class="btn btn-lg btn-filter d-inline-flex align-items-center gap-2"
                     :class="{ 'is-active': tuttiAttivo }"
                     :style="{ '--btn-accent': 'var(--color-accent-giallo)' }"

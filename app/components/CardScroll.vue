@@ -73,7 +73,7 @@ const cards = {
 </script>
 
 <template>
-    <section class="py-5">
+    <section class="py-5" data-aos="fade-up">
         <div class="container">
             <div class="text-center mb-4">
                 <h4 class="text-orange eyebrow mb-2">{{ cards.subtitle }}</h4>

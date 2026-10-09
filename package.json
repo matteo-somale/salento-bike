@@ -11,11 +11,15 @@
   },
   "dependencies": {
     "@nuxt/icon": "^2.5.1",
+    "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
     "imagesloaded": "^5.0.0",
     "masonry-layout": "^4.2.2",
     "nuxt": "^4.5.2",
     "vue": "^3.5.42",
     "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.8"
   }
 }

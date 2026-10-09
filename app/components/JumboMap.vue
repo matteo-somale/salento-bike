@@ -1,7 +1,7 @@
 <template>
     <section class="py-5">
         <div class="container position-relative">
-            <div class="background-giallo-light rounded p-4 p-md-5 jumbo-map-card">
+            <div class="background-giallo-light rounded p-4 p-md-5 jumbo-map-card" data-aos="fade-up">
                 <img src="/img/salento-map.png" alt="Mappa del Salento" class="img-fluid mb-4 mb-md-0 jumbo-map-image">
 
                 <div class="jumbo-map-text">
