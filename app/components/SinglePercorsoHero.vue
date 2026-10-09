@@ -67,14 +67,15 @@ const hexToRgba = (hex, opacity) => {
             {{ title }}
           </h1>
 
-          <p class="lead mb-4">
+          <p class="lead mb-4" style="max-width: 800px;">
             {{ text }}
           </p>
 
           <NuxtLink
             :to="buttonLink"
-            class="btn btn-lg btn-secondary"
+            class="btn btn-lg btn-secondary d-inline-flex align-items-center gap-2"
           >
+            <Icon name="lucide:bike" />
             {{ buttonText }}
           </NuxtLink>
 

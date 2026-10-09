@@ -136,7 +136,7 @@ watch(immaginiFiltrate, async () => {
                 <h1 class="text-primary fw-bold mb-3">Immagini dalle ciclovie del Salento</h1>
             </div>
 
-            <div class="d-flex flex-wrap justify-content-center gap-3 mb-5" data-aos="fade-up" data-aos-delay="150">
+            <div class="d-flex flex-nowrap gap-3 mb-5 filtri-scroll" data-aos="fade-up" data-aos-delay="150">
                 <button type="button" class="btn btn-lg btn-filter d-inline-flex align-items-center gap-2"
                     :class="{ 'is-active': tuttiAttivo }"
                     :style="{ '--btn-accent': 'var(--color-accent-giallo)' }"

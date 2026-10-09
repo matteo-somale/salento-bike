@@ -3,19 +3,19 @@
       image="/img/destinazioni/hero-salento-segnaposto.jpg"
       overlay-color="#1C4059"
       logo="/logo/logo-ladriatica-vert-white.svg"
-      title="PLACEHOLDER - Titolo da sostituire con contenuti reali"
-      text="PLACEHOLDER - Testo da sostituire con la descrizione reale della Ladriatica."
-      button-text="PLACEHOLDER - Vedi i percorsi"
+      title="Scopri il Salento Orientale in bici"
+      text="Un fantastico viaggio a pedali sul balcone del Mediterraneo, tra piccole e grandi meraviglie della natura in riva al mare nel Parco Otranto - SantaMaria di Leuca e Bosco di Tricase"
+      button-text="Scopri ladriatica"
       button-link="/percorsi"
     ></SinglePercorsoHero>
 
     <BannerCitation
       background-color="#1C4059"
       logo="/logo/logo-ladriatica-vert-white.svg"
-      eyebrow="IL SALENTO orientale"
-      title="PLACEHOLDER - Titolo da sostituire con contenuti reali"
-      text="PLACEHOLDER - Testo da sostituire con la citazione/descrizione reale per la Ladriatica."
-      subtitle="PLACEHOLDER - Nome e cognome"
+      eyebrow="DALL'IDEATORE DEL LOGOe"
+      title="Perché il logo ladriatica"
+      text="il logo elegge a protagonista il Faro di Punta Palascìa, punto più a est d’Italia e simbolo di accoglienza. Il faro si staglia davanti a un sole nascente che rivela una forma geometrica precisa: una ruota di bicicletta. I 12 raggi rendono il logo un manifesto del territorio, con un riferimento ai 12 comuni attraversati dall'itinerario."
+      subtitle="Il team Vivilitalia"
     ></BannerCitation>
 
     <PercorsoParagrafo

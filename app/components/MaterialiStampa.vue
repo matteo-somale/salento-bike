@@ -87,7 +87,7 @@ watch(rassegneFiltrate, async () => {
                 <h4 class="eyebrow text-orange mb-2">Area stampa</h4>
                 <h1 class="fw-bold mb-4 text-primary">Materiali stampa</h1>
 
-                <div class="d-flex flex-nowrap gap-3">
+                <div class="d-flex flex-nowrap gap-3 filtri-scroll w-100">
                     <button type="button" class="btn btn-lg btn-filter d-inline-flex align-items-center gap-2"
                         :class="{ 'is-active': tuttiAttivo }"
                         :style="{ '--btn-accent': 'var(--color-accent-giallo)' }"

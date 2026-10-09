@@ -161,6 +161,23 @@ button,
     }
 }
 
+/* riga di bottoni filtro: nowrap forzato, overflow gestito con scroll orizzontale invece di sforare il layout */
+.filtri-scroll {
+    justify-content: flex-start !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .btn-filter {
+        flex-shrink: 0;
+    }
+}
+
 /* sfondi */
 .background-primary {
     background-color: var(--color-primary);
