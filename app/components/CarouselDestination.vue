@@ -47,7 +47,9 @@ const destinations = [
                             <img :src="destination.copertina" class="rounded-md w-100 mb-4 destination-cover" alt="">
                             <h3 class="fw-bold"> {{ destination.titolo }} </h3>
                             <p class="body-large"> {{ destination.testo }} </p>
-                            <NuxtLink :to="destination.link" class="btn btn-primary btn-lg mt-auto"> Scopri i percorsi
+                            <NuxtLink :to="destination.link" class="btn btn-primary btn-lg mt-auto d-inline-flex align-items-center gap-2">
+                                <Icon name="lucide:bike" />
+                                Scopri i percorsi
                             </NuxtLink>
                         </article>
                     </div>

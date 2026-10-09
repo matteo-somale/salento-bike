@@ -32,8 +32,9 @@
                         escursioni e i vostri viaggi.
                     </p>
 
-                    <NuxtLink to="/" class="btn btn-primary btn-lg mb-4">
-                        Scopri di più
+                    <NuxtLink to="/" class="btn btn-primary btn-lg mb-4 d-inline-flex align-items-center gap-2">
+                        <Icon name="lucide:globe" />
+                        WebApp
                     </NuxtLink>
 
                     <!-- Store -->
