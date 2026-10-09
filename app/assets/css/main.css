@@ -163,7 +163,6 @@ button,
 
 /* riga di bottoni filtro: nowrap forzato, overflow gestito con scroll orizzontale invece di sforare il layout */
 .filtri-scroll {
-    justify-content: flex-start !important;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -211,7 +210,9 @@ button,
 
 
 @media (min-width: 768px) {
-  
+    .filtri-scroll {
+        justify-content: center;
+    }
 }
 
 @media (min-width: 992px) {
