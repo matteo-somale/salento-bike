@@ -67,28 +67,26 @@ const slides = [
                 </NuxtLink>
 
                 <!-- Navigazione -->
-                <div class="d-flex gap-2">
+                <div class="d-flex gap-2" id="arrows">
 
                   <button
-                    class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center"
+                    class="btn btn-lg btn-outline-primary d-inline-flex align-items-center justify-content-center"
                     type="button"
                     data-bs-target="#heroCarousel"
                     data-bs-slide="prev"
                     aria-label="Slide precedente"
-                    style="width: 48px; height: 48px;"
                   >
-                    <span aria-hidden="true">←</span>
+                    <Icon name="lucide:arrow-left" />
                   </button>
 
                   <button
-                    class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center"
+                    class="btn btn-lg btn-outline-primary d-inline-flex align-items-center justify-content-center"
                     type="button"
                     data-bs-target="#heroCarousel"
                     data-bs-slide="next"
                     aria-label="Slide successiva"
-                    style="width: 48px; height: 48px;"
                   >
-                    <span aria-hidden="true">→</span>
+                    <Icon name="lucide:arrow-right" />
                   </button>
 
                 </div>

@@ -134,6 +134,31 @@ button,
         border: 2px solid var(--btn-accent);
         color: var(--btn-accent);
     }
+
+    /* bottoni filtro con stato attivo/disattivo: colore passato inline con --btn-accent, es. :style="{ '--btn-accent': colore }" */
+    &.btn-filter {
+        &.is-active {
+            background-color: var(--btn-accent);
+            border: 2px solid var(--btn-accent);
+            color: var(--color-text-white);
+
+            &:hover, &:focus {
+                background-color: color-mix(in srgb, var(--btn-accent) 85%, black);
+                border-color: color-mix(in srgb, var(--btn-accent) 85%, black);
+            }
+        }
+
+        &:not(.is-active) {
+            background-color: var(--color-neutral-gray);
+            border: 2px solid var(--color-neutral-gray);
+            color: var(--color-text-white);
+
+            &:hover, &:focus {
+                background-color: color-mix(in srgb, var(--color-neutral-gray) 85%, black);
+                border-color: color-mix(in srgb, var(--color-neutral-gray) 85%, black);
+            }
+        }
+    }
 }
 
 /* sfondi */

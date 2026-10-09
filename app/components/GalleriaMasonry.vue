@@ -61,14 +61,31 @@ const immagini = destinazioni.flatMap((destinazione) =>
     }))
 )
 
-const filtroAttivo = ref(null)
+const selezionate = ref(destinazioni.map((d) => d.nome))
 
-const toggleFiltro = (nome) => {
-    filtroAttivo.value = filtroAttivo.value === nome ? null : nome
+const tuttiAttivo = computed(() => selezionate.value.length === destinazioni.length)
+
+function isAttiva(nome) {
+    return selezionate.value.includes(nome)
+}
+
+function selezionaTutti() {
+    selezionate.value = destinazioni.map((d) => d.nome)
+}
+
+function toggleFiltro(nome) {
+    if (selezionate.value.includes(nome)) {
+        const rimanenti = selezionate.value.filter((n) => n !== nome)
+        selezionate.value = rimanenti.length ? rimanenti : destinazioni.map((d) => d.nome)
+    } else {
+        selezionate.value = [...selezionate.value, nome]
+    }
 }
 
 const immaginiFiltrate = computed(() =>
-    filtroAttivo.value ? immagini.filter((immagine) => immagine.destinazione === filtroAttivo.value) : immagini
+    tuttiAttivo.value
+        ? immagini
+        : immagini.filter((immagine) => selezionate.value.includes(immagine.destinazione))
 )
 
 const immagineAttivaMobile = ref(null)
@@ -116,9 +133,21 @@ watch(immaginiFiltrate, async () => {
             </div>
 
             <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+                <button type="button" class="btn btn-lg btn-filter d-inline-flex align-items-center gap-2"
+                    :class="{ 'is-active': tuttiAttivo }"
+                    :style="{ '--btn-accent': 'var(--color-accent-giallo)' }"
+                    @click="selezionaTutti">
+                    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.5 3L6.2 1.8C6.37 1.5 6.7 1.33 7.03 1.33H8.97C9.3 1.33 9.63 1.5 9.8 1.8L10.5 3H12.67C13.4 3 14 3.6 14 4.33V11.33C14 12.07 13.4 12.67 12.67 12.67H3.33C2.6 12.67 2 12.07 2 11.33V4.33C2 3.6 2.6 3 3.33 3H5.5Z"
+                            stroke="white" stroke-width="1.3" stroke-linejoin="round" />
+                        <circle cx="8" cy="8" r="2.5" stroke="white" stroke-width="1.3" />
+                    </svg>
+                    Tutti
+                </button>
                 <button v-for="(destinazione, index) in destinazioni" :key="index" type="button"
-                    class="btn btn-lg d-inline-flex align-items-center gap-2"
-                    :style="{ backgroundColor: destinazione.colore, borderColor: destinazione.colore, color: '#fff' }"
+                    class="btn btn-lg btn-filter d-inline-flex align-items-center gap-2"
+                    :class="{ 'is-active': isAttiva(destinazione.nome) }"
+                    :style="{ '--btn-accent': destinazione.colore }"
                     @click="toggleFiltro(destinazione.nome)">
                     <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.5 3L6.2 1.8C6.37 1.5 6.7 1.33 7.03 1.33H8.97C9.3 1.33 9.63 1.5 9.8 1.8L10.5 3H12.67C13.4 3 14 3.6 14 4.33V11.33C14 12.07 13.4 12.67 12.67 12.67H3.33C2.6 12.67 2 12.07 2 11.33V4.33C2 3.6 2.6 3 3.33 3H5.5Z"

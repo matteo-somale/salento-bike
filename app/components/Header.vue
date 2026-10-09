@@ -56,8 +56,9 @@
 
             <NuxtLink
               to="/contact"
-              class="btn btn-orange btn-lg fw-bold"
+              class="btn btn-orange btn-lg fw-bold d-inline-flex align-items-center gap-2"
             >
+              <Icon name="bi:chat-fill" />
               ENG
             </NuxtLink>
 
