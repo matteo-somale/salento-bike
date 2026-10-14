@@ -24,7 +24,7 @@ const hexToRgba = (hex, opacity) => {
   <section class="py-5">
     <div class="container">
 
-      <div class="rounded-4 overflow-hidden" :style="{
+      <div class="rounded overflow-hidden " :style="{
         backgroundImage: `
             linear-gradient(
               ${hexToRgba(overlayColor, overlayOpacity)},

@@ -6,11 +6,13 @@ const destinazioni = [
     {
         nome: 'Ciclonica',
         colore: '#119660',
+        logo: '/logo/logo-ciclonica-simple.svg',
         immagini: [
             {
                 url: '/img/destinazioni/ciclovia-salento-hero.jpg',
                 alt: 'Ciclovia tra la macchia mediterranea del Salento ionico',
                 didascalia: 'Pedalando lungo la costa ionica al tramonto',
+                larga: true,
             },
             {
                 url: '/img/destinazioni/foto-dest-salento.png',
@@ -35,11 +37,13 @@ const destinazioni = [
     {
         nome: 'Ladriatica',
         colore: '#007FC3',
+        logo: '/logo/logo-ladriatica-simple.svg',
         immagini: [
             {
                 url: '/img/destinazioni/foto-dest-lecce.jpg',
                 alt: 'Lecce lungo il percorso della ladriatica',
                 didascalia: 'Lecce, la Firenze del Barocco, lungo il percorso ladriatico',
+                larga: true,
             },
             {
                 url: '/img/destinazioni/foto-lecce-segnaposto.jpg',
@@ -59,6 +63,7 @@ const immagini = destinazioni.flatMap((destinazione) =>
         ...immagine,
         destinazione: destinazione.nome,
         colore: destinazione.colore,
+        logo: destinazione.logo,
     }))
 )
 
@@ -164,14 +169,17 @@ watch(immaginiFiltrate, async () => {
 
             <div ref="grid" class="masonry-grid">
                 <div class="grid-sizer"></div>
-                <div v-for="immagine in immaginiFiltrate" :key="immagine.url" class="grid-item">
+                <div v-for="immagine in immaginiFiltrate" :key="immagine.url" class="grid-item"
+                    :class="{ 'grid-item--wide': immagine.larga }">
                     <div class="gallery-item-inner position-relative overflow-hidden rounded-4"
                         :class="{ 'is-active': immagineAttivaMobile === immagine.url }"
                         @click="toggleImmagineMobile(immagine.url)">
                         <img :src="immagine.url" :alt="immagine.alt" class="w-100 gallery-image">
                         <div v-if="immagine.didascalia" class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end p-3"
-                            :style="{ backgroundColor: immagine.colore + 'E6' }">
-                            <span class="text-white h5">{{ immagine.didascalia }}</span>
+                            :style="{ backgroundColor: immagine.colore + 'B3' }">
+                            <img v-if="immagine.logo" :src="immagine.logo" :alt="`Logo ${immagine.destinazione}`"
+                                class="position-absolute top-0 end-0 m-3 gallery-overlay-logo">
+                            <span v-if="immagine.didascalia" class="text-white h5 gallery-overlay-caption">{{ immagine.didascalia }}</span>
                         </div>
                     </div>
                 </div>
@@ -207,6 +215,18 @@ watch(immaginiFiltrate, async () => {
     }
 }
 
+@media (min-width: 576px) {
+    .grid-item--wide {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-item--wide {
+        width: 66.666%;
+    }
+}
+
 .grid-item {
     padding: 8px;
 }
@@ -216,20 +236,38 @@ watch(immaginiFiltrate, async () => {
     height: auto;
 }
 
+.grid-item--wide .gallery-image {
+    max-height: 400px;
+    object-fit: cover;
+}
+
 .gallery-overlay {
     opacity: 0;
-    transition: opacity .25s ease;
+    transform: translateY(100%);
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+.gallery-overlay-caption {
+    max-width: 400px;
+}
+
+.gallery-overlay-logo {
+    width: 8%;
+    min-width: 42px;
+    height: auto;
 }
 
 @media (hover: hover) and (pointer: fine) {
     .gallery-item-inner:hover .gallery-overlay {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
 @media (hover: none) {
     .gallery-item-inner.is-active .gallery-overlay {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 </style>

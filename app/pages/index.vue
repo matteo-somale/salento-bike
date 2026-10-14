@@ -23,6 +23,8 @@
     <CarouselDestination></CarouselDestination>
     <BannerApp></BannerApp>
 
+    <BannerLinkSud></BannerLinkSud>
+
     <CheckArticles></CheckArticles>
 
     <JumboSlowCard></JumboSlowCard>

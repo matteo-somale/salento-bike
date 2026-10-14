@@ -1,5 +1,5 @@
 <template>
-  <section class="py-5 bg-mobile-full banner-passport" data-aos="fade-up">
+  <section class="pt-5 pb-sm-0 pb-md-5 bg-mobile-full banner-passport" data-aos="fade-up">
     <div class="container">
 
       <div class="rounded-4 overflow-hidden bg-mobile-full-target">
@@ -23,8 +23,9 @@
 
               <NuxtLink
                 to="/about"
-                class="btn btn-orange btn-lg"
+                class="btn btn-orange btn-lg d-inline-flex align-items-center gap-2"
               >
+                <Icon name="material-symbols:approval" />
                 Scopri dove timbrare
               </NuxtLink>
 
@@ -50,5 +51,14 @@
 <style scoped>
 .banner-passport {
   --mobile-bg-color: var(--bs-warning);
+}
+
+/* Su schermi piccoli lo sfondo è applicato alla section (bg-mobile-full):
+   togliamo il padding-bottom così l'immagine tocca il bordo basso della section,
+   come succede con il box interno da 768px in su. */
+@media (max-width: 767.98px) {
+  .banner-passport {
+    padding-bottom: 0;
+  }
 }
 </style>

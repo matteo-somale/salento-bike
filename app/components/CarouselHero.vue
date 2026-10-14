@@ -62,17 +62,17 @@ const slides = [
 
                 <NuxtLink
                   to="/"
-                  class="btn btn-orange btn-lg mb-5 d-inline-flex align-items-center gap-2"
+                  class="btn btn-orange btn-lg mb-5 hero-cta-btn d-inline-flex align-items-center justify-content-center gap-2"
                 >
                   <Icon name="lucide:bike" />
                   {{ slide.button }}
                 </NuxtLink>
 
                 <!-- Navigazione -->
-                <div class="d-flex gap-2" id="arrows">
+                <div class="d-none d-md-flex gap-2" id="arrows">
 
                   <button
-                    class="btn btn-lg btn-outline-primary d-inline-flex align-items-center justify-content-center"
+                    class="btn btn-lg btn-outline-primary carousel-arrow-btn d-inline-flex align-items-center justify-content-center"
                     type="button"
                     data-bs-target="#heroCarousel"
                     data-bs-slide="prev"
@@ -82,7 +82,7 @@ const slides = [
                   </button>
 
                   <button
-                    class="btn btn-lg btn-outline-primary d-inline-flex align-items-center justify-content-center"
+                    class="btn btn-lg btn-outline-primary carousel-arrow-btn d-inline-flex align-items-center justify-content-center"
                     type="button"
                     data-bs-target="#heroCarousel"
                     data-bs-slide="next"
@@ -120,6 +120,23 @@ const slides = [
 </template>
 
 <style scoped>
+.hero-cta-btn {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-cta-btn {
+    width: auto;
+  }
+}
+
+.carousel-arrow-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0;
+  border-radius: 50%;
+}
+
 .video-cover {
   overflow: hidden;
 }
