@@ -4,28 +4,28 @@ import AOS from 'aos'
 
 const destinations = [
     {
-        testo: 'La ciclovia del Salento ionico',
+        testo: 'Ciclonica',
         destinazione: 'ciclonica',
         colore: '#119660',
         jumbomap: {
-            titolo: 'Le ciclovie del Salento ionico',
+            titolo: 'Le ciclovie<br>del Salento ionico',
             testo: 'Dalle spiagge dorate ai borghi del Barocco, dalle antiche masserie alla natura selvaggia dei parchi naturali: 305 km di pura bellezza tra i profumi della macchia mediterranea.',
-            immagine: '/img/salento-map.png',
+            immagine: '/maps/santento-map_ciclonica.svg',
             bottoni: [
-                { testo: 'Scopri il percorso completo', link: '/ciclonica' },
+                { testo: 'Scopri il percorso completo', classe: 'btn-primary', link: '/ciclonica' },
             ],
         },
     },
     {
-        testo: 'La ciclovia del Salento orientale',
+        testo: 'Ladriatica',
         destinazione: 'ladriatica',
         colore: '#007FC3',
         jumbomap: {
-            titolo: 'Le ciclovie del Salento orientale',
+            titolo: 'Le ciclovie<br> del Salento orientale',
             testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a Finibus Terrae.',
-            immagine: '/img/salento-map.png',
+            immagine: '/maps/santento-map_ladriatica.svg',
             bottoni: [
-                { testo: 'Scopri il percorso completo', link: '/ladriatica' },
+                { testo: 'Scopri il percorso completo', classe: 'btn-primary', link: '/ladriatica' },
             ],
         },
     },
@@ -99,7 +99,7 @@ watch(percorsiFiltrati, async () => {
     <section class="py-5">
         <div class="container">
 
-            <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+            <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 pb-lg-5" style="position: relative; z-index: 999;">
                 <button v-for="(destination, index) in destinations" :key="index" type="button"
                     class="btn btn-lg d-inline-flex align-items-center gap-2"
                     :class="selectedDestinazione === destination.destinazione ? 'btn-accent' : 'btn-accent-outline'"
@@ -110,27 +110,18 @@ watch(percorsiFiltrati, async () => {
                 </button>
             </div>
 
-            <div id="jumbomap" class="position-relative mb-5" v-if="destinazioneAttiva">
-                <div class="rounded p-4 p-md-5 jumbo-map-card" data-aos="fade-up" :style="{ backgroundColor: destinazioneAttiva.colore }">
-                    <img :src="destinazioneAttiva.jumbomap.immagine" alt="" class="img-fluid mb-4 mb-md-0 jumbo-map-image">
-
-                    <div class="jumbo-map-text">
-                        <h2 class="display-4 fw-bold text-white">
-                            {{ destinazioneAttiva.jumbomap.titolo }}
-                        </h2>
-                        <p class="lead text-white">
-                            {{ destinazioneAttiva.jumbomap.testo }}
-                        </p>
-
-                        <div class="d-flex flex-wrap gap-3">
-                            <NuxtLink v-for="(bottone, i) in destinazioneAttiva.jumbomap.bottoni" :key="i" :to="bottone.link"
-                                class="btn btn-primary btn-lg">
-                                {{ bottone.testo }}
-                            </NuxtLink>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <JumboMap
+                v-if="destinazioneAttiva"
+                class="mb-5 "
+                :sopratitolo="destinazioneAttiva.jumbomap.sopratitolo"
+                colore-sopratitolo="var(--color-text-white)"
+                :titolo="destinazioneAttiva.jumbomap.titolo"
+                :testo="destinazioneAttiva.jumbomap.testo"
+                colore-titolo-testo="var(--color-text-white)"
+                :immagine="destinazioneAttiva.jumbomap.immagine"
+                :colore-sfondo="destinazioneAttiva.colore"
+                :bottoni="destinazioneAttiva.jumbomap.bottoni"
+            ></JumboMap>
 
             <div class="text-center mb-5">
                 <h4 class="text-orange eyebrow mb-2">Scopri i percorsi più adatti a te</h4>
@@ -142,16 +133,18 @@ watch(percorsiFiltrati, async () => {
 
             <div class="d-flex flex-column gap-4">
                 <article v-for="(percorso, index) in percorsiFiltrati" :key="index"
-                    class="row g-0 rounded-4 overflow-hidden percorso-card mx-auto"
+                    class="row g-0 rounded overflow-hidden percorso-card mx-auto"
                     data-aos="fade-up" :data-aos-delay="Math.min(index, 3) * 100"
                     :style="{ backgroundColor: destinazioneAttiva.colore + '66' }">
-                    <div class="col-12 col-md-5 position-relative">
-                        <img :src="percorso.immagine" class="w-100 percorso-card-image" alt="">
-                        <span class="position-absolute top-0 start-0 m-3 badge rounded-pill percorso-chip">
+                    <div class="row p-y p-md-4">
+                    <div class="col-12 col-md-6 position-relative ">
+                        <img :src="percorso.immagine" class="w-100 rounded percorso-card-image" alt="">
+                        <span class="position-absolute top-0 start-1 m-3 badge rounded-pill"
+                            :style="{ backgroundColor: destinazioneAttiva.colore, color: 'var(--color-text-white)' }">
                             {{ percorso.tag }}
                         </span>
                     </div>
-                    <div class="col-12 col-md-7 d-flex flex-column justify-content-center p-4 p-md-5">
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                         <h3 class="fw-bold mb-3 text-primary">{{ percorso.titolo }}</h3>
                         <p class="body-large mb-4 text-primary">{{ percorso.testo }}</p>
                         <div class="d-flex flex-wrap gap-3">
@@ -164,6 +157,7 @@ watch(percorsiFiltrati, async () => {
                                 Scarica GPX
                             </NuxtLink>
                         </div>
+                    </div>
                     </div>
                 </article>
             </div>
@@ -180,32 +174,18 @@ watch(percorsiFiltrati, async () => {
 
 .percorso-card-image {
     object-fit: cover;
-    height: 350px;
+    height: 250px;
 }
 
-.percorso-chip {
-    background-color: var(--color-accent-orange);
-    color: var(--color-text-white);
-    font-weight: 600;
+@media (min-width: 768px) {
+    .percorso-card-image {
+        height: 300px;
+    }
 }
 
 @media (min-width: 992px) {
-    .jumbo-map-card {
-        max-width: 100%;
-    }
-
-    .jumbo-map-text {
-        max-width: 75%;
-    }
-
-    .jumbo-map-image {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        width: auto;
-        max-width: none;
-        height: 140%;
-        transform: translate(33%, -50%);
+    .percorso-card-image {
+        height: 350px;
     }
 }
 </style>

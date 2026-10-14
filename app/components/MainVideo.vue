@@ -9,7 +9,7 @@ const mainVideo = {
 </script>
 
 <template>
-    <section class="py-5" data-aos="fade-up">
+    <section class="py-5 background-lighter-gray" data-aos="fade-up">
         <div class="container d-flex flex-column align-items-center text-center">
 
             <h4 class="text-orange eyebrow mb-2">

@@ -1,43 +1,83 @@
+<script setup>
+const {
+  sopratitolo,
+  coloreSopratitolo,
+  titolo,
+  testo,
+  coloreTitoloTesto,
+  immagine,
+  coloreSfondo,
+  bottoni
+} = defineProps({
+  sopratitolo: { type: String, default: null },
+  coloreSopratitolo: { type: String, default: 'var(--color-accent-orange)' },
+  titolo: { type: String, required: true },
+  testo: { type: String, required: true },
+  coloreTitoloTesto: { type: String, default: 'var(--color-primary)' },
+  immagine: { type: String, required: true },
+  coloreSfondo: { type: String, required: true },
+  bottoni: { type: Array, default: () => [] }
+})
+</script>
+
 <template>
-    <section class="py-5">
-        <div class="container position-relative">
-            <div class="background-giallo-light rounded p-4 p-md-5 jumbo-map-card" data-aos="fade-up">
-                <img src="/img/salento-map.png" alt="Mappa del Salento" class="img-fluid mb-4 mb-md-0 jumbo-map-image">
+    <div class="p-4 p-md-5 jumbo-map-card" data-aos="fade-up">
+        <div class="jumbo-map-bg" :style="{ backgroundColor: coloreSfondo }"></div>
 
-                <div class="jumbo-map-text">
-                    <p class="eyebrow text-orange">il territorio</p>
-                    <h2 class="display-4 fw-bold text-primary">
-                        Le ciclovie del Salento
-                    </h2>
-                    <p class="lead">
-                        Ciclonica è un viaggio ad anello di 300 km che parte da Lecce per dirigersi lungo la costa ionica
-                        attraversando ben sei parchi naturali e aree protette. Anche Ladriatica è un viaggio ad anello di 230 km
-                        lungo il territorio più a est d’Italia, la costa orientale salentina.
-                    </p>
+        <img :src="immagine" alt="" class="img-fluid mb-4 mb-md-0 jumbo-map-image">
 
-                    <div class="d-flex flex-wrap gap-3">
-                        <NuxtLink to="/ciclonica" class="btn btn-secondary btn-lg">
-                            Vai a Ciclonica
-                        </NuxtLink>
+        <div class="jumbo-map-text">
+            <p v-if="sopratitolo" class="eyebrow" :style="{ color: coloreSopratitolo }">{{ sopratitolo }}</p>
+            <h2 class="display-4 fw-bold" :style="{ color: coloreTitoloTesto }" v-html="titolo"></h2>
+            <p class="lead" :style="{ color: coloreTitoloTesto }">{{ testo }}</p>
 
-                        <NuxtLink to="/ladriatica" class="btn btn-primary btn-lg">
-                            Vai a Ladriatica
-                        </NuxtLink>
-                    </div>
-                </div>
+            <div class="d-flex flex-wrap gap-3 jumbo-map-buttons">
+                <NuxtLink
+                    v-for="(bottone, index) in bottoni"
+                    :key="index"
+                    :to="bottone.link"
+                    :class="['btn btn-lg', bottone.classe]"
+                >
+                    {{ bottone.testo }}
+                </NuxtLink>
             </div>
         </div>
-    </section>
+    </div>
 </template>
 
 <style scoped>
-@media (min-width: 992px) {
-    .jumbo-map-card {
-        max-width: 100%;
-    }
+.jumbo-map-card {
+    position: relative;
+    isolation: isolate;
+}
 
-    .jumbo-map-text {
-        max-width: 75%;
+.jumbo-map-buttons {
+    flex-direction: column;
+}
+
+.jumbo-map-buttons .btn {
+    width: 100%;
+}
+
+.jumbo-map-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    width: 100vw;
+    margin-left: -50vw;
+    border-radius: 0;
+    z-index: -1;
+}
+
+@media (min-width: 992px) {
+    .jumbo-map-bg {
+        left: 0;
+        right: 0;
+        width: 83%;
+        margin-left: 0;
+        border-radius: var(--bs-border-radius);
     }
 
     .jumbo-map-image {
@@ -47,7 +87,33 @@
         width: auto;
         max-width: none;
         height: 140%;
-        transform: translate(33%, -50%);
+        transform: translateY(-50%);
+    }
+
+    .jumbo-map-buttons {
+        flex-direction: row;
+    }
+
+    .jumbo-map-buttons .btn {
+        width: auto;
+    }
+}
+
+@media (min-width: 1400px) {
+    .jumbo-map-text {
+        max-width: 75%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1399.98px) {
+    .jumbo-map-text {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .jumbo-map-image {
+        transform: translate(15%, -50%);
     }
 }
 </style>

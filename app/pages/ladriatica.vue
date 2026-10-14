@@ -18,6 +18,7 @@
       subtitle="Il team Vivilitalia"
     ></BannerCitation>
 
+    <div class="d-flex py-5 flex-column gap-5">
     <PercorsoParagrafo
       sopratitolo="IL SALENTO orientale"
       titolo="La magia di Finibus Terrae"
@@ -50,6 +51,7 @@
       :alt-layout="false"
       :bottoni="[{ testoBottone: 'Scopri le location', linkBottone: '/about' }]"
     ></PercorsoParagrafo>
+    </div>
 </template>
 
 <script setup>

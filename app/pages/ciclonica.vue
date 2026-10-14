@@ -22,6 +22,7 @@
 
     <BannerGuidaCiclonica></BannerGuidaCiclonica>
 
+    <div class="d-flex py-5 flex-column gap-5">
     <PercorsoParagrafo
       sopratitolo="IL SALENTO IONICO"
       titolo="Un percorso unico"
@@ -56,6 +57,7 @@ Gallipoli e quelle di Ugento, la costa intatta di Portoselvaggio e le piccole ma
       :alt-layout="false"
       :bottoni="[{ testoBottone: 'Scopri le location', linkBottone: '/about' }]"
     ></PercorsoParagrafo>
+    </div>
 </template>
 
 <script setup>

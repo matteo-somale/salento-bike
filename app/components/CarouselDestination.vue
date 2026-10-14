@@ -28,7 +28,7 @@ const destinations = [
 
 </script>
 <template>
-    <section class="py-5" data-aos="fade-up">
+    <section class="py-4 pt-lg-0" data-aos="fade-up">
         <div class="container"> <!-- Carousel -->
             <div class="text-center py-3">
                 <p class="eyebrow text-secondary">DESTINAZIONI</p>

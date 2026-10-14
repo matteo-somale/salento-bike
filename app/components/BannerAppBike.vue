@@ -1,7 +1,7 @@
 <template>
-    <section class="py-5" data-aos="fade-up">
+    <section class="py-5 bg-mobile-full banner-app-background" data-aos="fade-up">
         <div class="container">
-            <div class="rounded-4 p-4 p-lg-5 banner-app-grid banner-app-background">
+            <div class="rounded-4 p-4 p-lg-5 banner-app-grid bg-mobile-full-target">
 
                 <!-- Sopratitolo e logo -->
                 <div class="banner-app-top">
@@ -94,6 +94,6 @@
 }
 
 .banner-app-background {
-    background-color: color-mix(in srgb, var(--color-accent-celeste) 30%, transparent);
+    --mobile-bg-color: color-mix(in srgb, var(--color-accent-celeste) 30%, transparent);
 }
 </style>

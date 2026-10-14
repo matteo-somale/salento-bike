@@ -76,10 +76,10 @@
 const pagine = [
   { nome: 'Percorsi', route: '/percorsi' },
   { nome: 'APP', route: '/app' },
-  { nome: 'Area Stampa', route: '/area-stampa' },
   { nome: 'News', route: '/news' },
   { nome: 'Chi Siamo', route: '/chi-siamo' },
   { nome: 'Gallery', route: '/galleria' },
+  { nome: 'Area Stampa', route: '/area-stampa' },
 ]
 </script>
 

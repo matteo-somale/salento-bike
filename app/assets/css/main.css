@@ -24,6 +24,17 @@ button,
     }
 }
 
+/* badge */
+.badge {
+    font-family: var(--font-ui);
+    font-size: 16px;
+    font-weight: 600;
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
 /* bottoni */
 .btn {
     font-family: var(--font-ui);
@@ -199,6 +210,31 @@ button,
 .background-light-gray {
     background-color: var(--color-neutral-light-gray);
 }
+.background-lighter-gray {
+    background-color: var(--color-neutral-lighter-gray);
+}
+
+/* sfondo full-bleed su mobile: sotto i 768px il colore/immagine impostato con le
+   custom property --mobile-bg-color e --mobile-bg-image viene applicato alla
+   section (.bg-mobile-full) invece che al box interno (.bg-mobile-full-target);
+   da 768px in su lo sfondo torna sul box interno.
+   Esempio:
+     <section class="bg-mobile-full" style="--mobile-bg-color: red">
+       <div class="container">
+         <div class="bg-mobile-full-target">...</div>
+       </div>
+     </section> */
+.bg-mobile-full {
+    background-color: var(--mobile-bg-color, transparent);
+    background-image: var(--mobile-bg-image, none);
+    background-size: cover;
+    background-position: center;
+
+    .bg-mobile-full-target {
+        background-color: transparent;
+        background-image: none;
+    }
+}
 
 /* angoli */
 .rounded-md {
@@ -212,6 +248,18 @@ button,
 @media (min-width: 768px) {
     .filtri-scroll {
         justify-content: center;
+    }
+
+    .bg-mobile-full {
+        background-color: transparent;
+        background-image: none;
+
+        .bg-mobile-full-target {
+            background-color: var(--mobile-bg-color, transparent);
+            background-image: var(--mobile-bg-image, none);
+            background-size: cover;
+            background-position: center;
+        }
     }
 }
 

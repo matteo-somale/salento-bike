@@ -27,7 +27,7 @@ const slides = [
 <template>
   <section
     id="heroCarousel"
-    class="carousel slide"
+    class="carousel slide background-lighter-gray"
     data-bs-ride="carousel"
     data-bs-interval="15000"
     data-bs-wrap="true"

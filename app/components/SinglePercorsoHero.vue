@@ -31,23 +31,21 @@ const hexToRgba = (hex, opacity) => {
 </script>
 
 <template>
-  <section class="py-5">
+  <section
+    class="py-5 bg-mobile-full"
+    :style="{
+      '--mobile-bg-image': `
+        linear-gradient(
+          ${hexToRgba(overlayColor, overlayOpacity)},
+          ${hexToRgba(overlayColor, overlayOpacity)}
+        ),
+        url(${image})
+      `
+    }"
+  >
     <div class="container">
 
-      <div
-        class="rounded-4 overflow-hidden"
-        :style="{
-          backgroundImage: `
-            linear-gradient(
-              ${hexToRgba(overlayColor, overlayOpacity)},
-              ${hexToRgba(overlayColor, overlayOpacity)}
-            ),
-            url(${image})
-          `,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }"
-      >
+      <div class="rounded-4 overflow-hidden bg-mobile-full-target">
 
         <div
           class="d-flex flex-column align-items-center justify-content-center text-center text-white p-5"

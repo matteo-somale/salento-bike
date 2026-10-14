@@ -30,7 +30,7 @@ const {
 
 <template>
   <section class="">
-    <div class="container p-5">
+    <div class="container px-5">
 
       <div
         class="rounded-4 overflow-hidden"
@@ -63,7 +63,7 @@ const {
               <img
                 :src="logo"
                 alt=""
-                class="image-logo"
+                class="image-logo d-none d-lg-block"
               >
 
             </div>
@@ -93,7 +93,7 @@ const {
                 {{ titolo }}
               </h2>
 
-              <p class="mb-4">
+              <p class="mb-4 body-large body-primary">
                 {{ testo }}
               </p>
 

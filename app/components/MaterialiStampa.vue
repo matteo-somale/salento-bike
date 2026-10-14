@@ -113,7 +113,7 @@ watch(rassegneFiltrate, async () => {
 
                     <div v-if="destinazioniDiRassegna(rassegna).length" class="d-flex flex-row gap-2 mb-3">
                         <span v-for="destinazione in destinazioniDiRassegna(rassegna)" :key="destinazione.slug"
-                            class="badge rounded-pill"
+                            class="badge"
                             :style="{ backgroundColor: destinazione.colore, color: 'var(--color-text-white)' }">
                             {{ destinazione.nome }}
                         </span>

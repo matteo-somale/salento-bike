@@ -1,8 +1,8 @@
 <template>
-  <section class="py-5" data-aos="fade-up">
+  <section class="py-5 bg-mobile-full banner-passport" data-aos="fade-up">
     <div class="container">
 
-      <div class="bg-warning rounded-4 overflow-hidden">
+      <div class="rounded-4 overflow-hidden bg-mobile-full-target">
         <div class="row g-0 align-items-stretch">
 
           <!-- Contenuto -->
@@ -46,3 +46,9 @@
     </div>
   </section>
 </template>
+
+<style scoped>
+.banner-passport {
+  --mobile-bg-color: var(--bs-warning);
+}
+</style>
