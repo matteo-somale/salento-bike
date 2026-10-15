@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue'
+
 const slides = [
   {
     eyebrow: 'salento.bike',
@@ -22,32 +24,40 @@ const slides = [
     video: 'https://www.youtube.com/embed/yRV_RfbSl8k?start=12&autoplay=1&mute=1&loop=1&playlist=yRV_RfbSl8k&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0'
   }
 ]
+
+const containerRef = ref(null)
+const swiper = useSwiper(containerRef, {
+  loop: true,
+  autoplay: { delay: 15000 },
+  pagination: { clickable: true, enabled: true },
+  breakpoints: {
+    992: {
+      pagination: { enabled: false },
+    },
+  },
+})
 </script>
 
 <template>
   <section
     id="heroCarousel"
-    class="carousel slide background-lighter-gray"
-    data-bs-ride="carousel"
-    data-bs-interval="15000"
-    data-bs-wrap="true"
+    class="background-lighter-gray"
     data-aos="fade"
     data-aos-duration="800"
   >
-    <div class="carousel-inner">
+    <ClientOnly>
+      <swiper-container ref="containerRef" :init="false" class="hero-swiper">
 
       <!-- Slide -->
-      <div
+      <swiper-slide
         v-for="(slide, index) in slides"
         :key="index"
-        class="carousel-item"
-        :class="{ active: index === 0 }"
       >
         <div class="container py-3">
           <div class="row align-items-center g-5 min-vh-100">
 
             <!-- Colonna sinistra -->
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 mt-2">
               <div class="d-flex flex-column align-items-start">
 
                 <p class="text-orange eyebrow fw-semibold mb-2">
@@ -62,21 +72,20 @@ const slides = [
 
                 <NuxtLink
                   to="/"
-                  class="btn btn-orange btn-lg mb-5 hero-cta-btn d-inline-flex align-items-center justify-content-center gap-2"
+                  class="btn btn-orange btn-lg mb-0 mb-md-5 hero-cta-btn d-inline-flex align-items-center justify-content-center gap-2"
                 >
                   <Icon name="lucide:bike" />
                   {{ slide.button }}
                 </NuxtLink>
 
                 <!-- Navigazione -->
-                <div class="d-none d-md-flex gap-2" id="arrows">
+                <div class="d-none d-lg-flex gap-2" id="arrows">
 
                   <button
                     class="btn btn-lg btn-outline-primary carousel-arrow-btn d-inline-flex align-items-center justify-content-center"
                     type="button"
-                    data-bs-target="#heroCarousel"
-                    data-bs-slide="prev"
                     aria-label="Slide precedente"
+                    @click="swiper.prev()"
                   >
                     <Icon name="lucide:arrow-left" />
                   </button>
@@ -84,9 +93,8 @@ const slides = [
                   <button
                     class="btn btn-lg btn-outline-primary carousel-arrow-btn d-inline-flex align-items-center justify-content-center"
                     type="button"
-                    data-bs-target="#heroCarousel"
-                    data-bs-slide="next"
                     aria-label="Slide successiva"
+                    @click="swiper.next()"
                   >
                     <Icon name="lucide:arrow-right" />
                   </button>
@@ -113,13 +121,19 @@ const slides = [
 
           </div>
         </div>
-      </div>
+      </swiper-slide>
 
-    </div>
+      </swiper-container>
+    </ClientOnly>
   </section>
 </template>
 
 <style scoped>
+.hero-swiper swiper-slide {
+  padding-bottom: 3rem;
+  box-sizing: border-box;
+}
+
 .hero-cta-btn {
   width: 100%;
 }

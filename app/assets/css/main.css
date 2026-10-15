@@ -44,10 +44,14 @@ button,
 
     &.btn-lg {
         font-size: 20px;
+        font-weight: 600;
+        line-height: 1.2;
     }
 
     &.btn-sm {
-        font-size: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
     }
 
     &.btn-primary {
@@ -169,6 +173,16 @@ button,
                 border-color: color-mix(in srgb, var(--color-neutral-gray) 85%, black);
             }
         }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .btn.btn-lg {
+        font-size: 16px;
+    }
+
+    .btn.btn-sm {
+        font-size: 13px;
     }
 }
 

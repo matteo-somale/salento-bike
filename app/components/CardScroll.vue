@@ -79,11 +79,14 @@ const cards = {
                 <h4 class="text-orange eyebrow mb-2">{{ cards.subtitle }}</h4>
                 <h2 class="fw-bold">{{ cards.title }}</h2>
             </div>
-            <div class="position-relative">
-                <div class="overflow-auto carousel-track">
-                    <div class="d-flex flex-nowrap gap-4">
-                        <div v-for="(card, index) in cards.card" :key="index"
-                            class="card-item rounded-md overflow-hidden flex-shrink-0 text-white p-4 text-center"
+            <ClientOnly>
+                <swiper-container
+                    class="cardscroll-swiper"
+                    slides-per-view="auto"
+                    space-between="24"
+                >
+                    <swiper-slide v-for="(card, index) in cards.card" :key="index" class="card-slide">
+                        <div class="card-item rounded-md overflow-hidden text-white p-4 text-center"
                             :style="{ backgroundColor: cards.backgroundColor }">
                             <img :src="card.immagine" alt="" class="card-image w-100 rounded-md mb-3">
                             <h3 class="fw-bold mt-4">{{ card.titoloH3 }}</h3>
@@ -91,47 +94,20 @@ const cards = {
                             <p class="body-large">{{ card.testo }}</p>
                             <NuxtLink :to="card.bottoneLink" class="btn btn-primary w-100">{{ card.bottoneTesto }}</NuxtLink>
                         </div>
-                    </div>
-                </div>
-                <div class="fade-edge fade-edge-start" />
-                <div class="fade-edge fade-edge-end" />
-            </div>
+                    </swiper-slide>
+                </swiper-container>
+            </ClientOnly>
         </div>
     </section>
 </template>
 
 <style scoped>
-.carousel-track {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-snap-type: x mandatory;
-}
-
-.carousel-track::-webkit-scrollbar {
-    display: none;
-}
-
-.fade-edge {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 36px;
-    pointer-events: none;
-}
-
-.fade-edge-start {
-    left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent);
-}
-
-.fade-edge-end {
-    right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.5), transparent);
+.card-slide {
+    width: 400px;
 }
 
 .card-item {
-    scroll-snap-align: start;
-    width: 400px;
+    width: 100%;
 }
 
 .card-image {

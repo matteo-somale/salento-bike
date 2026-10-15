@@ -28,8 +28,8 @@ const {
 
         <div class="jumbo-map-text">
             <p v-if="sopratitolo" class="eyebrow" :style="{ color: coloreSopratitolo }">{{ sopratitolo }}</p>
-            <h2 class="display-4 fw-bold" :style="{ color: coloreTitoloTesto }" v-html="titolo"></h2>
-            <p class="lead" :style="{ color: coloreTitoloTesto }">{{ testo }}</p>
+            <h2 class="" :style="{ color: coloreTitoloTesto }" v-html="titolo"></h2>
+            <p class="body-large" :style="{ color: coloreTitoloTesto }">{{ testo }}</p>
 
             <div class="d-flex flex-wrap gap-3 jumbo-map-buttons">
                 <NuxtLink

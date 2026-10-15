@@ -2,7 +2,7 @@
 @font-face {
   font-family: "Bricolage Grotesque";
   src: url("~/assets/fonts/BricolageGrotesque/BricolageGrotesque_48pt-ExtraBold.woff2") format("woff2");
-  font-weight: 600;
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
@@ -11,7 +11,7 @@
 @font-face {
   font-family: "Bricolage Grotesque";
   src: url("~/assets/fonts/BricolageGrotesque/BricolageGrotesque_48pt-Bold.woff2") format("woff2");
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -20,7 +20,7 @@
 @font-face {
   font-family: "Bricolage Grotesque";
   src: url("~/assets/fonts/BricolageGrotesque/BricolageGrotesque_36pt-Bold.woff2") format("woff2");
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -38,7 +38,7 @@
 @font-face {
   font-family: "Bricolage Grotesque";
   src: url("~/assets/fonts/BricolageGrotesque/BricolageGrotesque_24pt-Medium.woff2") format("woff2");
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -125,18 +125,26 @@
 
 h1 {
     font-size: 60px;
+    line-height: 1.05;
+    font-weight: 800;
     font-family: var(--font-heading);
 }
 h2 {
     font-size: 40px;
+    line-height: 1.10;
+    font-weight: 700;
     font-family: var(--font-heading);
 }
 h3 {
     font-size: 32px;
+    line-height: 1.15;
+    font-weight: 700;
     font-family: var(--font-heading);
 }
 h4 {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 600;
     font-family: var(--font-heading);
 }
 h5 {
@@ -146,20 +154,35 @@ h5 {
 
 .eyebrow {
     font-size: 20px;
+    line-height: 1.30;
+    font-weight: 500;
     font-family: var(--font-heading);
     text-transform: uppercase;
 }
 
 .body-large {
     font-size: 18px;
+    line-height: 1.50;
+    font-weight: 500;
     font-family: var(--font-body);
 }
+p,
 .body-regular {
     font-size: 20px;
+    line-height: 1.50;
+    font-weight: 400;
     font-family: var(--font-body);
 }
 .body-small {
     font-size: 14px;
+    line-height: 1.45;
+    font-weight: 400;
+    font-family: var(--font-body);
+}
+.body-caption {
+    font-size: 12px;
+    line-height: 1.40;
+    font-weight: 400;
     font-family: var(--font-body);
 }
 
@@ -203,4 +226,45 @@ h5 {
 
 .text-petrolio {
     color: var(--color-accent-petrolio);
+}
+
+@media (max-width: 767.98px) {
+    h1 {
+        font-size: 36px;
+        line-height: 1.08;
+    }
+    h2 {
+        font-size: 28px;
+        line-height: 1.12;
+    }
+    h3 {
+        font-size: 22px;
+        line-height: 1.18;
+    }
+    h4 {
+        font-size: 18px;
+        line-height: 1.25;
+    }
+    .eyebrow {
+        font-size: 13px;
+        line-height: 1.30;
+    }
+
+    .body-large {
+        font-size: 16px;
+        line-height: 1.50;
+    }
+    p,
+    .body-regular {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+    .body-small {
+        font-size: 13px;
+        line-height: 1.45;
+    }
+    .body-caption {
+        font-size: 11px;
+        line-height: 1.40;
+    }
 }

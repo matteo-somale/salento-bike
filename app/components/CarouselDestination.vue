@@ -28,55 +28,58 @@ const destinations = [
 
 </script>
 <template>
-    <section class="py-4 pt-lg-0" data-aos="fade-up">
+    <section class="py-0 pb-4 py-md-4 pt-lg-0" data-aos="fade-up">
         <div class="container"> <!-- Carousel -->
             <div class="text-center py-3">
                 <p class="eyebrow text-secondary">DESTINAZIONI</p>
-                <h1 class="">I percorsi principali</h1>
+                <h1 class="text-primary">I percorsi principali</h1>
             </div>
-            <div class="carousel-track">
+            <!-- md e superiori: impilati/griglia come oggi -->
+            <div class="d-none d-md-block">
                 <div class="row g-4 px-4">
                     <div v-for="(destination, index) in destinations.slice(0, 2)" :key="index"
-                        class="col-12 col-lg-6 destination-item">
-                        <article class="p-md-5 p-3 rounded h-100 d-flex flex-column align-items-center text-center"
-                            :style="{ backgroundColor: destination.colore + '55' }">
-                            <div class="rounded d-flex align-items-center justify-content-center mb-3">
-                                <img :src="destination.logo" :alt="`Logo ${destination.titolo}`" class="my-1"
-                                    style="height: 140px;">
-                            </div>
-                            <img :src="destination.copertina" class="rounded-md w-100 mb-4 destination-cover" alt="">
-                            <h3 class="fw-bold"> {{ destination.titolo }} </h3>
-                            <p class="body-large"> {{ destination.testo }} </p>
-                            <NuxtLink :to="destination.link" class="btn btn-primary btn-lg mt-auto d-inline-flex align-items-center gap-2">
-                                <Icon name="lucide:bike" />
-                                Scopri i percorsi
-                            </NuxtLink>
-                        </article>
+                        class="col-12 col-lg-6">
+                        <DestinazioneCard
+                            :logo="destination.logo"
+                            :copertina="destination.copertina"
+                            :titolo="destination.titolo"
+                            :testo="destination.testo"
+                            :link="destination.link"
+                            :colore="destination.colore"
+                        ></DestinazioneCard>
                     </div>
                 </div>
+            </div>
+
+            <!-- sotto md: swiper classico -->
+            <div class="d-md-none">
+                <ClientOnly>
+                    <swiper-container
+                        class="destinazioni-swiper"
+                        pagination="true"
+                        slides-per-view="1"
+                        space-between="16"
+                    >
+                        <swiper-slide v-for="(destination, index) in destinations.slice(0, 2)" :key="index">
+                            <DestinazioneCard
+                                :logo="destination.logo"
+                                :copertina="destination.copertina"
+                                :titolo="destination.titolo"
+                                :testo="destination.testo"
+                                :link="destination.link"
+                                :colore="destination.colore"
+                            ></DestinazioneCard>
+                        </swiper-slide>
+                    </swiper-container>
+                </ClientOnly>
             </div>
         </div>
     </section>
 </template>
 
 <style scoped>
-.carousel-track {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-snap-type: x mandatory;
+.destinazioni-swiper swiper-slide {
+    padding-bottom: 2.5rem;
+    box-sizing: border-box;
 }
-
-.carousel-track::-webkit-scrollbar {
-    display: none;
-}
-
-.destination-item {
-    scroll-snap-align: start;
-}
-
-.destination-cover {
-    height: 35vh;
-    object-fit: cover;
-}
-
 </style>
