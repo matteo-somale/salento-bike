@@ -33,6 +33,15 @@ button,
     padding-left: 32px;
     padding-top: 16px;
     padding-bottom: 16px;
+
+    /* variante leggermente più piccola, per i chip destinazione sulle card news */
+    &.badge-sm {
+        font-size: 14px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
 
 /* bottoni */
