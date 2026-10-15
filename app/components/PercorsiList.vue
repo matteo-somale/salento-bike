@@ -176,35 +176,42 @@ watch(percorsiFiltrati, async () => {
                 </p>
             </div>
 
-            <div class="d-flex flex-column gap-4">
-                <article v-for="(percorso, index) in percorsiFiltrati" :key="index"
-                    class="row g-0 rounded overflow-hidden percorso-card mx-auto"
+            <!-- md e superiori: impilati -->
+            <div class="d-none d-md-flex flex-column gap-4">
+                <PercorsoCard v-for="(percorso, index) in percorsiFiltrati" :key="index"
                     data-aos="fade-up" :data-aos-delay="Math.min(index, 3) * 100"
-                    :style="{ backgroundColor: destinazioneAttiva.colore + '66' }">
-                    <div class="row p-y p-md-4">
-                    <div class="col-12 col-md-6 position-relative ">
-                        <img :src="percorso.immagine" class="w-100 rounded percorso-card-image" alt="">
-                        <span class="position-absolute top-0 start-1 m-3 badge rounded-pill"
-                            :style="{ backgroundColor: destinazioneAttiva.colore, color: 'var(--color-text-white)' }">
-                            {{ percorso.tag }}
-                        </span>
-                    </div>
-                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
-                        <h3 class="fw-bold mb-3 text-primary">{{ percorso.titolo }}</h3>
-                        <p class="body-large mb-4 text-primary">{{ percorso.testo }}</p>
-                        <div class="d-flex flex-wrap gap-3">
-                            <NuxtLink :to="percorso.linkPercorso" class="btn btn-lg btn-primary d-inline-flex align-items-center gap-2">
-                                <Icon name="lucide:bike" />
-                                Vai al percorso
-                            </NuxtLink>
-                            <NuxtLink :to="percorso.linkGpx" class="btn btn-lg btn-orange d-inline-flex align-items-center gap-2">
-                                <Icon name="lucide:download" />
-                                Scarica GPX
-                            </NuxtLink>
-                        </div>
-                    </div>
-                    </div>
-                </article>
+                    :immagine="percorso.immagine"
+                    :tag="percorso.tag"
+                    :titolo="percorso.titolo"
+                    :testo="percorso.testo"
+                    :link-percorso="percorso.linkPercorso"
+                    :link-gpx="percorso.linkGpx"
+                    :colore="destinazioneAttiva.colore"
+                ></PercorsoCard>
+            </div>
+
+            <!-- sotto md: swiper classico -->
+            <div class="d-md-none">
+                <ClientOnly>
+                    <swiper-container
+                        class="percorsi-swiper"
+                        pagination="true"
+                        slides-per-view="1"
+                        space-between="16"
+                    >
+                        <swiper-slide v-for="(percorso, index) in percorsiFiltrati" :key="index">
+                            <PercorsoCard
+                                :immagine="percorso.immagine"
+                                :tag="percorso.tag"
+                                :titolo="percorso.titolo"
+                                :testo="percorso.testo"
+                                :link-percorso="percorso.linkPercorso"
+                                :link-gpx="percorso.linkGpx"
+                                :colore="destinazioneAttiva.colore"
+                            ></PercorsoCard>
+                        </swiper-slide>
+                    </swiper-container>
+                </ClientOnly>
             </div>
 
         </div>
@@ -212,25 +219,8 @@ watch(percorsiFiltrati, async () => {
 </template>
 
 <style scoped>
-.percorso-card {
-    max-width: 1000px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
-
-.percorso-card-image {
-    object-fit: cover;
-    height: 250px;
-}
-
-@media (min-width: 768px) {
-    .percorso-card-image {
-        height: 300px;
-    }
-}
-
-@media (min-width: 992px) {
-    .percorso-card-image {
-        height: 350px;
-    }
+.percorsi-swiper swiper-slide {
+    padding-bottom: 2.5rem;
+    box-sizing: border-box;
 }
 </style>

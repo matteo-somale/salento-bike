@@ -43,7 +43,7 @@
         </div>
       </div> <!-- Separatore -->
       <hr class="my-5"> <!-- Copyright -->
-      <p class="small text-secondary mb-0 text-center text-lg-start"> © 2026 Salento.Bike — Un progetto della Green Community Ionico-Adriatica </p>
+      <p class="small text-secondary mb-0 text-center text-lg-start"> © 2026 Salento.Bike — Un progetto di Vivilitalia</p>
     </div>
   </footer>
 </template>

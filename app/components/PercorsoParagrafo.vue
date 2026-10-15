@@ -29,11 +29,11 @@ const {
 </script>
 
 <template>
-  <section class="">
-    <div class="container px-5">
+  <section class="percorso-paragrafo">
+    <div class="container px-md-5 px-sm-0">
 
       <div
-        class="rounded-4 overflow-hidden"
+        class="percorso-card rounded-4 overflow-hidden"
         :style="{ backgroundColor: hexToRgba(coloreSfondo, 0.35) }"
       >
 
@@ -41,19 +41,18 @@ const {
 
           <!-- Immagine -->
           <div
-            class="col-12 col-lg-6 p-5"
+            class="col-12 col-lg-6 p-4  p-md-5"
             :class="altLayout
               ? 'order-2 order-lg-1'
               : 'order-1 order-lg-2'"
             :data-aos="altLayout ? 'fade-left' : 'fade-right'"
           >
-            <div class="position-relative h-100 rounded-4 overflow-hidden">
+            <div class="percorso-image-wrapper position-relative rounded-4 overflow-hidden">
 
               <img
                 :src="immagine"
                 alt=""
                 class="w-100 h-100 object-fit-cover"
-                style="max-height: 500px;"
               >
 
               <!-- Overlay sfumato -->
@@ -79,7 +78,7 @@ const {
             data-aos-delay="150"
           >
             <div
-              class="h-100 d-flex flex-column align-items-start justify-content-center p-5"
+              class="h-100 d-flex flex-column align-items-start justify-content-center p-4 p-md-5"
             >
 
               <p
@@ -142,5 +141,25 @@ const {
   width: auto;
   max-width: calc(100% - 3rem);
   object-fit: contain;
+}
+
+.percorso-image-wrapper {
+  height: 100%;
+  max-height: 500px;
+}
+
+@media (max-width: 767.98px) {
+  /* Dentro lo swiper (sotto il breakpoint md) le card devono avere tutte la stessa altezza */
+  .percorso-paragrafo,
+  .percorso-paragrafo .container,
+  .percorso-card,
+  .percorso-paragrafo .row {
+    height: 100%;
+  }
+
+  .percorso-image-wrapper {
+    height: 250px;
+    max-height: 250px;
+  }
 }
 </style>

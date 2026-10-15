@@ -12,5 +12,5 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
   ],
 
-  modules: ['@nuxt/icon'],
+  modules: ['@nuxt/icon', 'nuxt-swiper'],
 })
