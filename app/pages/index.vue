@@ -27,6 +27,7 @@
 
     <CheckArticles></CheckArticles>
 
+    <JumboGreenRoad></JumboGreenRoad>
     <JumboSlowCard></JumboSlowCard>
   </div>
 </template>

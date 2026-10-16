@@ -1,40 +1,42 @@
+<script setup>
+import { getNewsList } from '~/utils/news'
+
+const ultimeNews = getNewsList().slice(0, 3)
+</script>
+
 <template>
     <section class="py-5">
         <div class="container">
             <div class="row align-items-end g-4 mb-4">
                 <div class="col-12 col-md-6 d-flex flex-column">
                     <p class="eyebrow text-orange">SOPRATITOLO</p>
-                    <h2 class="fw-bold">Titolo della sezione</h2>
+                    <h2 class="text-primary">Titolo della sezione</h2>
                 </div>
-                <div class="col-12 col-md-6 d-flex justify-content-end">
-                    <div class="d-flex align-items-center fw-bold gap-2 text-orange">
+                <div class="col-12 col-md-6 d-none d-md-flex justify-content-end">
+                    <NuxtLink to="/news" class="d-flex align-items-center fw-bold gap-2 text-orange text-decoration-none">
                         <span>Vedi tutte le news</span>
                         <span aria-hidden="true">&rarr;</span>
-                    </div>
+                    </NuxtLink>
                 </div>
             </div>
-            <div class="row g-4"> <!-- Item 1 -->
-                <div class="col-12 col-md-4" data-aos="fade-up">
-                    <div> <img src="/img/articoli/nard-centro.jpg" class="rounded-sm w-100 mb-3 article-cover" alt="">
-                        <p class="eyebrow text-orange">ARTICOLI</p>
-                        <h3 class="fw-bold">In sella da Lecce al mare: il racconto di un weekend in Ciclonica</h3>
-
-                    </div>
-                </div> <!-- Item 2 -->
-                <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div> <img src="/img/articoli/portoselvaggio-tramonto-anello-3.jpg" class="rounded-sm w-100 mb-3 article-cover" alt="">
-                        <p class="eyebrow text-orange">CONSIGLI TECNICI</p>
-                        <h3 class=" fw-bold">Cosa mettere nelle borse: la checklist per il cicloturista</h3>
-
-                    </div>
-                </div> <!-- Item 3 -->
-                <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div> <img src="/img/articoli/salento-territorio-min.png" class="rounded-sm w-100 mb-3 article-cover" alt="">
-                        <p class="eyebrow text-orange">EVENTI</p>
-                        <h3 class=" fw-bold">Ciclo-raduno d'autunno: appuntamento nei borghi ionici</h3>
-                    </div>
+            <div class="row g-4">
+                <div
+                    v-for="(item, index) in ultimeNews"
+                    :key="item.slug"
+                    class="col-12 col-md-4"
+                    data-aos="fade-up"
+                    :data-aos-delay="index * 100"
+                >
+                    <NuxtLink :to="`/news/${item.slug}`" class="d-block text-decoration-none">
+                        <img :src="item.immagine" class="rounded-sm w-100 mb-3 article-cover" :alt="item.titolo">
+                        <p class="eyebrow text-orange">{{ item.dataFormattata }}</p>
+                        <h3 class="fw-bold text-primary title-clamp-3">{{ item.titolo }}</h3>
+                    </NuxtLink>
                 </div>
             </div>
+            <NuxtLink to="/news" class="btn btn-outline-primary w-100 d-md-none mt-4">
+                Vedi tutte le news
+            </NuxtLink>
         </div>
     </section>
 </template>
@@ -43,5 +45,13 @@
 .article-cover {
     height: 280px;
     object-fit: cover;
+}
+
+.title-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 </style>
