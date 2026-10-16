@@ -38,7 +38,7 @@ const {
                     :to="bottone.link"
                     :class="['btn btn-lg', bottone.classe]"
                 >
-                    {{ bottone.testo }}
+                    <Icon name="lucide:bike" class="me-2" />{{ bottone.testo }}
                 </NuxtLink>
             </div>
         </div>

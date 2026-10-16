@@ -193,6 +193,12 @@ button,
     .btn.btn-sm {
         font-size: 13px;
     }
+
+    /* container Bootstrap: padding laterale leggermente maggiore su schermi piccoli */
+    .container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 }
 
 /* riga di bottoni filtro: nowrap forzato, overflow gestito con scroll orizzontale invece di sforare il layout */

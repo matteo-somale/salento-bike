@@ -41,7 +41,7 @@ const swiper = useSwiper(containerRef, {
 <template>
   <section
     id="heroCarousel"
-    class="background-lighter-gray"
+    class="background-lighter-gray pt-4"
     data-aos="fade"
     data-aos-duration="800"
   >
@@ -54,7 +54,7 @@ const swiper = useSwiper(containerRef, {
         :key="index"
       >
         <div class="container py-3">
-          <div class="row align-items-center g-5 min-vh-100">
+          <div class="row align-items-center g-5 min-vh-80">
 
             <!-- Colonna sinistra -->
             <div class="col-12 col-lg-6 mt-2">

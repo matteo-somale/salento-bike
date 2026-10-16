@@ -8,7 +8,8 @@
           to="/"
           class="navbar-brand"
         >
-          <img src="/logo/salento-bike-colore.svg" style="height: 5em;" alt="Logo salento.bike" class="my-1">
+          <img src="/logo/salento-bike-colore.svg" alt="Logo salento.bike" class="my-1 logo-full d-none d-lg-block">
+          <img src="/logo/salento-bike-colore-small.svg" alt="Logo salento.bike" class="my-1 logo-small d-lg-none">
         </NuxtLink>
 
 
@@ -33,7 +34,7 @@
         >
 
           <!-- Pagine -->
-          <ul class="navbar-nav mx-auto">
+          <ul class="navbar-nav mx-auto gap-2">
 
             <li
               v-for="(pagina, index) in pagine"
@@ -43,6 +44,7 @@
               <NuxtLink
                 :to="pagina.route"
                 class="nav-link"
+                @click="closeMenu"
               >
                 <h5>{{ pagina.nome }}</h5>
               </NuxtLink>
@@ -57,6 +59,7 @@
             <NuxtLink
               to="/contact"
               class="btn btn-orange btn-lg fw-bold d-inline-flex align-items-center gap-2"
+              @click="closeMenu"
             >
               <Icon name="bi:chat-fill" />
               ENG
@@ -81,9 +84,24 @@ const pagine = [
   { nome: 'Gallery', route: '/galleria' },
   { nome: 'Area Stampa', route: '/area-stampa' },
 ]
+
+// Su mobile chiude la tendina dopo il click su un link, prima della navigazione
+function closeMenu() {
+  const el = document.getElementById('mainNavbar')
+  const instance = el && window.bootstrap?.Collapse.getInstance(el)
+  instance?.hide()
+}
 </script>
 
 <style scoped>
+  .logo-full {
+    height: 5em;
+  }
+
+  .logo-small {
+    height: 2.2em;
+  }
+
   /* Schermi grandi: h5 arancione on hover e nella pagina selezionata */
   @media (min-width: 992px) {
     .nav-link:hover h5,
@@ -96,6 +114,11 @@ const pagine = [
   @media (max-width: 991.98px) {
     .navbar {
       position: relative;
+    }
+
+    /* Hamburger a riposo: icona nel colore primario */
+    .navbar-toggler {
+      --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231C4059' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
     /* Hamburger attivo: sfondo arancione e icona bianca */

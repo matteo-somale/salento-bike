@@ -1,10 +1,10 @@
 <template>
-    <section class="background-giallo py-5" data-aos="fade-up">
+    <section class="background-giallo py-3" data-aos="fade-up">
         <div class="container py-5">
             <div class="banner-app-grid">
 
                 <!-- Sopratitolo e titolo -->
-                <div class="banner-app-top">
+                <div class="banner-app-top text-primary">
                     <p class="eyebrow mb-2">
                         APP e WEBAPP
                     </p>
@@ -26,7 +26,7 @@
 
                 <!-- Testo, CTA e store -->
                 <div class="banner-app-bottom">
-                    <p class="body-large mb-4">
+                    <p class="body-large mb-4 text-primary">
                         Con Salento.Bike potrete seguire le tracce, trovare facilmente i punti di interesse, le
                         strutture bikefriendly, i punti noleggio e tutto quello che serve per organizzare le vostre
                         escursioni e i vostri viaggi.

@@ -4,7 +4,7 @@
 
     <CarouselHero></CarouselHero>
 
-    <section class="py-3">
+    <section class="py-0 py-lg-3">
       <div class="container">
         <JumboMap
           sopratitolo="il territorio"

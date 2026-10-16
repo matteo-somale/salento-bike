@@ -17,26 +17,33 @@
           <div class="row g-4"> <!-- Sezione 1 -->
             <div class="col-12 col-md-6 col-lg-3">
               <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
-                <h4 class="fw-bold mb-2 text-orange"> Progetto </h4> <span>Chi siamo</span> <span>Il progetto</span>
-                <span>Mission</span> <span>Contatti</span>
+                <h4 class="fw-bold mb-2 text-orange"> Progetto </h4>
+                <NuxtLink to="/ciclonica">Ciclonica</NuxtLink>
+                <NuxtLink to="/ladriatica">Ladriatica</NuxtLink>
+                <a href="#">Anello del Salento</a>
               </div>
             </div> <!-- Sezione 2 -->
             <div class="col-12 col-md-6 col-lg-3">
               <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
-                <h4 class="fw-bold mb-2 text-orange"> Servizi </h4> <span>Consulenza</span> <span>Soluzioni</span>
-                <span>Supporto</span> <span>Assistenza</span>
+                <h4 class="fw-bold mb-2 text-orange"> Risorse </h4>
+                <a href="#">La guida</a>
+                <NuxtLink to="/app">App</NuxtLink>
+                <a href="#">FAQ</a>
               </div>
             </div> <!-- Sezione 3 -->
             <div class="col-12 col-md-6 col-lg-3">
               <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
-                <h4 class="fw-bold mb-2 text-orange"> Risorse </h4> <span>Blog</span> <span>Guide</span>
-                <span>Documentazione</span> <span>FAQ</span>
+                <h4 class="fw-bold mb-2 text-orange"> Su di noi </h4>
+                <NuxtLink to="/chi-siamo">Chi siamo</NuxtLink>
+                <a href="#">Diventa parthner</a>
+                <NuxtLink to="/area-stampa">Area stampa</NuxtLink>
               </div>
             </div> <!-- Sezione 4 -->
             <div class="col-12 col-md-6 col-lg-3">
               <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
-                <h4 class="fw-bold mb-2 text-orange"> Seguici </h4> <span>Instagram</span> <span>LinkedIn</span>
-                <span>Facebook</span> <span>YouTube</span>
+                <h4 class="fw-bold mb-2 text-orange"> Contatti </h4>
+                <a href="mailto:info@vivilitalia.it">info@vivilitalia.it</a>
+                <a href="tel:+390686268324">06/86268324</a>
               </div>
             </div>
           </div>
@@ -54,12 +61,20 @@
 
 <style scoped>
 footer {
-  h3, p , span {
+  h3, p, span, a {
     color: var(--color-text-white);
   }
 
-  span {
+  span, a {
     font-size: 14px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   .footer-logo {

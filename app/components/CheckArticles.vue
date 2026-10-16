@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-12 col-md-6 d-flex justify-content-end">
                     <div class="d-flex align-items-center fw-bold gap-2 text-orange">
-                        <span>Scopri tutti gli articoli</span>
+                        <span>Vedi tutte le news</span>
                         <span aria-hidden="true">&rarr;</span>
                     </div>
                 </div>
