@@ -1,7 +1,7 @@
 <template>
     <section class="py-2 my-md-3">
         <div class="container">
-            <div class="green-road-background text-petrolio rounded px-5 py-4 py-md-2" data-aos="fade-up">
+            <div class="green-road-background text-petrolio rounded px-5 py-4 py-md-3" data-aos="fade-up">
                 <div class="row align-items-center g-5">
                     <!-- Logo -->
                     <div class="col-6 col-md-5 px-0">
@@ -14,7 +14,7 @@
                     <div class="col-6 col-md-7 px-3">
                         <div class="d-flex flex-column align-items-start gap-4">
                             <h2 class="fw-bold mb-0">Green road award</h2>
-                            <p class="mb-0 body-large green-road-text">Ciclonica, terza classificata all'edizione 2025 dell'Oscar Italiano del Cicloturismo</p>
+                            <p class="mb-0 body-large green-road-text"><b>Nel 2025 Ciclonica è salita sul podio della decima edizione dell'Oscar Italiano del Cicloturismo</b>, premio nazionale assegnato ogni anno alle regioni italiane che valorizzano le proprie vie verdi, promuovendo la mobilità sostenibile e il turismo lento.</p>
                         </div>
                     </div>
                 </div>

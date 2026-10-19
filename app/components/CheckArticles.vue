@@ -9,8 +9,8 @@ const ultimeNews = getNewsList().slice(0, 3)
         <div class="container">
             <div class="row align-items-end g-4 mb-4">
                 <div class="col-12 col-md-6 d-flex flex-column">
-                    <p class="eyebrow text-orange">SOPRATITOLO</p>
-                    <h2 class="text-primary">Titolo della sezione</h2>
+                    <p class="eyebrow text-orange">BLOG & NEWS</p>
+                    <h2 class="text-primary">Racconti, consigli ed eventi dal&nbsp;Salento</h2>
                 </div>
                 <div class="col-12 col-md-6 d-none d-md-flex justify-content-end">
                     <NuxtLink to="/news" class="d-flex align-items-center fw-bold gap-2 text-orange text-decoration-none">

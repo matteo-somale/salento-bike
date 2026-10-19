@@ -31,7 +31,7 @@ const mainVideo = {
             </div>
 
             <NuxtLink :to="mainVideo.buttonLink" class="btn btn-orange btn-lg d-inline-flex align-items-center gap-2">
-                <Icon name="bi:camera-video-fill" />
+                <Icon name="fluent:filmstrip-play-24-filled" />
                 Guarda il video completo su Youtube
             </NuxtLink>
 

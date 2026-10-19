@@ -21,7 +21,7 @@ const hexToRgba = (hex, opacity) => {
 </script>
 
 <template>
-  <section class="py-5">
+  <section class="py-5 pb-0">
     <div class="container">
 
       <div class="rounded overflow-hidden " :style="{
@@ -39,15 +39,19 @@ const hexToRgba = (hex, opacity) => {
         <div class="d-flex flex-column align-items-center justify-content-center text-center text-white p-5"
           style="min-height: 450px;" data-aos="fade" data-aos-duration="800">
 
-          <h1 class="display-4 fw-bold mb-3">
+          <h1 class="mb-3">
             {{ hero.title }}
           </h1>
 
-          <p class="lead mb-4">
+          <p class="body-large mb-4 d-none d-md-block">
             {{ hero.text }}
           </p>
 
-          <h4 class="text-orange">
+          <p class="body-small mb-4 d-md-none w-100 text-start">
+            {{ hero.text }}
+          </p>
+
+          <h4 class="eyebrow text-orange">
             {{ hero.subText }}
           </h4>
 

@@ -79,7 +79,7 @@ const percorsi = [
     },
     {
         immagine: '/img/destinazioni/hero-salento-segnaposto.jpg',
-        tag: 'Difficile',
+        tag: 'Percoso 1',
         destinazione: 'ladriatica',
         titolo: 'Percorso tre',
         testo: 'Testo descrittivo segnaposto per il percorso tre, da sostituire con contenuti reali.',
@@ -88,7 +88,7 @@ const percorsi = [
     },
     {
         immagine: '/img/destinazioni/hero-salento-segnaposto.jpg',
-        tag: 'Facile',
+        tag: 'Percoso 2',
         destinazione: 'ladriatica',
         titolo: 'Percorso quattro',
         testo: 'Testo descrittivo segnaposto per il percorso quattro, da sostituire con contenuti reali.',
@@ -97,7 +97,7 @@ const percorsi = [
     },
     {
         immagine: '/img/destinazioni/hero-salento-segnaposto.jpg',
-        tag: 'Facile',
+        tag: 'Percoso 3',
         destinazione: 'ladriatica',
         titolo: 'Percorso quattro',
         testo: 'Testo descrittivo segnaposto per il percorso quattro, da sostituire con contenuti reali.',
@@ -106,7 +106,7 @@ const percorsi = [
     },
     {
         immagine: '/img/destinazioni/hero-salento-segnaposto.jpg',
-        tag: 'Facile',
+        tag: 'Percoso 4',
         destinazione: 'ladriatica',
         titolo: 'Percorso quattro',
         testo: 'Testo descrittivo segnaposto per il percorso quattro, da sostituire con contenuti reali.',
@@ -115,7 +115,7 @@ const percorsi = [
     },
     {
         immagine: '/img/destinazioni/hero-salento-segnaposto.jpg',
-        tag: 'Facile',
+        tag: 'Percoso 5',
         destinazione: 'ladriatica',
         titolo: 'Percorso quattro',
         testo: 'Testo descrittivo segnaposto per il percorso quattro, da sostituire con contenuti reali.',

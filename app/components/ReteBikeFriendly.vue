@@ -4,8 +4,7 @@ const hero = {
   title: 'Una rete bike-friendly',
   text: 'La Ciclonica può contare su una rete di strutture bike-friendly, singole realtà imprenditoriali connesse da un percorso ciclabile che dà forza al tessuto produttivo del territorio. Sono realtà attente all\'ambiente e alla buona enogastronomia a km zero, che offrono servizi dedicati alle biciclette aiutano il turista a scoprire le tradizioni locali e la bellezza custodita nei luoghi più nascosti.',
   buttons: [
-    { text: 'Scopri di più', link: '/about' },
-    { text: 'Contattaci', link: '/contatti' }
+    { text: 'Come aderire', link: 'https://crm.bikesquare.eu/partners/start/ciclonica' },
   ]
 }
 
@@ -15,12 +14,12 @@ const overlayColor = '#255A52'
 const overlayOpacity = 0.9
 
 const network = {
-  image: '/img/destinazioni/foto-dest-lecce.jpg',
+  image: '/img/galleria/ladriatica/11_ALESSANO_PALAZZOSANGIOVANNI_phRobertoGuido.jpg',
   columns: [
     {
       title: 'La carta dei valori',
       text: 'Abbiamo scritto insieme una Carta dei Valori, una serie di impegni condivisi per strutture bike-friendly che vogliono combinare la tradizionale ospitalità del Salento con il rispetto dell’ambiente e le esigenze dei ciclisti. Attenzione al territorio, prodotti a km zero, servizi dedicati alle biciclette e scoperta delle tradizioni locali.',
-      button: { text: 'Leggi la carta dei valori', link: '/about' }
+      button: { text: 'Leggi la carta dei valori', link: 'https://cloud.mobilitysquare.eu/s/3Dan4A8QtyKdnGH?dir=/&editing=false&openfile=true' }
     },
     {
       title: 'Come si aderisce',
@@ -45,7 +44,7 @@ const hexToRgba = (hex, opacity) => {
   <section class="py-5">
     <div class="container">
 
-      <h2 class="text-center fw-bold mb-5">
+      <h2 class="text-center text-primary mb-5">
         In cosa crediamo
       </h2>
 
@@ -75,7 +74,7 @@ const hexToRgba = (hex, opacity) => {
                 {{ column.text }}
               </p>
 
-              <NuxtLink :to="column.button.link" class="btn btn-primary btn-lg">
+              <NuxtLink :to="column.button.link" class="btn btn-primary btn-lg column-cta-btn">
                 {{ column.button.text }}
               </NuxtLink>
             </div>
@@ -84,7 +83,7 @@ const hexToRgba = (hex, opacity) => {
         </div>
       </div>
 
-      <div id="bikeFriendlyHero" class="rounded-4 overflow-hidden" data-aos="fade-up" data-aos-delay="150" :style="{
+      <div id="bikeFriendlyHero" class="rounded-4 mt-3 overflow-hidden" data-aos="fade-up" data-aos-delay="150" :style="{
         backgroundImage: `
             linear-gradient(
               ${hexToRgba(overlayColor, overlayOpacity)},
@@ -123,6 +122,16 @@ const hexToRgba = (hex, opacity) => {
 </template>
 
 <style scoped>
+.column-cta-btn {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .column-cta-btn {
+    width: auto;
+  }
+}
+
 .network-image {
   object-fit: cover;
   max-height: 400px;

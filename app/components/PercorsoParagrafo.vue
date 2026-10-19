@@ -78,7 +78,7 @@ const {
             data-aos-delay="150"
           >
             <div
-              class="h-100 d-flex flex-column align-items-start justify-content-center p-4 p-md-5"
+              class="h-100 d-flex flex-column align-items-start justify-content-center p-4 pt-2 pt-md-4 p-md-5"
             >
 
               <p
@@ -88,7 +88,7 @@ const {
                 {{ sopratitolo }}
               </p>
 
-              <h2 class="fw-bold mb-4 text-primary">
+              <h2 class="mb-2 mb-md-4 text-primary">
                 {{ titolo }}
               </h2>
 
@@ -97,13 +97,13 @@ const {
               </p>
 
               <!-- Bottoni -->
-              <div class="d-flex flex-wrap gap-3">
+              <div class="d-flex flex-wrap gap-3 w-100">
 
                 <NuxtLink
                   v-for="(bottone, index) in bottoni"
                   :key="index"
                   :to="bottone.linkBottone"
-                  class="btn btn-primary btn-lg"
+                  class="btn btn-primary btn-lg percorso-btn"
                 >
                   {{ bottone.testoBottone }}
                 </NuxtLink>
@@ -160,6 +160,10 @@ const {
   .percorso-image-wrapper {
     height: 250px;
     max-height: 250px;
+  }
+
+  .percorso-btn {
+    width: 100%;
   }
 }
 </style>
