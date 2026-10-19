@@ -24,7 +24,7 @@ const {
     <div class="p-4 p-md-5 jumbo-map-card" data-aos="fade-up">
         <div class="jumbo-map-bg" :style="{ backgroundColor: coloreSfondo }"></div>
 
-        <img :src="immagine" alt="" class="img-fluid mb-4 mb-md-0 jumbo-map-image">
+        <img :src="immagine" alt="" class="img-fluid mb-0  mb-lg-4 mb-md-0 jumbo-map-image">
 
         <div class="jumbo-map-text">
             <p v-if="sopratitolo" class="eyebrow" :style="{ color: coloreSopratitolo }">{{ sopratitolo }}</p>

@@ -7,6 +7,8 @@ const slides = [
     title: 'Salento,<br> pedalare nella meraviglia',
     text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
     button: 'Guarda il video',
+    buttonLink: '/',
+    buttonIcon: 'fluent:filmstrip-play-24-filled',
     video: 'https://www.youtube.com/embed/yRV_RfbSl8k?start=12&autoplay=1&mute=1&loop=1&playlist=yRV_RfbSl8k&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0'
   },
   {
@@ -14,6 +16,8 @@ const slides = [
     title: 'Salento,<br> la punta estrema della&nbsp;Puglia',
     text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
     button: 'Guarda il video',
+    buttonLink: '/',
+    buttonIcon: 'lucide:bike',
     video: 'https://www.youtube.com/embed/yRV_RfbSl8k?start=12&autoplay=1&mute=1&loop=1&playlist=yRV_RfbSl8k&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0'
   },
   {
@@ -21,6 +25,8 @@ const slides = [
     title: 'Salento,<br> pedalare nella meraviglia',
     text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
     button: 'Guarda il video',
+    buttonLink: '/',
+    buttonIcon: 'lucide:bike',
     video: 'https://www.youtube.com/embed/yRV_RfbSl8k?start=12&autoplay=1&mute=1&loop=1&playlist=yRV_RfbSl8k&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0'
   }
 ]
@@ -71,10 +77,10 @@ const swiper = useSwiper(containerRef, {
                 </p>
 
                 <NuxtLink
-                  to="/"
+                  :to="slide.buttonLink"
                   class="btn btn-orange btn-lg mb-0 mb-md-5 hero-cta-btn d-inline-flex align-items-center justify-content-center gap-2"
                 >
-                  <Icon name="lucide:bike" />
+                  <Icon :name="slide.buttonIcon" />
                   {{ slide.button }}
                 </NuxtLink>
 
@@ -162,5 +168,28 @@ const swiper = useSwiper(containerRef, {
   height: 100%;
   border: 0;
   transform: translate(-50%, -50%);
+}
+
+/* Su schermi grandi lo sfondo grigio non copre più tutta la section,
+   ma solo un'altezza fissa dall'alto, per fermarsi poco prima del
+   bordo inferiore del video (circa 30px prima). */
+@media (min-width: 992px) {
+  #heroCarousel {
+    --hero-bg-height: 78%; /* regolare qui per avvicinare/allontanare il bordo dal video */
+    background-color: transparent;
+    position: relative;
+    isolation: isolate;
+  }
+
+  #heroCarousel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--hero-bg-height);
+    background-color: var(--color-neutral-lighter-gray);
+    z-index: -1;
+  }
 }
 </style>

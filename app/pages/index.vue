@@ -13,8 +13,8 @@
           immagine="/maps/santento-map-ciclonica-adriatica.svg"
           colore-sfondo="color-mix(in srgb, var(--color-accent-giallo) 60%, transparent)"
           :bottoni="[
-            { testo: 'Vai a Ciclonica', classe: 'btn-secondary', link: '/ciclonica' },
-            { testo: 'Vai a Ladriatica', classe: 'btn-primary', link: '/ladriatica' }
+            { testo: 'Scopri Ciclonica', classe: 'btn-secondary', link: '/ciclonica' },
+            { testo: 'Scopri Ladriatica', classe: 'btn-primary', link: '/ladriatica' }
           ]"
         ></JumboMap>
       </div>
