@@ -5,7 +5,7 @@ const slides = [
   {
     eyebrow: 'salento.bike',
     title: 'Salento,<br> pedalare nella meraviglia',
-    text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
+    text: 'Ci sono luoghi che richiedono un tempo lento per essere compresi: il Salento è uno di questi. Racchiuso tra due mari, Adriatico e Ionio, questo lembo d\'Italia è un paradiso naturale nato per essere esplorato in sella a una bicicletta.',
     button: 'Guarda il video',
     buttonLink: '/',
     buttonIcon: 'fluent:filmstrip-play-24-filled',
