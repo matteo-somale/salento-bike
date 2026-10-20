@@ -32,7 +32,7 @@ const hexToRgba = (hex, opacity) => {
 
 <template>
   <section
-    class="py-5 bg-mobile-full"
+    class="pt-4 pb-2 bg-mobile-full"
     :style="{
       '--mobile-bg-image': `
         linear-gradient(

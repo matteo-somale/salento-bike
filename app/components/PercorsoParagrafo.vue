@@ -41,10 +41,8 @@ const {
 
           <!-- Immagine -->
           <div
-            class="col-12 col-lg-6 p-4  p-md-5"
-            :class="altLayout
-              ? 'order-2 order-lg-1'
-              : 'order-1 order-lg-2'"
+            class="col-12 col-lg-6 p-4  p-md-5 order-1"
+            :class="altLayout ? 'order-lg-1' : 'order-lg-2'"
             :data-aos="altLayout ? 'fade-left' : 'fade-right'"
           >
             <div class="percorso-image-wrapper position-relative rounded-4 overflow-hidden">
@@ -70,10 +68,8 @@ const {
 
           <!-- Contenuto -->
           <div
-            class="col-12 col-lg-6"
-            :class="altLayout
-              ? 'order-1 order-lg-2'
-              : 'order-2 order-lg-1'"
+            class="col-12 col-lg-6 order-2"
+            :class="altLayout ? 'order-lg-2' : 'order-lg-1'"
             :data-aos="altLayout ? 'fade-right' : 'fade-left'"
             data-aos-delay="150"
           >
@@ -103,8 +99,9 @@ const {
                   v-for="(bottone, index) in bottoni"
                   :key="index"
                   :to="bottone.linkBottone"
-                  class="btn btn-primary btn-lg percorso-btn"
+                  class="btn btn-primary btn-lg percorso-btn d-inline-flex align-items-center justify-content-center gap-2"
                 >
+                  <Icon v-if="bottone.icona" :name="bottone.icona" />
                   {{ bottone.testoBottone }}
                 </NuxtLink>
 
@@ -146,6 +143,12 @@ const {
 .percorso-image-wrapper {
   height: 100%;
   max-height: 500px;
+}
+
+@media (min-width: 992px) {
+  .percorso-image-wrapper {
+    min-height: 500px;
+  }
 }
 
 @media (max-width: 767.98px) {

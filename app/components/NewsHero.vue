@@ -8,30 +8,37 @@ defineProps({
 
 <template>
   <section
-    class="py-5 bg-mobile-full"
-    :style="{ '--mobile-bg-image': `linear-gradient(to top, color-mix(in srgb, ${colore} 80%, transparent), color-mix(in srgb, ${colore} 15%, transparent)), url(${immagine})` }"
+    class="pt-5 pb-4 bg-mobile-full"
+    :style="{ '--mobile-bg-image': `url(${immagine})` }"
   >
     <div class="container">
-      <div class="rounded-4 overflow-hidden bg-mobile-full-target">
-        <div
-          class="d-flex flex-column justify-content-end text-white p-4 p-md-5 news-hero-content"
+      <div class="news-hero-inner">
+        <div class="rounded-4 overflow-hidden bg-mobile-full-target news-hero-image" />
+        <h2
+          class="fw-bold mt-4 mb-0"
+          :style="{ color: colore }"
           data-aos="fade"
           data-aos-duration="800"
         >
-          <h2 class="fw-bold mb-0">{{ titolo }}</h2>
-        </div>
+          {{ titolo }}
+        </h2>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.news-hero-content {
+.news-hero-inner {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.news-hero-image {
   min-height: 450px;
 }
 
 @media (max-width: 767.98px) {
-  .news-hero-content {
+  .news-hero-image {
     min-height: 300px;
     height: 40vh;
   }

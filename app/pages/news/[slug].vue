@@ -16,7 +16,7 @@ useHead({ title: item.titolo })
 
 <template>
   <NewsHero :immagine="item.immagine" :titolo="item.titolo" :colore="coloreHero" />
-  <section class="py-5">
+  <section class="pb-5">
     <div class="container news-body" v-html="item.corpoHtml" />
   </section>
 </template>

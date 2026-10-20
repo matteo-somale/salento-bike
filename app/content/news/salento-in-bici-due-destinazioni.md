@@ -7,7 +7,7 @@ destinazione: [ciclonica, ladriatica]
 ---
 Non serve scegliere: **Ciclonica** e **Ladriatica** sono collegate tra loro e si possono vivere nello stesso weekend, alternando il versante ionico a quello adriatico senza mai allontanarsi troppo dalla costa.
 
-## Un itinerario per due giorni
+### Un itinerario per due giorni
 
 Il primo giorno è ideale per affrontare i tratti più dolci della Ciclonica, tra masserie e macchia mediterranea; il secondo si può dedicare alle scogliere e ai borghi barocchi del versante adriatico. Tra le tappe più consigliate per chi ha poco tempo a disposizione:
 
@@ -16,7 +16,7 @@ Il primo giorno è ideale per affrontare i tratti più dolci della Ciclonica, tr
 - Collegamento interno tra le due ciclovie, pensato per chi vuole unire i due tracciati
 - Santa Maria di Leuca, punto di arrivo simbolico del Salento in bicicletta
 
-## Organizzare il viaggio
+### Organizzare il viaggio
 
 Per pianificare le tappe potete consultare la sezione [percorsi](/percorsi) del sito, dove sono elencati tutti gli anelli disponibili con le relative distanze e dislivelli.
 

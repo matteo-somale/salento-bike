@@ -7,7 +7,7 @@ destinazione: []
 ---
 A un anno dal lancio del progetto, la **Green Community Ionico-Adriatica** fa un primo bilancio dell'iniziativa che ha portato migliaia di cicloturisti a scoprire il Salento su due ruote.
 
-## I numeri della prima stagione
+### I numeri della prima stagione
 
 I dati raccolti insieme ai dieci comuni costieri coinvolti raccontano una crescita costante dell'interesse verso la mobilità lenta nel territorio. Tra i risultati più significativi:
 
@@ -16,7 +16,7 @@ I dati raccolti insieme ai dieci comuni costieri coinvolti raccontano una cresci
 - Un numero crescente di famiglie e gruppi organizzati in visita
 - Nuove collaborazioni con associazioni sportive e culturali del territorio
 
-## Cosa cambia per il prossimo anno
+### Cosa cambia per il prossimo anno
 
 Il progetto continuerà a crescere con nuovi investimenti in segnaletica, aree di sosta e materiali informativi, oltre a nuove iniziative pensate per chi visita il territorio per la prima volta. Per restare aggiornati potete seguire la [pagina chi siamo](/chi-siamo) del sito.
 

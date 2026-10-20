@@ -7,7 +7,7 @@ destinazione: [ciclonica]
 ---
 Il Comune di Nardò ha inaugurato un nuovo tratto di pista ciclabile che collega il centro storico al tracciato della **Ciclonica del Salento**, rendendo ancora più semplice raggiungere la rete regionale in sicurezza e senza interruzioni.
 
-## Un intervento atteso da anni
+### Un intervento atteso da anni
 
 Il nuovo tratto, lungo circa 3 chilometri, è stato realizzato con fondi regionali dedicati alla mobilità sostenibile. Chi arriva in treno o in auto può ora lasciare il mezzo in centro e raggiungere la ciclovia in pochi minuti, senza percorrere tratti promiscui con il traffico veicolare.
 
@@ -18,7 +18,7 @@ Tra le caratteristiche principali del progetto:
 - Due nuove aree di sosta attrezzate con rastrelliere e fontanelle
 - Collegamento diretto con la stazione ferroviaria
 
-## Come arrivare
+### Come arrivare
 
 Per maggiori informazioni su orari e percorsi consigliati, consultate la [pagina dedicata ai percorsi](/percorsi) del sito, oppure contattate l'ufficio turistico locale.
 
