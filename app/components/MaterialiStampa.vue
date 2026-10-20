@@ -10,24 +10,28 @@ const destinazioni = [
 const rassegne = [
     {
         destinazioni: ['ciclonica'],
+        tipo: 'video',
         titolo: 'Rassegna uno',
         testo: 'Testo descrittivo segnaposto per la rassegna uno, da sostituire con contenuti reali.',
         link: '/',
     },
     {
         destinazioni: ['ladriatica'],
+        tipo: 'cartella',
         titolo: 'Rassegna due',
         testo: 'Testo descrittivo segnaposto per la rassegna due, da sostituire con contenuti reali.',
         link: '/',
     },
     {
         destinazioni: ['ciclonica', 'ladriatica'],
+        tipo: 'cartella',
         titolo: 'Rassegna tre',
         testo: 'Testo descrittivo segnaposto per la rassegna tre, da sostituire con contenuti reali.',
         link: '/',
     },
     {
         destinazioni: [],
+        tipo: 'video',
         titolo: 'Rassegna quattro',
         testo: 'Testo descrittivo segnaposto per la rassegna quattro, da sostituire con contenuti reali.',
         link: '/',
@@ -73,6 +77,28 @@ function sfondoRassegna(rassegna) {
     return { backgroundColor: `color-mix(in srgb, ${colore} 50%, transparent)` }
 }
 
+const BADGE_ICONA_PER_TIPO = {
+    video: 'fluent:document-text-24-filled',
+    cartella: 'material-symbols:folder-eye',
+}
+
+const BOTTONE_PER_TIPO = {
+    video: { icona: 'fluent:glasses-24-filled', testo: 'Guarda la rassegna' },
+    cartella: { icona: 'fluent:folder-open-24-filled', testo: 'Guarda la cartella' },
+}
+
+function badgeIconaRassegna(rassegna) {
+    return BADGE_ICONA_PER_TIPO[rassegna.tipo]
+}
+
+function bottoneIconaRassegna(rassegna) {
+    return BOTTONE_PER_TIPO[rassegna.tipo].icona
+}
+
+function bottoneTestoRassegna(rassegna) {
+    return BOTTONE_PER_TIPO[rassegna.tipo].testo
+}
+
 watch(rassegneFiltrate, async () => {
     await nextTick()
     AOS.refreshHard()
@@ -113,8 +139,9 @@ watch(rassegneFiltrate, async () => {
 
                     <div v-if="destinazioniDiRassegna(rassegna).length" class="d-flex flex-row gap-2 mb-3">
                         <span v-for="destinazione in destinazioniDiRassegna(rassegna)" :key="destinazione.slug"
-                            class="badge"
+                            class="badge d-inline-flex align-items-center gap-1"
                             :style="{ backgroundColor: destinazione.colore, color: 'var(--color-text-white)' }">
+                            <Icon :name="badgeIconaRassegna(rassegna)" class="badge-icon" />
                             {{ destinazione.nome }}
                         </span>
                     </div>
@@ -123,8 +150,8 @@ watch(rassegneFiltrate, async () => {
                     <p class="body-large mb-4">{{ rassegna.testo }}</p>
 
                     <NuxtLink :to="rassegna.link" class="btn btn-lg btn-orange d-inline-flex align-items-center gap-2">
-                        <Icon name="lucide:download" />
-                        Scarica la rassegna
+                        <Icon :name="bottoneIconaRassegna(rassegna)" />
+                        {{ bottoneTestoRassegna(rassegna) }}
                     </NuxtLink>
                 </article>
             </div>
@@ -132,3 +159,9 @@ watch(rassegneFiltrate, async () => {
         </div>
     </section>
 </template>
+
+<style scoped>
+.badge-icon {
+    font-size: 1.2em;
+}
+</style>

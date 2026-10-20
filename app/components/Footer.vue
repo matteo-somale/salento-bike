@@ -11,12 +11,13 @@
               <img src="/logo/green-community-logo-white.png" alt="Logo Ciclonica" class="footer-logo">
               <img src="/logo/costa-otranto-logo-white.png" alt="Logo L'Adriatica" class="footer-logo">
             </div>
+            <p class="small text-white mb-0 text-center d-lg-none"> © 2026 Salento.Bike — Un progetto di Vivilitalia</p>
           </div>
         </div> <!-- Colonna 8/12 -->
         <div class="col-12 col-lg-8">
           <div class="row g-4"> <!-- Sezione 1 -->
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
+              <div class="d-flex flex-column align-items-start text-start gap-2">
                 <h4 class="fw-bold mb-2 text-orange"> Progetto </h4>
                 <NuxtLink to="/ciclonica">Ciclonica</NuxtLink>
                 <NuxtLink to="/ladriatica">Ladriatica</NuxtLink>
@@ -24,7 +25,7 @@
               </div>
             </div> <!-- Sezione 2 -->
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
+              <div class="d-flex flex-column align-items-start text-start gap-2">
                 <h4 class="fw-bold mb-2 text-orange"> Risorse </h4>
                 <a href="#">La guida</a>
                 <NuxtLink to="/app">App</NuxtLink>
@@ -32,7 +33,7 @@
               </div>
             </div> <!-- Sezione 3 -->
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
+              <div class="d-flex flex-column align-items-start text-start gap-2">
                 <h4 class="fw-bold mb-2 text-orange"> Su di noi </h4>
                 <NuxtLink to="/chi-siamo">Chi siamo</NuxtLink>
                 <a href="#">Diventa parthner</a>
@@ -40,7 +41,7 @@
               </div>
             </div> <!-- Sezione 4 -->
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start gap-2">
+              <div class="d-flex flex-column align-items-start text-start gap-2">
                 <h4 class="fw-bold mb-2 text-orange"> Contatti </h4>
                 <a href="mailto:info@vivilitalia.it">info@vivilitalia.it</a>
                 <a href="tel:+390686268324">06/86268324</a>
@@ -49,8 +50,8 @@
           </div>
         </div>
       </div> <!-- Separatore -->
-      <hr class="my-5"> <!-- Copyright -->
-      <p class="small text-white mb-0 text-center text-lg-start"> © 2026 Salento.Bike — Un progetto di Vivilitalia</p>
+      <hr class="my-5 d-none d-lg-block"> <!-- Copyright -->
+      <p class="small text-white mb-0 text-start d-none d-lg-block"> © 2026 Salento.Bike — Un progetto di Vivilitalia</p>
     </div>
   </footer>
 </template>
@@ -80,6 +81,11 @@ footer {
   .footer-logo {
     max-height: 100px;
     width: auto;
+  }
+
+  hr {
+    color: var(--color-text-white);
+    opacity: 1;
   }
 }
 </style>
