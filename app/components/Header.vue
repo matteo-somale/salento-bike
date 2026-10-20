@@ -34,7 +34,7 @@
         >
 
           <!-- Pagine -->
-          <ul class="navbar-nav mx-auto gap-2">
+          <ul class="navbar-nav mx-auto gap-1 px-2">
 
             <li
               v-for="(pagina, index) in pagine"
@@ -102,6 +102,10 @@ function closeMenu() {
     height: 2.2em;
   }
 
+  .nav-item {
+    white-space: nowrap;
+  }
+
   /* Schermi grandi: h5 arancione on hover e nella pagina selezionata */
   @media (min-width: 992px) {
     .nav-link:hover h5,
@@ -114,6 +118,7 @@ function closeMenu() {
   @media (max-width: 991.98px) {
     .navbar {
       position: relative;
+      padding-top: 1rem;
     }
 
     /* Hamburger a riposo: icona nel colore primario */

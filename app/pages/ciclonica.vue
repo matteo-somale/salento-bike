@@ -46,6 +46,12 @@
         </swiper-container>
       </ClientOnly>
     </div>
+
+    <MainVideo></MainVideo>
+
+    <JumboGreenRoad></JumboGreenRoad>
+
+    <JumboSlowCard></JumboSlowCard>
 </template>
 
 <script setup>

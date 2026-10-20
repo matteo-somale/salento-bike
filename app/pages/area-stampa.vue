@@ -4,6 +4,8 @@
 
     <ContattiStampa></ContattiStampa>
 
+    <MainVideo></MainVideo>
+
 </template>
 
 <script setup>

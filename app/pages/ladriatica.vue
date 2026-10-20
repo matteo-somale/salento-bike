@@ -42,6 +42,8 @@
         </swiper-container>
       </ClientOnly>
     </div>
+
+    <MainVideo></MainVideo>
 </template>
 
 <script setup>

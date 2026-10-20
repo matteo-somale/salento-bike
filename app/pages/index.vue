@@ -23,11 +23,12 @@
     <CarouselDestination></CarouselDestination>
     <BannerApp></BannerApp>
 
+    <MainVideo></MainVideo>
+
     <BannerLinkSud></BannerLinkSud>
 
     <CheckArticles></CheckArticles>
 
-    <JumboGreenRoad></JumboGreenRoad>
     <JumboSlowCard></JumboSlowCard>
   </div>
 </template>

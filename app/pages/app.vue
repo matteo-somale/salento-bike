@@ -11,6 +11,8 @@
     <AppSectionList></AppSectionList>
 
     <AppSectionCta></AppSectionCta>
+
+    <MainVideo></MainVideo>
 </template>
 
 <script setup>
