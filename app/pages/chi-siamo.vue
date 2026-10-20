@@ -6,4 +6,6 @@
   <ReteBikeFriendly></ReteBikeFriendly>
 
   <MainVideo></MainVideo>
+
+  <JumboSlowCard></JumboSlowCard>
 </template>

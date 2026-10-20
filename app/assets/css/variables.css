@@ -50,4 +50,7 @@
   /* Breakpoints */
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
+
+  /* Overwrite delle componenti swiper */
+  --swiper-pagination-color: var(--color-primary);
 }

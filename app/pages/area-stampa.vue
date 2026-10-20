@@ -6,6 +6,8 @@
 
     <MainVideo></MainVideo>
 
+    <JumboSlowCard></JumboSlowCard>
+
 </template>
 
 <script setup>

@@ -153,10 +153,10 @@ watch(percorsiFiltrati, async () => {
     <section class="py-5">
         <div class="container">
 
-            <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 pb-lg-5" style="position: relative; z-index: 999;">
+            <div class="d-flex flex-wrap justify-content-center gap-1 gap-md-3 mb-3 mb-lg-5 pb-lg-5" style="position: relative; z-index: 999;">
                 <button v-for="(destination, index) in destinations" :key="index" type="button"
-                    class="btn btn-lg d-inline-flex align-items-center gap-2"
-                    :class="selectedDestinazione === destination.destinazione ? 'btn-accent' : 'btn-accent-outline'"
+                    class="btn btn-lg btn-filter d-inline-flex align-items-center gap-2"
+                    :class="{ 'is-active': selectedDestinazione === destination.destinazione }"
                     :style="{ '--btn-accent': destination.colore }"
                     @click="selectedDestinazione = destination.destinazione">
                     <Icon name="lucide:bike" />
