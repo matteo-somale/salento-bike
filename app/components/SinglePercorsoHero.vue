@@ -6,7 +6,8 @@ const {
   title,
   text,
   buttonText,
-  buttonLink
+  buttonLink,
+  buttonVariant
 } = defineProps({
   image: { type: String, required: true },
   overlayColor: { type: String, default: '#119660' },
@@ -14,7 +15,8 @@ const {
   title: { type: String, required: true },
   text: { type: String, required: true },
   buttonText: { type: String, required: true },
-  buttonLink: { type: String, required: true }
+  buttonLink: { type: String, required: true },
+  buttonVariant: { type: String, default: 'btn-secondary' }
 })
 
 const overlayOpacity = 0.6
@@ -71,7 +73,8 @@ const hexToRgba = (hex, opacity) => {
 
           <NuxtLink
             :to="buttonLink"
-            class="btn btn-lg btn-secondary d-inline-flex align-items-center gap-2"
+            class="btn btn-lg d-inline-flex align-items-center gap-2"
+            :class="buttonVariant"
           >
             <Icon name="lucide:bike" />
             {{ buttonText }}

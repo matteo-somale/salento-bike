@@ -1,12 +1,13 @@
 <template>
     <SinglePercorsoHero
-      image="/img/destinazioni/hero-salento-segnaposto.jpg"
+      image="/img/galleria/ladriatica/05_TORREMINERVINO_phRobertoGuido.jpg"
       overlay-color="#1C4059"
       logo="/logo/logo-ladriatica-vert-white.svg"
       title="Scopri il Salento Orientale in bici"
       text="Un fantastico viaggio a pedali sul balcone del Mediterraneo, tra piccole e grandi meraviglie della natura in riva al mare nel Parco Otranto - SantaMaria di Leuca e Bosco di Tricase"
       button-text="Scopri ladriatica"
       button-link="/percorsi"
+      button-variant="btn-celeste"
     ></SinglePercorsoHero>
 
     

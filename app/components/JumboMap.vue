@@ -29,7 +29,7 @@ const {
         <div class="jumbo-map-text">
             <p v-if="sopratitolo" class="eyebrow" :style="{ color: coloreSopratitolo }">{{ sopratitolo }}</p>
             <h2 class="" :style="{ color: coloreTitoloTesto }" v-html="titolo"></h2>
-            <p class="body-large" :style="{ color: coloreTitoloTesto }">{{ testo }}</p>
+            <p class="body-large testo-limitato" :style="{ color: coloreTitoloTesto }">{{ testo }}</p>
 
             <div class="d-flex flex-wrap gap-3 jumbo-map-buttons">
                 <NuxtLink
@@ -69,6 +69,12 @@ const {
     margin-left: -50vw;
     border-radius: 0;
     z-index: -1;
+}
+
+@media (min-width: 990px) and (max-width: 1199.98px) {
+    .testo-limitato {
+        max-width: 55ch;
+    }
 }
 
 @media (min-width: 992px) {

@@ -1,12 +1,13 @@
 <template>
     <SinglePercorsoHero
-      image="/img/destinazioni/hero-salento-segnaposto.jpg"
+      image="/img/galleria/ciclonica/11_TORRE_SABEA_phROBERTOGUIDO.jpg"
       overlay-color="#119660"
       logo="/logo/logo-ciclonica-vert-white.svg"
       title="Scopri il Salento Ionico in bici"
       text="La straordinaria avventura di pedalare nelle terre del Salento tra parchi costieri, borghi e spiagge selvagge"
       button-text="Vedi i percorsi"
       button-link="/percorsi"
+      button-variant="btn-secondary"
     ></SinglePercorsoHero>
     
     <BannerPassport></BannerPassport>

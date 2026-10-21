@@ -102,6 +102,19 @@ button,
         }
     }
 
+    &.btn-celeste {
+        background-color: var(--color-accent-celeste);
+        border-color: var(--color-accent-celeste);
+        color: var(--color-text-white);
+
+        &:hover,
+        &:focus {
+            background-color: color-mix(in srgb, var(--color-accent-celeste) 85%, black);
+            border-color: color-mix(in srgb, var(--color-accent-celeste) 85%, black);
+            color: var(--color-text-white);
+        }
+    }
+
     /* varianti outline: sfondo vuoto, bordo e testo del colore del brand */
     &.btn-outline-primary {
         background-color: transparent;
@@ -135,6 +148,18 @@ button,
         &:hover,
         &:focus {
             background-color: var(--color-accent-orange);
+            color: var(--color-text-white);
+        }
+    }
+
+    &.btn-outline-celeste {
+        background-color: transparent;
+        border: 2px solid var(--color-accent-celeste);
+        color: var(--color-accent-celeste);
+
+        &:hover,
+        &:focus {
+            background-color: var(--color-accent-celeste);
             color: var(--color-text-white);
         }
     }

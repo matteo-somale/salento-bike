@@ -8,6 +8,7 @@ const destinations = [
         destinazione: 'ciclonica',
         colore: '#119660',
         jumbomap: {
+            sopratitolo: 'percorsi',
             titolo: 'Le ciclovie<br>del Salento ionico',
             testo: 'Dalle spiagge dorate ai borghi del Barocco, dalle antiche masserie alla natura selvaggia dei parchi naturali: 305 km di pura bellezza tra i profumi della macchia mediterranea.',
             immagine: '/maps/santento-map_ciclonica.svg',
@@ -21,6 +22,7 @@ const destinations = [
         destinazione: 'ladriatica',
         colore: '#007FC3',
         jumbomap: {
+            sopratitolo: 'percorsi',
             titolo: 'Le ciclovie<br> del Salento orientale',
             testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a Finibus Terrae.',
             immagine: '/maps/santento-map_ladriatica.svg',

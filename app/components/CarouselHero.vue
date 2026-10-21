@@ -6,28 +6,28 @@ const slides = [
     eyebrow: 'salento.bike',
     title: 'Salento,<br> pedalare nella meraviglia',
     text: 'Ci sono luoghi che richiedono un tempo lento per essere compresi: il Salento è uno di questi. Racchiuso tra due mari, Adriatico e Ionio, questo lembo d\'Italia è un paradiso naturale nato per essere esplorato in sella a una bicicletta.',
-    button: 'Guarda il video',
-    buttonLink: '/',
+    button: 'Guarda il video completo',
+    buttonLink: '#pedalaConCiclonica',
     buttonIcon: 'fluent:filmstrip-play-24-filled',
-    video: 'https://www.youtube.com/embed/yRV_RfbSl8k?start=12&autoplay=1&mute=1&loop=1&playlist=yRV_RfbSl8k&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0'
+    media: { type: 'video', src: '/video/hero-placeholder.mp4', alt: 'Video cicloturismo nel Salento' }
   },
   {
     eyebrow: 'Il Salento',
     title: 'Salento,<br> la punta estrema della&nbsp;Puglia',
-    text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
-    button: 'Guarda il video',
-    buttonLink: '/',
+    text: 'Siamo nel “tacco” d’Italia, la punta più a est dello Stivale, dove sorge il primo sole. Qui il cicloturista scopre coste mozzafiato, parchi, vigneti, uliveti e borghi antichi. È il paradiso per chi viaggia in bici e vuole scoprire l\'anima vera del territorio, lontano dal turismo di massa.',
+    button: 'Scopri il Salento',
+    buttonLink: 'https://ebike.bikesquare.eu/map/salento',
     buttonIcon: 'lucide:bike',
-    video: 'https://www.youtube.com/embed/yRV_RfbSl8k?start=12&autoplay=1&mute=1&loop=1&playlist=yRV_RfbSl8k&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0'
+    media: { type: 'image', src: '/img/italia-salento-map.jpg', alt: 'Mappa dell\'Italia con il Salento evidenziato' }
   },
   {
     eyebrow: 'salento.bike',
-    title: 'Salento,<br> pedalare nella meraviglia',
-    text: 'Il Salento è terra che va assaporata lentamente. E non esiste modo migliore per farlo se non in sella a una bicicletta. Questo lembo d’Italia stretto tra due mari, l’Adriatico e lo Ionio, è il paradiso perfetto per il cicloturismo, con itinerari accessibili praticamente a tutti.',
-    button: 'Guarda il video',
-    buttonLink: '/',
+    title: 'Salento, naturalmente ciclabile ',
+    text: 'Prevalentemente pianeggiante o con dislivelli accessibili, il Salento è la meta ideale per il cicloturista. Grazie a una rete infinita di stradine a basso impatto veicolare, per più dell’80% asfaltate, il territorio è totalmente ciclabile. ',
+    button: 'I percorsi principali',
+    buttonLink: '#destinationsList',
     buttonIcon: 'lucide:bike',
-    video: 'https://www.youtube.com/embed/yRV_RfbSl8k?start=12&autoplay=1&mute=1&loop=1&playlist=yRV_RfbSl8k&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0'
+    media: { type: 'image', src: '/img/foto-bike-hero.jpeg', alt: 'Ciclista in sella lungo un percorso del Salento' }
   }
 ]
 
@@ -114,13 +114,22 @@ const swiper = useSwiper(containerRef, {
             <div class="col-12 col-lg-6">
               <div class="ratio ratio-1x1">
                 <div class="video-cover rounded-4">
-                  <iframe
-                    class="video-cover-frame"
-                    :src="slide.video"
-                    title="Video Salento Bike"
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen
-                  ></iframe>
+                  <video
+                    v-if="slide.media.type === 'video'"
+                    class="video-cover-media"
+                    :src="slide.media.src"
+                    :aria-label="slide.media.alt"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                  ></video>
+                  <img
+                    v-else
+                    class="video-cover-media"
+                    :src="slide.media.src"
+                    :alt="slide.media.alt"
+                  >
                 </div>
               </div>
             </div>
@@ -160,14 +169,10 @@ const swiper = useSwiper(containerRef, {
 .video-cover {
   overflow: hidden;
 }
-.video-cover-frame {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 177.78%; /* copre l'altezza intera del box 1:1 con un video 16:9, tagliando ai lati */
+.video-cover-media {
+  width: 100%;
   height: 100%;
-  border: 0;
-  transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 /* Su schermi grandi lo sfondo grigio non copre più tutta la section,

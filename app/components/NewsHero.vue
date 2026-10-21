@@ -7,22 +7,20 @@ defineProps({
 </script>
 
 <template>
-  <section
-    class="pt-5 pb-4 bg-mobile-full"
-    :style="{ '--mobile-bg-image': `url(${immagine})` }"
-  >
-    <div class="container">
-      <div class="news-hero-inner">
-        <div class="rounded-4 overflow-hidden bg-mobile-full-target news-hero-image" />
-        <h2
-          class="fw-bold mt-4 mb-0"
-          :style="{ color: colore }"
-          data-aos="fade"
-          data-aos-duration="800"
-        >
-          {{ titolo }}
-        </h2>
-      </div>
+  <section class="pt-5 pb-4">
+    <div class="container news-hero-inner">
+      <div
+        class="rounded-4 overflow-hidden news-hero-image"
+        :style="{ backgroundImage: `url(${immagine})` }"
+      />
+      <h2
+        class="fw-bold mt-4 mb-0"
+        :style="{ color: colore }"
+        data-aos="fade"
+        data-aos-duration="800"
+      >
+        {{ titolo }}
+      </h2>
     </div>
   </section>
 </template>
@@ -35,6 +33,8 @@ defineProps({
 
 .news-hero-image {
   min-height: 450px;
+  background-size: cover;
+  background-position: center;
 }
 
 @media (max-width: 767.98px) {

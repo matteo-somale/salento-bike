@@ -1,13 +1,13 @@
 <template>
-  <section class="pt-5 pb-sm-0 pb-md-5 bg-mobile-full banner-passport" data-aos="fade-up">
+  <section class="pt-2 pt-md-3 pt-lg-5 pb-sm-0 pb-md-5 bg-mobile-full banner-passport" data-aos="fade-up">
     <div class="container">
 
       <div class="rounded-4 overflow-hidden bg-mobile-full-target">
         <div class="row g-0 align-items-stretch">
 
           <!-- Contenuto -->
-          <div class="col-12 col-lg-6 order-1 order-lg-2">
-            <div class="h-100 d-flex flex-column align-items-start justify-content-center p-5">
+          <div class="col-12 col-lg-7 order-1 order-lg-2 text-primary">
+            <div class="h-100 d-flex flex-column align-items-start justify-content-center p-5 pb-0 pb-lg-5">
 
               <p class="eyebrow mb-2">
                 il passaporto della ciclonica
@@ -33,11 +33,11 @@
           </div>
 
           <!-- Immagine -->
-          <div class="col-12 col-lg-6 order-2 order-lg-1 d-flex align-items-end justify-content-center">
+          <div class="col-12 col-lg-5 order-2 order-lg-1 d-flex align-items-end justify-content-center">
             <img
               src="/img/Mockup-Passport.png"
               alt=""
-              class="img-fluid pt-4"
+              class="img-fluid pt-4 banner-passport-img"
             >
           </div>
 
@@ -59,6 +59,15 @@
 @media (max-width: 767.98px) {
   .banner-passport {
     padding-bottom: 0;
+  }
+}
+
+/* Sotto il breakpoint lg il layout passa a colonna unica (col-12):
+   limitiamo l'altezza dell'immagine per evitare che diventi troppo grande. */
+@media (max-width: 991.98px) {
+  .banner-passport-img {
+    max-height: 400px;
+    width: auto;
   }
 }
 </style>
