@@ -62,7 +62,7 @@ const percorsi = [
     titolo: 'Un percorso unico',
     testo: `Si parte da Lecce e si arriva al mare seguendo un percorso ciclabile su strade a bassa intensità di traffico, sterrati e interpoderali. 
 Un viaggio in sei tappe,  o in 5 anelli giornalieri, tra spiagge selvagge e fitte pinete, centri storici, piccole frazioni e la rete dei parchi naturali che si affacciano sulla costa ionica. Dal rosa dei fenicotteri al verde intenso dei pini marittimi, dal giallo delle ginestre in fiore all’azzurro del mare: preparati a pedalare tra i colori!`,
-    immagine: '/img/galleria/ciclonica/08_BAIAVERDE_phROBERTOGUIDO.jpg',
+    immagini: ['/img/galleria/ciclonica/08_BAIAVERDE_phROBERTOGUIDO.jpg'],
     logo: '/logo/logo-ciclonica-simple.svg',
     coloreSfondo: '#119660',
     altLayout: false,
@@ -73,7 +73,10 @@ Un viaggio in sei tappe,  o in 5 anelli giornalieri, tra spiagge selvagge e fit
     titolo: 'Scopri il Salento più autentico',
     testo: `Lecce, capitale del barocco, Galatina, patria della taranta e del pasticciotto, le spiagge di
 Gallipoli e quelle di Ugento, la costa intatta di Portoselvaggio e le piccole marine ancora non interessate dal turismo di massa. Un viaggio in un Salento inaspettato, facile da pedalare e bello da scoprire soprattutto in bassa stagione.`,
-    immagine: '/img/foto-nard-barocca.jpg',
+    immagini: [
+      '/img/foto-nard-barocca.jpg',
+      '/img/galleria/ciclonica/13_PORTOSELVAGGIO_phROBERTOGUIDO.jpg',
+    ],
     logo: '/logo/logo-ciclonica-simple.svg',
     coloreSfondo: '#119660',
     altLayout: true,
@@ -83,7 +86,7 @@ Gallipoli e quelle di Ugento, la costa intatta di Portoselvaggio e le piccole ma
     sopratitolo: 'lungo il percorso',
     titolo: 'Una rete di ospitalità Bikefriendly',
     testo: `Abbiamo messo insieme una rete di strutture bike-friendly, luoghi accoglienti che combinano la tradizionale ospitalità del territorio con l’attenzione all’ambiente e le esigenze dei ciclisti. Molti operatori della rete hanno partecipato a un corso ASTA – Alta Scuola di Turismo Ambientale, per migliorare la loro proposta di accoglienza e arricchirla di servizi e informazioni per chi va in bicicletta. `,
-    immagine: '/img/galleria/ciclonica/12_SANTAMARIAALBAGNO_1_phROBERTOGUIDO.jpg',
+    immagini: ['/img/galleria/ciclonica/12_SANTAMARIAALBAGNO_1_phROBERTOGUIDO.jpg'],
     logo: '/logo/logo-ciclonica-simple.svg',
     coloreSfondo: '#119660',
     altLayout: false,

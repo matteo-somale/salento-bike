@@ -1,4 +1,6 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
 function hexToRgba(hex, alpha) {
   const valoreHex = hex.replace('#', '')
   const r = parseInt(valoreHex.substring(0, 2), 16)
@@ -8,7 +10,7 @@ function hexToRgba(hex, alpha) {
 }
 
 const {
-  immagine,
+  immagini,
   logo,
   coloreSfondo,
   altLayout,
@@ -17,7 +19,7 @@ const {
   testo,
   bottoni
 } = defineProps({
-  immagine: { type: String, required: true },
+  immagini: { type: Array, required: true },
   logo: { type: String, required: true },
   coloreSfondo: { type: String, default: '#119660' },
   altLayout: { type: Boolean, default: false },
@@ -25,6 +27,21 @@ const {
   titolo: { type: String, required: true },
   testo: { type: String, required: true },
   bottoni: { type: Array, default: () => [] }
+})
+
+const slideAttivo = ref(0)
+let timerCarosello = null
+
+onMounted(() => {
+  if (immagini.length > 1) {
+    timerCarosello = setInterval(() => {
+      slideAttivo.value = (slideAttivo.value + 1) % immagini.length
+    }, 7000)
+  }
+})
+
+onUnmounted(() => {
+  clearInterval(timerCarosello)
 })
 </script>
 
@@ -48,9 +65,12 @@ const {
             <div class="percorso-image-wrapper position-relative rounded-4 overflow-hidden">
 
               <img
-                :src="immagine"
+                v-for="(img, index) in immagini"
+                :key="img"
+                :src="img"
                 alt=""
-                class="w-100 h-100 object-fit-cover"
+                class="percorso-carousel-image w-100 h-100 object-fit-cover"
+                :class="{ 'is-active': index === slideAttivo }"
               >
 
               <!-- Overlay sfumato -->
@@ -143,6 +163,17 @@ const {
 .percorso-image-wrapper {
   height: 100%;
   max-height: 500px;
+}
+
+.percorso-carousel-image {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.percorso-carousel-image.is-active {
+  opacity: 1;
 }
 
 @media (min-width: 992px) {
