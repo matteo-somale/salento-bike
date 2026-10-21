@@ -38,31 +38,26 @@ const rassegne = [
     },
 ]
 
-const selezionate = ref(destinazioni.map((d) => d.slug))
+const filtroAttivo = ref(null)
 
-const tuttiAttivo = computed(() => selezionate.value.length === destinazioni.length)
+const tuttiAttivo = computed(() => filtroAttivo.value === null)
 
 function isAttiva(slug) {
-    return selezionate.value.includes(slug)
+    return filtroAttivo.value === slug
 }
 
 function selezionaTutti() {
-    selezionate.value = destinazioni.map((d) => d.slug)
+    filtroAttivo.value = null
 }
 
-function toggleDestinazione(slug) {
-    if (selezionate.value.includes(slug)) {
-        const rimanenti = selezionate.value.filter((s) => s !== slug)
-        selezionate.value = rimanenti.length ? rimanenti : destinazioni.map((d) => d.slug)
-    } else {
-        selezionate.value = [...selezionate.value, slug]
-    }
+function selezionaDestinazione(slug) {
+    filtroAttivo.value = slug
 }
 
 const rassegneFiltrate = computed(() =>
     tuttiAttivo.value
         ? rassegne
-        : rassegne.filter((rassegna) => rassegna.destinazioni.some((slug) => selezionate.value.includes(slug)))
+        : rassegne.filter((rassegna) => rassegna.destinazioni.includes(filtroAttivo.value))
 )
 
 function destinazioniDiRassegna(rassegna) {
@@ -119,13 +114,13 @@ watch(rassegneFiltrate, async () => {
                         :style="{ '--btn-accent': 'var(--color-accent-giallo)' }"
                         @click="selezionaTutti">
                         <Icon :name="tuttiAttivo ? 'lucide:x' : 'lucide:plus'" />
-                        Tutti
+                        Tutto
                     </button>
                     <button v-for="destinazione in destinazioni" :key="destinazione.slug" type="button"
                         class="btn btn-lg btn-filter d-inline-flex align-items-center gap-2"
                         :class="{ 'is-active': isAttiva(destinazione.slug) }"
                         :style="{ '--btn-accent': destinazione.colore }"
-                        @click="toggleDestinazione(destinazione.slug)">
+                        @click="selezionaDestinazione(destinazione.slug)">
                         <Icon :name="isAttiva(destinazione.slug) ? 'lucide:x' : 'lucide:plus'" />
                         {{ destinazione.nome }}
                     </button>

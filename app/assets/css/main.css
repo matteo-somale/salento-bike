@@ -186,6 +186,8 @@ button,
 
     /* bottoni filtro con stato attivo/disattivo: colore passato inline con --btn-accent, es. :style="{ '--btn-accent': colore }" */
     &.btn-filter {
+        transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+
         &.is-active {
             background-color: var(--btn-accent);
             border: 2px solid var(--btn-accent);
