@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 const mainVideo = {
-    subtitle: 'da chi ci è stato',
+    subtitle: 'da chi l\'ha provato',
     title: 'I video dal Salento in&nbsp;bici',
     text: 'Su due ruote tra paesaggi mozzafiato, antiche masserie e borghi del Barocco. Guarda i video di chi già ha fatto questa esperienza!',
     youtubeLinks: [
