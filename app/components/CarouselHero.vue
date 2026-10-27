@@ -9,7 +9,7 @@ const slides = [
     button: 'Guarda il video completo',
     buttonLink: '#pedalaConCiclonica',
     buttonIcon: 'fluent:filmstrip-play-24-filled',
-    media: { type: 'video', src: '/video/hero-placeholder.mp4', alt: 'Video cicloturismo nel Salento' }
+    media: { type: 'video', src: '/videos/ciclonica-video-wide-teaser.mp4', alt: 'Video cicloturismo nel Salento' }
   },
   {
     eyebrow: 'Il Salento',

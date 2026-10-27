@@ -45,6 +45,11 @@
                 <h4 class="fw-bold mb-2 text-orange"> Contatti </h4>
                 <a href="mailto:info@vivilitalia.it">info@vivilitalia.it</a>
                 <a href="tel:+390686268324">06/86268324</a>
+                <div class="d-flex flex-wrap gap-3 mt-2">
+                  <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank" rel="noopener noreferrer" :aria-label="social.name" class="social-link text-orange">
+                    <Icon :name="social.icon" size="20" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -57,7 +62,12 @@
 </template>
 
 <script setup>
-// JavaScript / logica
+const socials = [
+  { name: 'YouTube', icon: 'fa6-brands:youtube', url: '#' },
+  { name: 'Facebook', icon: 'fa6-brands:facebook', url: '#' },
+  { name: 'Instagram', icon: 'fa6-brands:instagram', url: '#' },
+  { name: 'LinkedIn', icon: 'fa6-brands:linkedin', url: '#' },
+]
 </script>
 
 <style scoped>
@@ -76,6 +86,16 @@ footer {
 
   a:hover {
     text-decoration: underline;
+  }
+
+  .social-link {
+    color: var(--color-accent-orange);
+    line-height: 1;
+  }
+
+  .social-link:hover {
+    text-decoration: none;
+    opacity: 0.8;
   }
 
   .footer-logo {
