@@ -55,8 +55,8 @@
 const percorsi = [
   {
     sopratitolo: 'IL SALENTO orientale',
-    titolo: 'La magia di <i>Finibus Terrae<i>',
-    testo: 'Partendo da Lecce si pedala immergendosi nel verde dell’Oasi delle Cesine e arrivare a Otranto per scoprire la magia della cava di bauxite sul mare e la suggestione del faro più a Est d’Italia. Si attraversa l’intero parco regionale, uno scrigno di tesori naturali, fino alla terra estrema di <i>Finibus Terrae<i> per far ritorno a Lecce dai borghi antichi dell’entroterra, fra muretti a secco, patriarchi verdi e la terra di dolmen e menhir',
+    titolo: 'La magia di <i>Finibus Terrae</i>',
+    testo: 'Partendo da Lecce si pedala immergendosi nel verde dell’Oasi delle Cesine e arrivare a Otranto per scoprire la magia della cava di bauxite sul mare e la suggestione del faro più a Est d’Italia. Si attraversa l’intero parco regionale, uno scrigno di tesori naturali, fino alla terra estrema di <i>Finibus Terrae</i> per far ritorno a Lecce dai borghi antichi dell’entroterra, fra muretti a secco, patriarchi verdi e la terra di dolmen e menhir',
     immagini: ['/img/galleria/ladriatica/06_CASTRO_phRobertoGuido.jpg'],
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',

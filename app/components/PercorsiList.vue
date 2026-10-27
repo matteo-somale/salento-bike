@@ -26,7 +26,7 @@ const destinations = [
         jumbomap: {
             sopratitolo: 'percorsi',
             titolo: 'Le ciclovie<br> del Salento orientale',
-            testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a <i>Finibus Terrae<i>.',
+            testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a <i>Finibus Terrae</i>.',
             immagine: '/maps/santento-map_ladriatica.svg',
             bottoni: [
                 { testo: 'Scopri il percorso completo', classe: 'btn-primary', link: '/ladriatica' },

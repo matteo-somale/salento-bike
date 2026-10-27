@@ -13,7 +13,7 @@ const destinations = [
         logo: '/logo/logo-ladriatica-vert-color.svg',
         copertina: '/img/galleria/ladriatica/05_TORREMINERVINO_phRobertoGuido.jpg',
         titolo: 'La ciclovia del Salento orientale',
-        testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a <i>Finibus Terrae<i>.',
+        testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a <i>Finibus Terrae</i>.',
         link: '/ladriatica',
         colore: '#007FC3',
         coloreSfondo: '#80C4F4',
