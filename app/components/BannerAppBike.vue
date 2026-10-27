@@ -1,5 +1,5 @@
 <template>
-    <section class="py-5 bg-mobile-full banner-app-background" data-aos="fade-up">
+    <section class="py-4 bg-mobile-full banner-app-background" data-aos="fade-up">
         <div class="container">
             <div class="rounded p-4 p-lg-5 banner-app-grid bg-mobile-full-target">
 
@@ -30,19 +30,20 @@
                         escursioni e i vostri viaggi.
                     </p>
 
-                    <NuxtLink to="/" class="btn btn-primary btn-lg mb-4">
-                        Scopri di più
+                    <NuxtLink to="https://bikesquare.web.app/home" target="blank" class="btn btn-primary btn-lg mb-4">
+                        <Icon name="lucide:globe" />
+                        WebApp
                     </NuxtLink>
 
                     <!-- Store -->
                     <div class="d-flex flex-wrap gap-3">
 
-                        <a href="#" aria-label="Scarica su Google Play">
-                            <img src="/img/app/get-on-google-play.svg" alt="Scarica su Google Play"
+                        <a href="https://play.google.com/store/apps/details?id=eu.bikesquare.ebike&hl=it&pli=1" target="blank" aria-label="Scarica su Google Play">
+                            <img src="/img/app/get-on-google-play.svg"  alt="Scarica su Google Play"
                                 style="height: 60px;">
                         </a>
 
-                        <a href="#" aria-label="Scarica su App Store">
+                        <a href="https://apps.apple.com/it/app/bikesquare/id1346583687"  target="blank" aria-label="Scarica su App Store">
                             <img src="/img/app/get-on-apple.svg" alt="Scarica su App Store" style="height: 60px;">
                         </a>
 
@@ -74,6 +75,23 @@
         column-gap: 3rem;
         row-gap: 0;
         align-items: center;
+    }
+
+    /* il blocco sx resta unito e centrato verticalmente rispetto all'immagine */
+    .banner-app-top {
+        align-self: end;
+    }
+
+    .banner-app-bottom {
+        align-self: start;
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner-app-image {
+        max-width: 460px;
+        width: 100%;
+        justify-self: center;
     }
 }
 

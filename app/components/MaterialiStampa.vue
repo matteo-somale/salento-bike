@@ -8,34 +8,41 @@ const destinazioni = [
 ]
 
 const rassegne = [
+    // {
+    //     destinazioni: ['ciclonica'],
+    //     tipo: 'video',
+    //     titolo: 'Rassegna uno',
+    //     testo: 'Testo descrittivo segnaposto per la rassegna uno, da sostituire con contenuti reali.',
+    //     link: '/',
+    // },
     {
         destinazioni: ['ciclonica'],
-        tipo: 'video',
-        titolo: 'Rassegna uno',
-        testo: 'Testo descrittivo segnaposto per la rassegna uno, da sostituire con contenuti reali.',
-        link: '/',
-    },
-    {
-        destinazioni: ['ladriatica'],
         tipo: 'cartella',
-        titolo: 'Rassegna due',
-        testo: 'Testo descrittivo segnaposto per la rassegna due, da sostituire con contenuti reali.',
-        link: '/',
+        titolo: 'RASSEGNA STAMPA 2026',
+        testo: 'Cartella con la rassegna stampa con il press tour di marzo 2026 e i link a tutti gli articoli',
+        link: 'https://docs.google.com/document/d/1X2LRBV0Zm8w8mtBiexNDwhRE2N7lbcvS/edit',
     },
     {
-        destinazioni: ['ciclonica', 'ladriatica'],
+        destinazioni: ['ciclonica'],
         tipo: 'cartella',
-        titolo: 'Rassegna tre',
-        testo: 'Testo descrittivo segnaposto per la rassegna tre, da sostituire con contenuti reali.',
-        link: '/',
+        titolo: 'Rassegna stampa 2024 - 2025',
+        testo: 'Raccolta di interventi e materiale tra il 2024 ed il 2025',
+        link: 'https://drive.google.com/drive/folders/1RJ2vH4zpyogWDi7UgjdJzyN2jqshFkBX',
     },
     {
-        destinazioni: [],
-        tipo: 'video',
-        titolo: 'Rassegna quattro',
-        testo: 'Testo descrittivo segnaposto per la rassegna quattro, da sostituire con contenuti reali.',
-        link: '/',
+        destinazioni: ['ciclonica'],
+        tipo: 'cartella',
+        titolo: 'Cartella stampa',
+        testo: 'Raccolta di materiale relativo alle confereze stampa di ciclonica',
+        link: 'https://drive.google.com/drive/folders/16vFBYZrQnbnVAPKV3OmHZlVdbo_aMfne',
     },
+    // {
+    //     destinazioni: [],
+    //     tipo: 'video',
+    //     titolo: 'Rassegna quattro',
+    //     testo: 'Testo descrittivo segnaposto per la rassegna quattro, da sostituire con contenuti reali.',
+    //     link: '/',
+    // },
 ]
 
 const filtroAttivo = ref(null)
@@ -144,7 +151,7 @@ watch(rassegneFiltrate, async () => {
                     <h3 class="fw-bold mb-3 text-primary">{{ rassegna.titolo }}</h3>
                     <p class="body-large mb-4">{{ rassegna.testo }}</p>
 
-                    <NuxtLink :to="rassegna.link" class="btn btn-lg btn-orange d-inline-flex align-items-center gap-2">
+                    <NuxtLink :to="rassegna.link" target="blank" class="btn btn-lg btn-orange d-inline-flex align-items-center gap-2">
                         <Icon :name="bottoneIconaRassegna(rassegna)" />
                         {{ bottoneTestoRassegna(rassegna) }}
                     </NuxtLink>

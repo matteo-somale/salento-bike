@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, nextTick, watch } from 'vue'
+import { computed, nextTick, watch } from 'vue'
 import AOS from 'aos'
 
 const destinations = [
@@ -137,7 +137,8 @@ const percorsi = [
     },
 ]
 
-const selectedDestinazione = ref(destinations[0].destinazione)
+// Destinazione letta/scritta nell'URL (?destination=...), vedi composables/useDestinazioneAttiva.js
+const { destinazioneAttiva: selectedDestinazione, setDestinazione } = useDestinazioneAttiva()
 
 const percorsiFiltrati = computed(() =>
     percorsi.filter((percorso) => percorso.destinazione === selectedDestinazione.value)
@@ -162,7 +163,7 @@ watch(percorsiFiltrati, async () => {
                     class="btn btn-lg btn-filter d-inline-flex align-items-center gap-2"
                     :class="{ 'is-active': selectedDestinazione === destination.destinazione }"
                     :style="{ '--btn-accent': destination.colore }"
-                    @click="selectedDestinazione = destination.destinazione">
+                    @click="setDestinazione(destination.destinazione)">
                     <Icon name="lucide:bike" />
                     {{ destination.testo }}
                 </button>

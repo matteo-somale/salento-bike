@@ -6,7 +6,7 @@
       title="Scopri il Salento Ionico in bici"
       text="La straordinaria avventura di pedalare nelle terre del Salento tra parchi costieri, borghi e spiagge selvagge"
       button-text="Vedi i percorsi"
-      button-link="/percorsi"
+      button-link="/percorsi?destination=ciclonica"
       button-variant="btn-secondary"
     ></SinglePercorsoHero>
     

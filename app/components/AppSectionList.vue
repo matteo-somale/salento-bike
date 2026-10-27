@@ -14,7 +14,7 @@ const section = {
 </script>
 
 <template>
-    <section class="py-5">
+    <section class="py-3">
         <div class="container">
             <div class="row g-4 g-lg-5 align-items-center">
 

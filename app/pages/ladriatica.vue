@@ -6,7 +6,7 @@
       title="Scopri il Salento Orientale in bici"
       text="Un fantastico viaggio a pedali sul balcone del Mediterraneo, tra piccole e grandi meraviglie della natura in riva al mare nel Parco Otranto - SantaMaria di Leuca e Bosco di Tricase"
       button-text="Scopri ladriatica"
-      button-link="/percorsi"
+      button-link="/percorsi?destination=ladriatica"
       button-variant="btn-celeste"
     ></SinglePercorsoHero>
 
