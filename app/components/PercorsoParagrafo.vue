@@ -115,7 +115,8 @@ onUnmounted(() => {
                   :key="index"
                   :to="bottone.linkBottone"
                   class="btn btn-primary btn-lg percorso-btn d-inline-flex align-items-center justify-content-center gap-2"
-                >
+                  target="blank"
+                  >
                   <Icon v-if="bottone.icona" :name="bottone.icona" />
                   {{ bottone.testoBottone }}
                 </NuxtLink>

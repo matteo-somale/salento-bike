@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-5 background-primary">
+  <footer class="py-5 mt-2 background-primary">
     <div class="container"> <!-- Contenuto principale -->
       <div class="row g-5"> <!-- Colonna 4/12 -->
         <div class="col-12 col-lg-4">

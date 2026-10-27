@@ -27,14 +27,14 @@ defineProps({
                 <h3 class="fw-bold mb-1 mb-md-3 text-primary">{{ titolo }}</h3>
                 <p class="body-large mb-4 text-primary">{{ testo }}</p>
                 <div class="d-flex flex-column flex-md-row flex-wrap gap-2 percorso-card-actions">
-                    <NuxtLink :to="linkPercorso" class="btn btn-lg btn-primary d-inline-flex align-items-center justify-content-center gap-2">
+                    <a :href="linkPercorso" target="_blank" rel="noopener" class="btn btn-lg btn-primary d-inline-flex align-items-center justify-content-center gap-2">
                         <Icon name="lucide:bike" />
                         Vai al percorso
-                    </NuxtLink>
-                    <NuxtLink :to="linkGpx" class="btn btn-lg btn-orange d-inline-flex align-items-center justify-content-center gap-2">
+                    </a>
+                    <a :href="linkGpx" download class="btn btn-lg btn-orange d-inline-flex align-items-center justify-content-center gap-2">
                         <Icon name="lucide:download" />
                         Scarica GPX
-                    </NuxtLink>
+                    </a>
                 </div>
             </div>
         </div>

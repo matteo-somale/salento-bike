@@ -66,7 +66,7 @@ Un viaggio in sei tappe,  o in 5 anelli giornalieri, tra spiagge selvagge e fit
     logo: '/logo/logo-ciclonica-simple.svg',
     coloreSfondo: '#119660',
     altLayout: false,
-    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: '/about', icona: 'lucide:bike' }],
+    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: 'https://ebike.bikesquare.eu/percorsi?destinations=salento&tags=ciclonica', icona: 'lucide:bike' }],
   },
   {
     sopratitolo: 'Barocco e tradizione',
@@ -80,7 +80,7 @@ Gallipoli e quelle di Ugento, la costa intatta di Portoselvaggio e le piccole ma
     logo: '/logo/logo-ciclonica-simple.svg',
     coloreSfondo: '#119660',
     altLayout: true,
-    bottoni: [{ testoBottone: 'Scopri i punti di interesse', linkBottone: '/about', icona: 'fluent:image-search-24-filled' }],
+    bottoni: [{ testoBottone: 'Scopri i punti di interesse', linkBottone: 'https://ebike.bikesquare.eu/pois?destination=salento&tags=ciclonica&categorie=da-vedere,informazioni-turistiche,spiagge,parco-area-naturalistica', icona: 'fluent:image-search-24-filled' }],
   },
   {
     sopratitolo: 'lungo il percorso',
@@ -90,7 +90,7 @@ Gallipoli e quelle di Ugento, la costa intatta di Portoselvaggio e le piccole ma
     logo: '/logo/logo-ciclonica-simple.svg',
     coloreSfondo: '#119660',
     altLayout: false,
-    bottoni: [{ testoBottone: 'Scopri le location', linkBottone: '/about', icona: 'ph:map-pin-fill' }],
+    bottoni: [{ testoBottone: 'Scopri le location', linkBottone: 'https://ebike.bikesquare.eu/pois?destination=salento&tags=ciclonica&categorie=enogastronomia,noleggio-e-bike,mangiare,dormire,esperienze-benessere,informazioni-turistiche', icona: 'ph:map-pin-fill' }],
   },
 ]
 </script>

@@ -61,7 +61,7 @@ const percorsi = [
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',
     altLayout: false,
-    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: '/about', icona: 'lucide:bike' }],
+    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: 'https://ebike.bikesquare.eu/percorsi?destinations=salento&tags=ladriatica', icona: 'lucide:bike' }],
   },
   {
     sopratitolo: 'IL SALENTO orientale',
@@ -71,7 +71,7 @@ const percorsi = [
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',
     altLayout: true,
-    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: '/about', icona: 'lucide:bike' }],
+    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: 'https://ebike.bikesquare.eu/percorsi?destinations=salento&tags=ladriatica', icona: 'lucide:bike' }],
   },
   {
     sopratitolo: 'lungo il percorso',
@@ -84,7 +84,7 @@ const percorsi = [
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',
     altLayout: false,
-    bottoni: [{ testoBottone: 'Scopri i punti di interesse', linkBottone: '/about', icona: 'fluent:image-search-24-filled' }],
+    bottoni: [{ testoBottone: 'Scopri i punti di interesse', linkBottone: 'https://ebike.bikesquare.eu/pois?destination=salento&tags=ladriatica&categorie=da-vedere,parco-area-naturalistica,informazioni-turistiche,spiagge', icona: 'fluent:image-search-24-filled' }],
   },
   /* {
     sopratitolo: 'BAROCCO E TRADIZIONE',

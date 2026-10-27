@@ -32,7 +32,7 @@
                         escursioni e i vostri viaggi.
                     </p>
 
-                    <NuxtLink to="/" class="btn btn-primary btn-lg mb-4 d-inline-flex align-items-center gap-2">
+                    <NuxtLink to="https://ciclovia-salento.web.app/home" target="blank" class="btn btn-primary btn-lg mb-4 d-inline-flex align-items-center gap-2">
                         <Icon name="lucide:globe" />
                         WebApp
                     </NuxtLink>
@@ -40,12 +40,12 @@
                     <!-- Store -->
                     <div class="d-flex flex-wrap gap-3">
 
-                        <a href="#" aria-label="Scarica su Google Play">
+                        <a href="https://play.google.com/store/apps/details?id=it.ciclovia_salento" target="blank" aria-label="Scarica su Google Play">
                             <img src="/img/app/get-on-google-play.svg" alt="Scarica su Google Play"
                                 style="height: 60px;">
                         </a>
 
-                        <a href="#" aria-label="Scarica su App Store">
+                        <a href="https://apps.apple.com/us/app/salento-bike-ciclovie-puglia/id6497486621" target="blank" aria-label="Scarica su App Store">
                             <img src="/img/app/get-on-apple.svg" alt="Scarica su App Store" style="height: 60px;">
                         </a>
 
