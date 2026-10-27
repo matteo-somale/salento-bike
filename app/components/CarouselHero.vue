@@ -197,4 +197,16 @@ const swiper = useSwiper(containerRef, {
     z-index: -1;
   }
 }
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #heroCarousel {
+    --hero-bg-height: 75%;
+  }
+}
+
+@media (min-width: 1400px) {
+  #heroCarousel {
+    --hero-bg-height: 72%;
+  }
+}
 </style>
