@@ -16,7 +16,7 @@ defineProps({
         :style="{ backgroundColor: colore + '40' }"
     >
         <div class="row p-4">
-            <div class="col-12 col-md-6 position-relative ">
+            <div class="col-12 col-md-6 position-relative percorso-card-image-col">
                 <img :src="immagine" class="w-100 rounded percorso-card-image" alt="">
                 <span class="position-absolute top-0 start-1 m-3 badge rounded-pill"
                     :style="{ backgroundColor: colore, color: 'var(--color-text-white)' }">
@@ -43,6 +43,7 @@ defineProps({
 
 <style scoped>
 .percorso-card {
+    width: 100%;
     max-width: 1000px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -53,14 +54,26 @@ defineProps({
 }
 
 @media (min-width: 768px) {
+    .percorso-card-image-col {
+        height: auto;
+    }
+
     .percorso-card-image {
-        height: 300px;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 
 @media (min-width: 992px) {
+    .percorso-card .row {
+        --bs-gutter-x: 3rem;
+    }
+
     .percorso-card-image {
-        height: 350px;
+        position: static;
+        height: 300px;
     }
 }
 

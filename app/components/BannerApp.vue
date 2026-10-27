@@ -65,7 +65,20 @@
         "top"
         "image"
         "bottom";
-    gap: 3rem;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .banner-app-grid {
+        gap: 3rem;
+    }
+
+    /* immagine quadrata: max-width 500px = max-height 500px */
+    .banner-app-image {
+        width: 100%;
+        max-width: 500px;
+        justify-self: center;
+    }
 }
 
 @media (min-width: 992px) {
@@ -77,6 +90,23 @@
         column-gap: 3rem;
         row-gap: 0;
         align-items: center;
+    }
+
+    /* il blocco sx resta unito e centrato verticalmente rispetto all'immagine */
+    .banner-app-top {
+        align-self: end;
+    }
+
+    .banner-app-bottom {
+        align-self: start;
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner-app-image {
+        /* immagine quadrata: larghezza 500px = altezza 500px */
+        width: 500px;
+        max-width: 100%;
     }
 }
 
