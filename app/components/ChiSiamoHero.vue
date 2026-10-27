@@ -2,7 +2,7 @@
 const hero = {
   image: '/img/destinazioni/hero-salento-segnaposto.jpg',
   title: 'Un gruppo appassionato',
-  text: 'Siamo un gruppo di persone appassionate della nostra terra e convinte che la bicicletta sia il mezzo migliore per scoprire il Salento. Amministratori locali, piccoli imprenditori o semplici cittadini riuniti dal progetto di un percorso ciclabile che attraversa i territori dei dieci comuni costieri che fanno parte della Green Community Ionico-Adriatica.',
+  text: 'Siamo un gruppo di persone appassionate di Salento, chi per nascita e chi per adozione, e siamo convinte che la bicicletta sia il mezzo migliore per scoprire questa terra. Siamo amministratori locali, professionisti, piccoli imprenditori o semplici cittadini riuniti intorno all\'idea di trasformare il Salento in una meta di rilevanza nazionale e internazionale per il popolo dei&nbsp;cicloturisti.',
   subText: 'Siamo una piccola comunità nella grande Green Community! '
 }
 
@@ -43,12 +43,12 @@ const hexToRgba = (hex, opacity) => {
             {{ hero.title }}
           </h1>
 
-          <p class="body-large mb-4 d-none d-md-block">
-            {{ hero.text }}
+          <p class="body-large mb-4 d-none d-md-block"  v-html="hero.text">
+           
           </p>
 
-          <p class="body-small mb-4 d-md-none w-100 text-start">
-            {{ hero.text }}
+          <p class="body-small mb-4 d-md-none w-100 text-start" v-html="hero.text">
+            
           </p>
 
           <h4 class="eyebrow text-orange">
@@ -62,3 +62,9 @@ const hexToRgba = (hex, opacity) => {
     </div>
   </section>
 </template>
+
+<style scoped>
+p {
+  max-width: 100ch;
+}
+</style>

@@ -2,7 +2,7 @@
 const hero = {
   image: '/img/destinazioni/hero-salento-segnaposto.jpg',
   title: 'Una rete bike-friendly',
-  text: 'La Ciclonica può contare su una rete di strutture bike-friendly, singole realtà imprenditoriali connesse da un percorso ciclabile che dà forza al tessuto produttivo del territorio. Sono realtà attente all\'ambiente e alla buona enogastronomia a km zero, che offrono servizi dedicati alle biciclette aiutano il turista a scoprire le tradizioni locali e la bellezza custodita nei luoghi più nascosti.',
+  text: 'La rete di Salento.Bike può contare su una rete di strutture bike-friendly, singole realtà imprenditoriali connesse da un percorso ciclabile che dà forza al tessuto produttivo del territorio. Sono realtà attente all\'ambiente e alla buona enogastronomia a km zero, che offrono servizi dedicati alle biciclette aiutano il turista a scoprire le tradizioni locali e la bellezza custodita nei luoghi più nascosti.',
   buttons: [
     { text: 'Come aderire', link: 'https://crm.bikesquare.eu/partners/start/ciclonica' },
   ]
@@ -23,7 +23,7 @@ const network = {
     },
     {
       title: 'Come si aderisce',
-      text: 'Per aderire alla Carta dei Valori basta condividere il nostro impegno per un’accoglienza cicloturistica sostenibile. Le strutture interessate possono contattarci, passando dal nostro partner tecnico BikeSquare, sottoscrivere la carta ed entrare nella Comunità della Ciclonica offrendo servizi di qualità dedicati ai viaggiatori in bici.',
+      text: 'Per aderire alla Carta dei Valori basta condividere il nostro impegno per un’accoglienza cicloturistica sostenibile. Le strutture interessate possono contattarci, passando dal nostro partner tecnico BikeSquare, sottoscrivere la carta ed entrare nella comunità offrendo servizi di qualità dedicati ai viaggiatori in bici.',
       button: { text: 'Contattaci', link: '/contatti' }
     }
   ]

@@ -17,9 +17,9 @@ defineProps({
             <img :src="logo" :alt="`Logo ${titolo}`" class="my-1 destination-logo">
         </div>
         <img :src="copertina" class="rounded-md w-100 mb-4 destination-cover" alt="">
-        <h3 class="text-primary destination-text"> {{ titolo }} </h3>
-        <p class="body-large text-primary destination-text d-none d-md-block"> {{ testo }} </p>
-        <p class="body-small text-primary destination-text d-md-none"> {{ testo }} </p>
+        <h3 class="text-primary destination-text" v-html="titolo" />
+        <p class="body-large text-primary destination-text d-none d-md-block" v-html="testo" />
+        <p class="body-small text-primary destination-text d-md-none" v-html="testo" />
         <NuxtLink :to="link" class="btn btn-primary btn-lg mt-auto d-inline-flex align-items-center justify-content-center gap-2 destination-btn">
             <Icon name="lucide:bike" />
             Scopri i percorsi

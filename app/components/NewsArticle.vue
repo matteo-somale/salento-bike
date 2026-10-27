@@ -14,7 +14,7 @@ defineProps({
   <NuxtLink :to="`/news/${slug}`" class="d-block text-decoration-none">
     <article
       class="rounded overflow-hidden news-article-card mx-auto"
-      :style="{ backgroundColor: `color-mix(in srgb, ${colore} 50%, transparent)` }"
+      :style="{ backgroundColor: `color-mix(in srgb, ${colore} 40%, transparent)` }"
     >
       <div class="row p-4">
         <div class="col-12 col-md-5 position-relative">

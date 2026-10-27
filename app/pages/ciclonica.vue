@@ -69,9 +69,9 @@ Un viaggio in sei tappe,  o in 5 anelli giornalieri, tra spiagge selvagge e fit
     bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: '/about', icona: 'lucide:bike' }],
   },
   {
-    sopratitolo: 'barocco e tradizione',
+    sopratitolo: 'Barocco e tradizione',
     titolo: 'Scopri il Salento più autentico',
-    testo: `Lecce, capitale del barocco, Galatina, patria della taranta e del pasticciotto, le spiagge di
+    testo: `Lecce, capitale del Barocco, Galatina, patria della taranta e del pasticciotto, le spiagge di
 Gallipoli e quelle di Ugento, la costa intatta di Portoselvaggio e le piccole marine ancora non interessate dal turismo di massa. Un viaggio in un Salento inaspettato, facile da pedalare e bello da scoprire soprattutto in bassa stagione.`,
     immagini: [
       '/img/foto-nard-barocca.jpg',
@@ -84,7 +84,7 @@ Gallipoli e quelle di Ugento, la costa intatta di Portoselvaggio e le piccole ma
   },
   {
     sopratitolo: 'lungo il percorso',
-    titolo: 'Una rete di ospitalità Bikefriendly',
+    titolo: 'Una rete di ospitalità bikefriendly',
     testo: `Abbiamo messo insieme una rete di strutture bike-friendly, luoghi accoglienti che combinano la tradizionale ospitalità del territorio con l’attenzione all’ambiente e le esigenze dei ciclisti. Molti operatori della rete hanno partecipato a un corso ASTA – Alta Scuola di Turismo Ambientale, per migliorare la loro proposta di accoglienza e arricchirla di servizi e informazioni per chi va in bicicletta. `,
     immagini: ['/img/galleria/ciclonica/12_SANTAMARIAALBAGNO_1_phROBERTOGUIDO.jpg'],
     logo: '/logo/logo-ciclonica-simple.svg',

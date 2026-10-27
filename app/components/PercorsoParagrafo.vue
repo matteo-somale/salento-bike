@@ -100,17 +100,12 @@ onUnmounted(() => {
               <p
                 class="eyebrow mb-2"
                 :style="{ color: coloreSfondo }"
-              >
-                {{ sopratitolo }}
-              </p>
+                v-html="sopratitolo"
+              />
 
-              <h2 class="mb-2 mb-md-4 text-primary">
-                {{ titolo }}
-              </h2>
+              <h2 class="mb-2 mb-md-4 text-primary" v-html="titolo" />
 
-              <p class="mb-4 body-large body-primary">
-                {{ testo }}
-              </p>
+              <p class="mb-4 body-large body-primary" v-html="testo" />
 
               <!-- Bottoni -->
               <div class="d-flex flex-wrap gap-3 w-100">

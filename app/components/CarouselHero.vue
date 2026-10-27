@@ -5,7 +5,7 @@ const slides = [
   {
     eyebrow: 'salento.bike',
     title: 'Salento,<br> pedalare nella meraviglia',
-    text: 'Ci sono luoghi che richiedono un tempo lento per essere compresi: il Salento è uno di questi. Racchiuso tra due mari, Adriatico e Ionio, questo lembo d\'Italia è un paradiso naturale nato per essere esplorato in sella a una bicicletta.',
+    text: 'Ci sono luoghi che richiedono un tempo lento per essere compresi: il Salento è uno di questi. Racchiuso tra due mari, Adriatico e Ionio, questo lembo d\'Italia è un paradiso naturale ideale per essere esplorato in sella a una bicicletta.',
     button: 'Guarda il video completo',
     buttonLink: '#pedalaConCiclonica',
     buttonIcon: 'fluent:filmstrip-play-24-filled',

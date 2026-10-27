@@ -13,7 +13,7 @@ defineProps({
 <template>
     <article
         class="rounded overflow-hidden percorso-card mx-auto"
-        :style="{ backgroundColor: colore + '66' }"
+        :style="{ backgroundColor: colore + '40' }"
     >
         <div class="row p-4">
             <div class="col-12 col-md-6 position-relative ">

@@ -17,12 +17,11 @@
           <div class="d-flex flex-column align-items-start text-white">
 
             <h1 class="display-5 fw-bold mb-3">
-              La rete Bike link sud
+              La rete Bike Link Sud
             </h1>
 
             <h3 class="fw-bold mb-3">
-              Oltre i confini: il magnifico viaggio in bicicletta
-nel Mezzogiorno d’Italia
+              Oltre i confini: il magnifico viaggio in bicicletta nel Mezzogiorno d’Italia
             </h3>
 
             <p class="body-regular mb-4 d-none d-md-block">

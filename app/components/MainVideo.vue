@@ -2,9 +2,9 @@
 import { ref } from 'vue'
 
 const mainVideo = {
-    subtitle: 'VIDEO DAL SALENTO IN BICI',
-    title: 'Una giornata con Ciclonica',
-    text: 'Un assaggio di quella che potrebbe essere la tua giornata pedalando sulla Ciclonica, scoprendo con BringYourBike il Salento ionico sul mezzo migliore per farlo! Vuoi farti un\'idea migliore? ',
+    subtitle: 'da chi ci è stato',
+    title: 'I video dal Salento in bici',
+    text: 'Su due ruote tra paesaggi mozzafiato, antiche masserie e borghi del Barocco. Guarda i video di chi già ha fatto questa esperienza!',
     youtubeLinks: [
         'https://www.youtube.com/embed/yRV_RfbSl8k',
         'https://www.youtube.com/embed/yRV_RfbSl8k'
@@ -56,10 +56,11 @@ const swiper = useSwiper(containerRef, {
                 </ClientOnly>
             </div>
 
+            <!-- bottone per i video
             <NuxtLink :to="mainVideo.buttonLink" class="btn btn-orange btn-lg d-inline-flex align-items-center gap-2">
                 <Icon name="fluent:filmstrip-play-24-filled" />
                 Guarda il video completo su Youtube
-            </NuxtLink>
+            </NuxtLink>-->
 
         </div>
     </section>

@@ -2,7 +2,7 @@
 import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const cards = {
-    subtitle: 'Cho siamo',
+    subtitle: 'Chi siamo',
     title: 'Il nostro team',
     backgroundColor: 'var(--color-accent-giallo)',
     card: [
@@ -21,15 +21,15 @@ const cards = {
         {
             immagine: '/img/team/carlo-e-giulia.jpg',
             titoloH3: 'Carlo Cascione e Giulia Trenuzzo',
-            titoloH5: 'salento bici tour',
+            titoloH5: 'Salento bici tour',
             testo: 'Ci piace andare in bici e abbiamo fatto di questa passione la nostra principale attività. Ora accompagniamo tanti turisti a pedalare sulle strade del Salento e abbiamo sempre gli occhi bene aperti per contrastare abusi edilizi e scempi ambientali.',
         },
-        {
-            immagine: '/img/team/giulia-puglia.jpeg',
-            titoloH3: 'Giulia Puglia',
-            titoloH5: 'Assessora Ambiente e Cultura Comune di Nardò',
-            testo: 'Amo la mia città e la mia terra e provo da anni a dare un contributo per migliorarle, per renderle più accoglienti e per tutelare e far conoscere le meravigliose aree protette che abbiamo.',
-        },
+        //{
+        //    immagine: '/img/team/giulia-puglia.jpeg',
+        //    titoloH3: 'Giulia Puglia',
+        //    titoloH5: 'Assessora Ambiente e Cultura Comune di Nardò',
+        //    testo: 'Amo la mia città e la mia terra e provo da anni a dare un contributo per migliorarle, per renderle più accoglienti e per tutelare e far conoscere le meravigliose aree protette che abbiamo.',
+        //},
         {
             immagine: '/img/team/sergio-fai.jpg',
             titoloH3: 'Sergio Fai',
@@ -41,6 +41,12 @@ const cards = {
             titoloH3: 'Francesca Biffi',
             titoloH5: 'ufficio stampa e comunicazione',
             testo: 'Mi occupo di comunicazione su temi ambientali e di turismo sostenibile da molti anni. Amo profondamente il Salento che è diventato un po’ una seconda casa. Dare l’opportunità di scoprire questa terra dalla bicicletta è la missione più bella di Ciclonica.',
+        },
+        {
+            immagine: '/img/team/michele-tenore.jpg',
+            titoloH3: 'Michele Tenore',
+            titoloH5: 'Presidente Parco Costa Otranto-S.M. di Leuca e Bosco di&nbsp;Tricase',
+            testo: 'Agronomo di professione e profondamente innamorato della natura mi onoro di rappresentare il Parco Naturale Regionale “Costa Otranto-S.M. di Leuca e Bosco di Tricase”. Promotore di una fruizione lenta e rispettosa dell’ambiente ho promosso, assieme ai 12 sindaci del Parco, il percorso cicloturistico “Ladriatica”',
         },
         {
             immagine: '/img/team/team-bikesquare.jpg',
@@ -114,8 +120,8 @@ onBeforeUnmount(() => {
     <section class="py-5" data-aos="fade-up">
         <div class="container">
             <div class="text-center mb-4">
-                <h4 class="text-secondary eyebrow mb-2">{{ cards.subtitle }}</h4>
-                <h1 class="text-primary">{{ cards.title }}</h1>
+                <h4 class="text-secondary eyebrow mb-2" v-html="cards.subtitle"></h4>
+                <h1 class="text-primary" v-html="cards.title"></h1>
             </div>
             <ClientOnly>
                 <swiper-container
@@ -129,10 +135,10 @@ onBeforeUnmount(() => {
                             :ref="(el) => setCardItemRef(el, index)"
                             :style="{ backgroundColor: cards.backgroundColor }">
                             <img :src="card.immagine" alt="" class="card-image w-100 rounded-md mb-3">
-                            <h3 class="text-center text-primary mt-4">{{ card.titoloH3 }}</h3>
-                            <p class="text-center eyebrow text-orange">{{ card.titoloH5 }}</p>
-                            <p class="text-primary d-none d-md-block body-regular">{{ card.testo }}</p>
-                            <p class="text-primary d-md-none body-small">{{ card.testo }}</p>
+                            <h3 class="text-center text-primary mt-4" v-html="card.titoloH3"></h3>
+                            <p class="text-center eyebrow text-orange" v-html="card.titoloH5"></p>
+                            <p class="text-primary d-none d-md-block body-regular" v-html="card.testo"></p>
+                            <p class="text-primary d-md-none body-small" v-html="card.testo"></p>
                         </div>
                     </swiper-slide>
                 </swiper-container>

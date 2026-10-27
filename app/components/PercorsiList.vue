@@ -6,6 +6,7 @@ const destinations = [
     {
         testo: 'Ciclonica',
         destinazione: 'ciclonica',
+        titolo: '5 percorsi ad anello',
         colore: '#119660',
         jumbomap: {
             sopratitolo: 'percorsi',
@@ -20,11 +21,12 @@ const destinations = [
     {
         testo: 'Ladriatica',
         destinazione: 'ladriatica',
+        titolo: '6 percorsi ad anello',
         colore: '#007FC3',
         jumbomap: {
             sopratitolo: 'percorsi',
             titolo: 'Le ciclovie<br> del Salento orientale',
-            testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a Finibus Terrae.',
+            testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a <i>Finibus Terrae<i>.',
             immagine: '/maps/santento-map_ladriatica.svg',
             bottoni: [
                 { testo: 'Scopri il percorso completo', classe: 'btn-primary', link: '/ladriatica' },
@@ -47,7 +49,7 @@ const percorsi = [
         immagine: '/img/percorsi/ciclonica/2-anello-gallipoli.png',
         tag: 'Percoso 2',
         destinazione: 'ciclonica',
-        titolo: 'Da Gallipoli alla scoperta di borghi e masserie dell\'entroterra salentino',
+        titolo: 'Da Gallipoli alla scoperta di borghi e masserie della campagna salentina',
         testo: 'Avvicinarsi alla natura di Gallipoli e al Parco di Punta Pizzo',
         linkPercorso: '/',
         linkGpx: '/',
@@ -66,7 +68,7 @@ const percorsi = [
         tag: 'Percoso 4',
         destinazione: 'ciclonica',
         titolo: 'Un mare di verde e di blu',
-        testo: 'Tra Porto Cesareo e Nardò passando per Portoselvaggio e la palude del capitano',
+        testo: 'Tra Porto Cesareo e Nardò passando per Portoselvaggio e la Palude del Capitano',
         linkPercorso: '/',
         linkGpx: '/',
     },
@@ -83,7 +85,7 @@ const percorsi = [
         immagine: '/img/percorsi/ladriatica/1-anello-finibus-terrae.png',
         tag: 'Percoso 1',
         destinazione: 'ladriatica',
-        titolo: 'Pedalando sulle maestose scogliere di FinibusTerrae',
+        titolo: 'Pedalando sulle maestose scogliere di Finibus Terrae',
         testo: 'Escursione giornaliera ad anello fra i tesori di pietra del Capo di Leuca',
         linkPercorso: '/',
         linkGpx: '/',
@@ -181,7 +183,7 @@ watch(percorsiFiltrati, async () => {
 
             <div class="text-center mb-5">
                 <h4 class="text-orange eyebrow mb-2">Scopri i percorsi più adatti a te</h4>
-                <h1 text-1 class="text-celeste fw-bold mb-3">5 percorsi ad anello</h1>
+                <h1 text-1 class="text-celeste fw-bold mb-3">{{ destinazioneAttiva?.titolo }}</h1>
                 <p class="lead col-12 col-lg-8 mx-auto">
                     Escursioni da fare in giornata o da collegare per vacanze di 2 o più giorni
                 </p>

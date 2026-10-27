@@ -27,9 +27,9 @@ const {
         <img :src="immagine" alt="" class="img-fluid mb-0  mb-lg-4 mb-md-0 jumbo-map-image">
 
         <div class="jumbo-map-text">
-            <p v-if="sopratitolo" class="eyebrow" :style="{ color: coloreSopratitolo }">{{ sopratitolo }}</p>
+            <p v-if="sopratitolo" class="eyebrow" :style="{ color: coloreSopratitolo }" v-html="sopratitolo"></p>
             <h2 class="" :style="{ color: coloreTitoloTesto }" v-html="titolo"></h2>
-            <p class="body-large testo-limitato" :style="{ color: coloreTitoloTesto }">{{ testo }}</p>
+            <p class="body-large testo-limitato" :style="{ color: coloreTitoloTesto }" v-html="testo"></p>
 
             <div class="d-flex flex-wrap gap-3 jumbo-map-buttons">
                 <NuxtLink

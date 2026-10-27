@@ -3,7 +3,7 @@ const destinations = [
     {
         logo: '/logo/logo-ciclonica-vert.svg',
         copertina: '/img/galleria/ciclonica/11_TORRE_SABEA_phROBERTOGUIDO.jpg',
-        titolo: 'La ciclovia del salento ionico',
+        titolo: 'La ciclovia del Salento ionico',
         testo: 'Dalle spiagge dorate ai borghi del Barocco, dalle antiche masserie alla natura selvaggia dei parchi naturali: 305 km di pura bellezza tra i profumi della macchia mediterranea.',
         link: '/ciclonica',
         colore: '#119660',
@@ -12,8 +12,8 @@ const destinations = [
     {
         logo: '/logo/logo-ladriatica-vert-color.svg',
         copertina: '/img/galleria/ladriatica/05_TORREMINERVINO_phRobertoGuido.jpg',
-        titolo: 'La ciclovia del salento orientale',
-        testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a Finibus Terrae.',
+        titolo: 'La ciclovia del Salento orientale',
+        testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a <i>Finibus Terrae<i>.',
         link: '/ladriatica',
         colore: '#007FC3',
         coloreSfondo: '#80C4F4',

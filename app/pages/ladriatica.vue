@@ -42,7 +42,7 @@
       logo="/logo/logo-ladriatica-vert-white.svg"
       eyebrow="DALL'IDEATORE DEL LOGO"
       title="Perché il logo ladriatica"
-      text="il logo elegge a protagonista il Faro di Punta Palascìa, punto più a est d’Italia e simbolo di accoglienza. Il faro si staglia davanti a un sole nascente che rivela una forma geometrica precisa: una ruota di bicicletta. I 12 raggi rendono il logo un manifesto del territorio, con un riferimento ai 12 comuni attraversati dall'itinerario."
+      text="Il logo elegge a protagonista il Faro di Punta Palascìa, punto più a est d’Italia e simbolo di accoglienza. Il faro si staglia davanti a un sole nascente che rivela una forma geometrica precisa: una ruota di bicicletta. I 12 raggi rendono il logo un manifesto del territorio, con un riferimento ai 12 comuni attraversati dall'itinerario."
       subtitle="Il team Vivilitalia"
     ></BannerCitation>
 
@@ -55,8 +55,8 @@
 const percorsi = [
   {
     sopratitolo: 'IL SALENTO orientale',
-    titolo: 'La magia di Finibus Terrae',
-    testo: 'Partendo da Lecce si pedala immergendosi nel verde dell’Oasi delle Cesine e arrivare a Otranto per scoprire la magia della cava di bauxite sul mare e la suggestione del faro più a Est d’Italia. Si attraversa l’intero parco regionale, uno scrigno di tesori naturali, fino alla terra estrema di Finibus Terrae per far ritorno a Lecce dai borghi antichi dell’entroterra, fra muretti a secco, patriarchi verdi e la terra di dolmen e menhir',
+    titolo: 'La magia di <i>Finibus Terrae<i>',
+    testo: 'Partendo da Lecce si pedala immergendosi nel verde dell’Oasi delle Cesine e arrivare a Otranto per scoprire la magia della cava di bauxite sul mare e la suggestione del faro più a Est d’Italia. Si attraversa l’intero parco regionale, uno scrigno di tesori naturali, fino alla terra estrema di <i>Finibus Terrae<i> per far ritorno a Lecce dai borghi antichi dell’entroterra, fra muretti a secco, patriarchi verdi e la terra di dolmen e menhir',
     immagini: ['/img/galleria/ladriatica/06_CASTRO_phRobertoGuido.jpg'],
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',
@@ -64,28 +64,38 @@ const percorsi = [
     bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: '/about', icona: 'lucide:bike' }],
   },
   {
+    sopratitolo: 'IL SALENTO orientale',
+    titolo: 'Un percorso unico in 4 tappe o 6 anelli giornalieri',
+    testo: 'Ladriatica è un percorso ad anello alla portata di tutti che si sviluppa in poco più di 230 km, da suddividere in quattro tappe, per la maggior parte su strade secondarie e rurali. In alternativa 6 percorsi ad anello consentono di fare delle escursioni giornaliere.',
+    immagini: ['/img/galleria/ladriatica/20_CASTELLOOTRANTO_2_phRobertoGuido.jpg'],
+    logo: '/logo/logo-ladriatica-simple.svg',
+    coloreSfondo: '#007FC3',
+    altLayout: true,
+    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: '/about', icona: 'lucide:bike' }],
+  },
+  {
     sopratitolo: 'lungo il percorso',
     titolo: 'Barocco, mare e natura',
-    testo: 'È un itinerario ricco di chicche, lontani dal clamore del turismo balneare: dal famoso barocco di Lecce fino alla suggestione del mosaico di Otranto e ai tesori bizantini nelle chiese rupestri; dalla piscina naturale nella roccia fino ai muretti a secco e ai borghi incantati.',
+    testo: 'È un itinerario ricco di chicche, lontani dal clamore del turismo balneare: dal famoso Barocco di Lecce fino alla suggestione del mosaico di Otranto e ai tesori bizantini nelle chiese rupestri; dalla piscina naturale nella roccia fino ai muretti a secco e ai borghi incantati.',
     immagini: [
       '/img/galleria/ladriatica/11_ALESSANO_PALAZZOSANGIOVANNI_phRobertoGuido.jpg',
       '/img/galleria/ladriatica/07_CIOLO_phRobertoGuido.jpg',
     ],
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',
-    altLayout: true,
+    altLayout: false,
     bottoni: [{ testoBottone: 'Scopri i punti di interesse', linkBottone: '/about', icona: 'fluent:image-search-24-filled' }],
   },
-  {
+  /* {
     sopratitolo: 'BAROCCO E TRADIZIONE',
     titolo: 'Fra borghi, mare e campagna',
     testo: "Si parte da Lecce e si arriva al mare seguendo un percorso ciclabile su strade a bassa intensità di traffico che attraversano il Salento ionico. Un viaggio in sei tappe tra spiagge selvagge e fitte pinete, centri storici, piccole frazioni e la rete dei parchi naturali che si affacciano sulla costa ionica. Dal rosa dei fenicotteri al verde intenso dei pini marittimi, dal giallo delle ginestre in fiore all'azzurro del mare: preparati a pedalare tra i colori!",
     immagini: ['/img/galleria/ladriatica/17_LEDUESORELLE_2_phRobertoGuido.jpg'],
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',
-    altLayout: false,
+    altLayout: true,
     bottoni: [{ testoBottone: 'Scopri le location', linkBottone: '/about', icona: 'ph:map-pin-fill' }],
-  },
+  }, */
 ]
 </script>
 
