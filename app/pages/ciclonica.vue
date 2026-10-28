@@ -10,9 +10,6 @@
       button-variant="btn-secondary"
     ></SinglePercorsoHero>
     
-    <BannerPassport></BannerPassport>
-
-    <BannerGuidaCiclonica></BannerGuidaCiclonica>
 
     <!-- md e superiori: impilati -->
     <div class="d-none d-md-flex py-5 flex-column gap-5">
@@ -47,6 +44,10 @@
       text="Credo molto nelle reti e nella cooperazione tra enti e componenti positive della comunità. Credo nella necessità di tenere insieme tutte le terre dei parchi salentini, luoghi che rappresentano radici, prospettive e visioni condivise del Salento. <br> Ho immaginato Ciclonica come un asse di collegamento tra i comuni dell'area ionico salentina, capace di unire territori, persone e futuro. Ho ideato il nome e il concept del logo, facendo incontrare la bicicletta al tamburello della pizzica salentina, ovvero il movimento al ritmo ancestrale di questa terra, il suono della natura al battito del cuore. <br> “Sono fiero di aver contribuito fin dall'inizio alla fondazione della Green Community Jonico-Adriatica”"
       subtitle="Agostino Indennitate"
     ></BannerCitation>
+
+    <BannerPassport></BannerPassport>
+
+    <BannerGuidaCiclonica></BannerGuidaCiclonica>
 
     <MainVideo></MainVideo>
 

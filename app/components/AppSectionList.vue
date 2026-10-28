@@ -10,6 +10,8 @@ const section = {
         { testo: 'Scopri le curiosità lungo il tracciato' },
         { testo: 'scarica le tracce GPX da utilizzare in APP' }
     ],
+    bottoneTesto: 'Scopri di più',
+    bottoneLink: '/',
 }
 </script>
 
@@ -25,8 +27,8 @@ const section = {
                 </div>
 
                 <div class="col-12 col-md-7" data-aos="fade-right" data-aos-delay="150">
-                    <h4 class="text-orange eyebrow mb-2">{{ section.sopratitolo }}</h4>
-                    <h2 class="fw-bold mb-4">{{ section.titolo }}</h2>
+                    <h4 class="text-celeste eyebrow mb-2">{{ section.sopratitolo }}</h4>
+                    <h2 class="text-primary mb-4">{{ section.titolo }}</h2>
 
                     <div class="d-flex flex-column gap-3">
                         <div v-for="(voce, index) in section.lista" :key="index"
@@ -42,6 +44,10 @@ const section = {
                             <p class="mb-0 body-large">{{ voce.testo }}</p>
                         </div>
                     </div>
+
+                    <NuxtLink :to="section.bottoneLink" target="blank" class="btn btn-primary btn-lg mt-4">
+                        <Icon name="lucide:bike" class="me-2" />{{ section.bottoneTesto }}
+                    </NuxtLink>
                 </div>
 
             </div>

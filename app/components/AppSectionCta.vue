@@ -16,11 +16,11 @@ const section = {
             <div class="row g-4 g-lg-5 align-items-center">
 
                 <div class="col-12 col-md-7" data-aos="fade-left">
-                    <h4 class="text-orange eyebrow mb-2">{{ section.sopratitolo }}</h4>
-                    <h2 class="fw-bold mb-3">{{ section.titolo }}</h2>
+                    <h4 class="text-celeste eyebrow mb-2">{{ section.sopratitolo }}</h4>
+                    <h2 class="text-primary mb-3">{{ section.titolo }}</h2>
                     <p class="body-large mb-4">{{ section.testo }}</p>
-                    <NuxtLink :to="section.bottoneLink" class="btn btn-primary btn-lg">
-                        {{ section.bottoneTesto }}
+                    <NuxtLink :to="section.bottoneLink" target="blank" class="btn btn-primary btn-lg">
+                        <Icon name="lucide:bike" class="me-2" />{{ section.bottoneTesto }}
                     </NuxtLink>
                 </div>
 

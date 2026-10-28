@@ -21,22 +21,20 @@
                 <h4 class="fw-bold mb-2 text-orange"> Progetto </h4>
                 <NuxtLink to="/ciclonica">Ciclonica</NuxtLink>
                 <NuxtLink to="/ladriatica">Ladriatica</NuxtLink>
-                <a href="#">Anello del Salento</a>
               </div>
             </div> <!-- Sezione 2 -->
             <div class="col-12 col-md-6 col-lg-3">
               <div class="d-flex flex-column align-items-start text-start gap-2">
                 <h4 class="fw-bold mb-2 text-orange"> Risorse </h4>
-                <a href="#">La guida</a>
+                <a href="https://www.ediciclo.it/libri/dettaglio/ciclonica-ciclovia-del-salento-ionico/" target="blank">La guida ciclonica</a>
                 <NuxtLink to="/app">App</NuxtLink>
-                <a href="#">FAQ</a>
               </div>
             </div> <!-- Sezione 3 -->
             <div class="col-12 col-md-6 col-lg-3">
               <div class="d-flex flex-column align-items-start text-start gap-2">
                 <h4 class="fw-bold mb-2 text-orange"> Su di noi </h4>
                 <NuxtLink to="/chi-siamo">Chi siamo</NuxtLink>
-                <a href="#">Diventa parthner</a>
+                <a href="https://cicloturismo.puglia.it/it/diventa-partner/" target="blank">Diventa parthner</a>
                 <NuxtLink to="/area-stampa">Area stampa</NuxtLink>
               </div>
             </div> <!-- Sezione 4 -->

@@ -25,7 +25,7 @@ const slides = [
     title: 'Salento, naturalmente ciclabile ',
     text: 'Prevalentemente pianeggiante o con dislivelli accessibili, il Salento è la meta ideale per il cicloturista. Grazie a una rete infinita di stradine a basso impatto veicolare, per più dell’80% asfaltate, il territorio è totalmente ciclabile. ',
     button: 'I percorsi principali',
-    buttonLink: '#destinationsList',
+    buttonLink: '/percorsi',
     buttonIcon: 'lucide:bike',
     media: { type: 'image', src: '/img/foto-bike-hero.jpeg', alt: 'Ciclista in sella lungo un percorso del Salento' }
   }

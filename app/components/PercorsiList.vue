@@ -14,7 +14,7 @@ const destinations = [
             testo: 'Dalle spiagge dorate ai borghi del Barocco, dalle antiche masserie alla natura selvaggia dei parchi naturali: 305 km di pura bellezza tra i profumi della macchia mediterranea.',
             immagine: '/maps/santento-map_ciclonica.svg',
             bottoni: [
-                { testo: 'Scopri il percorso completo', classe: 'btn-primary', link: '/ciclonica' },
+                { testo: 'Scopri il percorso completo', classe: 'btn-primary', link: 'https://ebike.bikesquare.eu/salento/percorso/ciclonica-la-ciclovia-del-salento-ionico' },
             ],
         },
     },
@@ -29,7 +29,7 @@ const destinations = [
             testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a <i>Finibus Terrae</i>.',
             immagine: '/maps/santento-map_ladriatica.svg',
             bottoni: [
-                { testo: 'Scopri il percorso completo', classe: 'btn-primary', link: '/ladriatica' },
+                { testo: 'Scopri il percorso completo', classe: 'btn-primary', link: 'https://ebike.bikesquare.eu/salento/percorso/ladriatica-ciclovia-del-salento-orientale' },
             ],
         },
     },

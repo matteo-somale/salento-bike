@@ -1,16 +1,16 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 
 const mainVideo = {
     subtitle: 'da chi l\'ha provato',
     title: 'I video dal Salento in&nbsp;bici',
     text: 'Su due ruote tra paesaggi mozzafiato, antiche masserie e borghi del Barocco. Guarda i video di chi già ha fatto questa esperienza!',
     youtubeLinks: [
-        'https://www.youtube.com/embed/yRV_RfbSl8k?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K',
-        'https://www.youtube.com/embed/VWKEaJizJKc?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K',
-        'https://www.youtube.com/embed/QruvlHL8b7Q?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K',
-        'https://www.youtube.com/embed/IEHfoeXHQ60?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K',
-        'https://www.youtube.com/embed/FbQ9DHrIP-k?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K'
+        'https://www.youtube.com/embed/yRV_RfbSl8k?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K&enablejsapi=1',
+        'https://www.youtube.com/embed/VWKEaJizJKc?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K&enablejsapi=1',
+        'https://www.youtube.com/embed/QruvlHL8b7Q?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K&enablejsapi=1',
+        'https://www.youtube.com/embed/IEHfoeXHQ60?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K&enablejsapi=1',
+        'https://www.youtube.com/embed/FbQ9DHrIP-k?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K&enablejsapi=1'
     ],
     buttonLink: '/percorso'
 }
@@ -18,6 +18,27 @@ const mainVideo = {
 const containerRef = ref(null)
 const swiper = useSwiper(containerRef, {
     loop: true,
+})
+
+function stopAllVideos() {
+    const iframes = containerRef.value?.querySelectorAll('iframe') ?? []
+    iframes.forEach((iframe) => {
+        // eslint-disable-next-line no-self-assign
+        iframe.src = iframe.src
+    })
+}
+
+onMounted(() => {
+    containerRef.value?.addEventListener('swiperslidechange', stopAllVideos)
+
+    watch(swiper.instance, (instance) => {
+        instance?.on('slideChange', stopAllVideos)
+    }, { immediate: true })
+})
+
+onBeforeUnmount(() => {
+    containerRef.value?.removeEventListener('swiperslidechange', stopAllVideos)
+    swiper.instance.value?.off('slideChange', stopAllVideos)
 })
 </script>
 

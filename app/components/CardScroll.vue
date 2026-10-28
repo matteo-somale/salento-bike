@@ -40,7 +40,7 @@ const cards = {
             immagine: '/img/team/francesca-biffi.jpg',
             titoloH3: 'Francesca Biffi',
             titoloH5: 'ufficio stampa e comunicazione',
-            testo: 'Mi occupo di comunicazione su temi ambientali e di turismo sostenibile da molti anni. Amo profondamente il Salento che è diventato un po’ una seconda casa. Dare l’opportunità di scoprire questa terra dalla bicicletta è la missione più bella di Ciclonica.',
+            testo: 'Mi occupo di comunicazione su temi ambientali e di turismo sostenibile da molti anni. Amo profondamente il Salento che è diventato un po’ una seconda casa. Dare l’opportunità di scoprire questa terra dalla bicicletta è la missione più bella delle Ciclovie del Salento',
         },
         {
             immagine: '/img/team/michele-tenore.jpg',
@@ -63,8 +63,8 @@ const cards = {
         {
             immagine: '/img/team/bartolo-conte.jpg',
             titoloH3: 'Bartolo Conte',
-            titoloH5: 'Coordinatore progetto Ciclonica Vivilitalia',
-            testo: 'Per Vivilitalia ho coordinato i corsi ASTA – Alta Scuola di Turismo Ambientale dedicata ai piccoli imprenditori turistici della Comunità della Ciclonica. Mi piace quando tutto gira alla perfezione, come la ruota di una bicicletta.',
+            titoloH5: 'Coordinatore Progetti Vivilitalia',
+            testo: 'Per Vivilitalia ho coordinato i corsi ASTA – Alta Scuola di Turismo Ambientale dedicata ai piccoli imprenditori turistici delle comunità della Ciclonica e de Ladriatica. Mi piace quando tutto gira alla perfezione, come la ruota di una bicicletta.',
         },
         {
             immagine: '/img/team/aurora-mastore.jpg',

@@ -4,7 +4,7 @@ const hero = {
   title: 'Una rete bike-friendly',
   text: 'La rete di Salento.Bike può contare su una rete di strutture bike-friendly, singole realtà imprenditoriali connesse da un percorso ciclabile che dà forza al tessuto produttivo del territorio. Sono realtà attente all\'ambiente e alla buona enogastronomia a km zero, che offrono servizi dedicati alle biciclette aiutano il turista a scoprire le tradizioni locali e la bellezza custodita nei luoghi più nascosti.',
   buttons: [
-    { text: 'Come aderire', link: 'https://crm.bikesquare.eu/partners/start/ciclonica' },
+    { text: 'Come aderire', link: 'https://cicloturismo.puglia.it/it/diventa-partner/' },
   ]
 }
 
@@ -19,12 +19,12 @@ const network = {
     {
       title: 'La carta dei valori',
       text: 'Abbiamo scritto insieme una Carta dei Valori, una serie di impegni condivisi per strutture bike-friendly che vogliono combinare la tradizionale ospitalità del Salento con il rispetto dell’ambiente e le esigenze dei ciclisti. Attenzione al territorio, prodotti a km zero, servizi dedicati alle biciclette e scoperta delle tradizioni locali.',
-      button: { text: 'Leggi la carta dei valori', link: 'https://cloud.mobilitysquare.eu/s/3Dan4A8QtyKdnGH?dir=/&editing=false&openfile=true' }
+      button: { text: 'Leggi la carta dei valori', link: 'https://cloud.mobilitysquare.eu/s/WwL9A3F4zxGDpkC' }
     },
     {
       title: 'Come si aderisce',
       text: 'Per aderire alla Carta dei Valori basta condividere il nostro impegno per un’accoglienza cicloturistica sostenibile. Le strutture interessate possono contattarci, passando dal nostro partner tecnico BikeSquare, sottoscrivere la carta ed entrare nella comunità offrendo servizi di qualità dedicati ai viaggiatori in bici.',
-      button: { text: 'Contattaci', link: '/contatti' }
+      button: { text: 'Contattaci', link: 'https://cicloturismo.puglia.it/it/diventa-partner/' }
     }
   ]
 }
@@ -44,9 +44,9 @@ const hexToRgba = (hex, opacity) => {
   <section class="py-5">
     <div class="container">
 
-      <h2 class="text-center text-primary mb-5">
+      <h1 class="text-center text-primary mb-5">
         In cosa crediamo
-      </h2>
+      </h1>
 
       <div id="bikeFriendlyNetwork" class="background-light-gray rounded-4 p-4 p-lg-5 mt-5" data-aos="fade-up">
         <div class="row g-4 align-items-stretch">
@@ -74,7 +74,7 @@ const hexToRgba = (hex, opacity) => {
                 {{ column.text }}
               </p>
 
-              <NuxtLink :to="column.button.link" class="btn btn-primary btn-lg column-cta-btn">
+              <NuxtLink :to="column.button.link" target="blank" class="btn btn-primary btn-lg column-cta-btn">
                 {{ column.button.text }}
               </NuxtLink>
             </div>
@@ -108,7 +108,7 @@ const hexToRgba = (hex, opacity) => {
 
           <div class="d-flex flex-row flex-wrap justify-content-center gap-3">
             <NuxtLink v-for="button in hero.buttons" :key="button.link" :to="button.link"
-              class="btn btn-orange btn-lg">
+              class="btn btn-orange btn-lg" target="blank">
               {{ button.text }}
             </NuxtLink>
           </div>
