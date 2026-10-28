@@ -56,14 +56,20 @@
           <!-- Bottone -->
           <div class="header-action text-center">
 
-            <NuxtLink
-              to="/contact"
-              class="btn btn-orange btn-lg fw-bold d-inline-flex align-items-center gap-2"
-              @click="closeMenu"
-            >
-              <Icon name="bi:chat-fill" />
-              ENG
-            </NuxtLink>
+            <div class="header-action-inner d-inline-block position-relative">
+
+              <NuxtLink
+                to="/contact"
+                class="btn btn-gray btn-lg fw-bold d-inline-flex align-items-center gap-2"
+                @click="closeMenu"
+              >
+                <Icon name="bi:chat-fill" />
+                ENG
+              </NuxtLink>
+
+              <span class="coming-soon body-small">coming soon</span>
+
+            </div>
 
           </div>
 
@@ -103,6 +109,15 @@ function closeMenu() {
   }
 
   .nav-item {
+    white-space: nowrap;
+  }
+
+  .coming-soon {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-accent-orange);
     white-space: nowrap;
   }
 
