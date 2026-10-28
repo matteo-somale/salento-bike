@@ -61,10 +61,9 @@
 
 <script setup>
 const socials = [
-  { name: 'YouTube', icon: 'fa6-brands:youtube', url: '#' },
-  { name: 'Facebook', icon: 'fa6-brands:facebook', url: '#' },
-  { name: 'Instagram', icon: 'fa6-brands:instagram', url: '#' },
-  { name: 'LinkedIn', icon: 'fa6-brands:linkedin', url: '#' },
+  { name: 'Facebook', icon: 'fa6-brands:facebook', url: '#' },// a ciclonica
+  { name: 'Instagram', icon: 'fa6-brands:instagram', url: '#' },//a ciclonica
+  { name: 'LinkedIn', icon: 'fa6-brands:linkedin', url: '#' },//a vivilitalia
 ]
 </script>
 

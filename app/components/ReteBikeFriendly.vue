@@ -1,6 +1,6 @@
 <script setup>
 const hero = {
-  image: '/img/destinazioni/hero-salento-segnaposto.jpg',
+  image: '/img/destinazioni/foto-chi-siamo-2.jpg',
   title: 'Una rete bike-friendly',
   text: 'La rete di Salento.Bike può contare su una rete di strutture bike-friendly, singole realtà imprenditoriali connesse da un percorso ciclabile che dà forza al tessuto produttivo del territorio. Sono realtà attente all\'ambiente e alla buona enogastronomia a km zero, che offrono servizi dedicati alle biciclette aiutano il turista a scoprire le tradizioni locali e la bellezza custodita nei luoghi più nascosti.',
   buttons: [

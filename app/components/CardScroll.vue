@@ -40,13 +40,13 @@ const cards = {
             immagine: '/img/team/francesca-biffi.jpg',
             titoloH3: 'Francesca Biffi',
             titoloH5: 'ufficio stampa e comunicazione',
-            testo: 'Mi occupo di comunicazione su temi ambientali e di turismo sostenibile da molti anni. Amo profondamente il Salento che è diventato un po’ una seconda casa. Dare l’opportunità di scoprire questa terra dalla bicicletta è la missione più bella delle Ciclovie del Salento',
+            testo: 'Mi occupo di comunicazione su temi ambientali e di turismo sostenibile da molti anni. Amo profondamente il Salento che è diventato un po’ una seconda casa. Dare l’opportunità di scoprire questa terra dalla bicicletta è la missione più bella delle Ciclovie del Salento.',
         },
         {
             immagine: '/img/team/michele-tenore.jpg',
             titoloH3: 'Michele Tenore',
             titoloH5: 'Presidente Parco Costa Otranto-S.M. di Leuca e Bosco di&nbsp;Tricase',
-            testo: 'Agronomo di professione e profondamente innamorato della natura mi onoro di rappresentare il Parco Naturale Regionale “Costa Otranto-S.M. di Leuca e Bosco di Tricase”. Promotore di una fruizione lenta e rispettosa dell’ambiente ho promosso, assieme ai 12 sindaci del Parco, il percorso cicloturistico “Ladriatica”',
+            testo: 'Agronomo di professione e profondamente innamorato della natura mi onoro di rappresentare il Parco Naturale Regionale “Costa Otranto-S.M. di Leuca e Bosco di Tricase”. Promotore di una fruizione lenta e rispettosa dell’ambiente ho promosso, assieme ai 12 sindaci del Parco, il percorso cicloturistico “Ladriatica”.',
         },
         {
             immagine: '/img/team/team-bikesquare.jpg',

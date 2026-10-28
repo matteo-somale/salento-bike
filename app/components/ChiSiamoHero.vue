@@ -1,9 +1,9 @@
 <script setup>
 const hero = {
-  image: '/img/destinazioni/hero-salento-segnaposto.jpg',
+  image: '/img/galleria/ciclonica/07_PARCOPIZZO_2_phROBERTOGUIDO.jpg',
   title: 'Un gruppo appassionato',
   text: 'Siamo un gruppo di persone appassionate di Salento, chi per nascita e chi per adozione, e siamo convinte che la bicicletta sia il mezzo migliore per scoprire questa terra. Siamo amministratori locali, professionisti, piccoli imprenditori o semplici cittadini riuniti intorno all\'idea di trasformare il Salento in una meta di rilevanza nazionale e internazionale per il popolo dei&nbsp;cicloturisti.',
-  subText: 'Siamo una piccola comunità nella grande Green Community! '
+  subText: ''
 }
 
 const overlayColor = '#1D2839'
