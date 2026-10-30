@@ -22,8 +22,9 @@
               </p>
 
               <NuxtLink
-                to="/about"
+                to="https://docs.google.com/document/d/1JBYNFGzxzIeXUpVWTjLNcuH_nqNLRj3Nf2Jf6C4DCao/edit?tab=t.0#heading=h.qogrsq6xamm2"
                 class="btn btn-orange btn-lg d-inline-flex align-items-center gap-2"
+                target="blank"
               >
                 <Icon name="material-symbols:approval" />
                 Scopri dove timbrare
