@@ -288,6 +288,14 @@ const immaginiFiltrate = computed(() =>
         : immagini.filter((immagine) => immagine.destinazione === filtroAttivo.value)
 )
 
+// le "alte" sono foto orizzontali con altezza fissa 520px e object-fit: cover,
+// quindi servono ~925px di larghezza indipendentemente dalla colonna
+function sizesGalleria(immagine, indice) {
+    if (immagine.alta) return '925px'
+    if (immagine.larga || indice === 0) return 'xs:100vw sm:540px md:720px lg:880px'
+    return 'xs:100vw sm:360px lg:440px'
+}
+
 const immagineAttivaMobile = ref(null)
 
 const toggleImmagineMobile = (url) => {
@@ -395,7 +403,8 @@ watch(immaginiFiltrate, async () => {
                     <div class="gallery-item-inner position-relative overflow-hidden rounded-4"
                         :class="{ 'is-active': immagineAttivaMobile === immagine.url }"
                         @click="onClickImmagine(immagine)">
-                        <img :src="immagine.url" :alt="immagine.alt" class="w-100 gallery-image">
+                        <NuxtImg :src="immagine.url" :alt="immagine.alt" class="w-100 gallery-image"
+                            format="webp" :sizes="sizesGalleria(immagine, indice)" />
                         <div v-if="immagine.didascalia" class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end p-3"
                             :style="{ backgroundColor: immagine.colore + 'B3' }">
                             <img v-if="immagine.logo" :src="immagine.logo" :alt="`Logo ${immagine.destinazione}`"

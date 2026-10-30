@@ -8,8 +8,8 @@
               <img src="/logo/logo-vivilitalia-bianco.svg" style="height: 4em;" alt="Logo Vivilitalia" class="my-1"></div>
             <p class="mb-0"> in collaborazione con </p>
             <div class="d-flex flex-column flex-sm-row flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3">
-              <img src="/logo/green-community-logo-white.png" alt="Logo Ciclonica" class="footer-logo">
-              <img src="/logo/costa-otranto-logo-white.png" alt="Logo L'Adriatica" class="footer-logo">
+              <NuxtImg src="/logo/green-community-logo-white.png" alt="Logo Ciclonica" class="footer-logo" format="webp" densities="x1" loading="lazy" />
+              <NuxtImg src="/logo/costa-otranto-logo-white.png" alt="Logo L'Adriatica" class="footer-logo" format="webp" densities="x1" loading="lazy" />
             </div>
             <p class="small text-white mb-0 text-center d-lg-none"> © 2026 Salento.Bike — Un progetto di Vivilitalia</p>
           </div>

@@ -9,6 +9,8 @@ const hero = {
 const overlayColor = '#1D2839'
 const overlayOpacity = 0.9
 
+const img = useImage()
+
 const hexToRgba = (hex, opacity) => {
   const value = hex.replace('#', '')
 
@@ -30,7 +32,7 @@ const hexToRgba = (hex, opacity) => {
               ${hexToRgba(overlayColor, overlayOpacity)},
               ${hexToRgba(overlayColor, overlayOpacity)}
             ),
-            url(${hero.image})
+            url(${img(hero.image, { width: 1600, format: 'webp' })})
           `,
         backgroundSize: 'cover',
         backgroundPosition: 'center'

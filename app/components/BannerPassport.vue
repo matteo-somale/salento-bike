@@ -34,11 +34,14 @@
 
           <!-- Immagine -->
           <div class="col-12 col-lg-5 order-2 order-lg-1 d-flex align-items-end justify-content-center">
-            <img
+            <NuxtImg
               src="/img/Mockup-Passport.png"
               alt=""
               class="img-fluid pt-4 banner-passport-img"
-            >
+              format="webp"
+              densities="x1"
+              loading="lazy"
+            />
           </div>
 
         </div>

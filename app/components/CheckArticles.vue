@@ -28,7 +28,8 @@ const ultimeNews = getNewsList().slice(0, 3)
                     :data-aos-delay="index * 100"
                 >
                     <NuxtLink :to="`/news/${item.slug}`" class="d-block text-decoration-none">
-                        <img :src="item.immagine" class="rounded-sm w-100 mb-3 article-cover" :alt="item.titolo">
+                        <NuxtImg :src="item.immagine" class="rounded-sm w-100 mb-3 article-cover" :alt="item.titolo"
+                            format="webp" sizes="xs:100vw sm:540px md:440px" loading="lazy" />
                         <p class="eyebrow text-orange">{{ item.dataFormattata }}</p>
                         <h3 class="fw-bold text-primary title-clamp-3">{{ item.titolo }}</h3>
                     </NuxtLink>

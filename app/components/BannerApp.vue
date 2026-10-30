@@ -19,7 +19,7 @@
                     <div class="ratio ratio-1x1">
                         <div
                             class=" d-flex align-items-center justify-content-center overflow-hidden">
-                            <img src="/img/app/iphone-15-mockup-bikesquare.png" alt="">
+                            <NuxtImg src="/img/app/iphone-15-mockup-bikesquare.png" alt="" format="webp" densities="x1" loading="lazy" />
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,8 @@
 
                     <p class="body-large mb-0">Nel cuore del Sud, tra mare, borghi e natura</p>
 
-                    <img src="/img/guida-ciclonica-mockup.png" alt="Ciclonica" class="banner-image d-lg-none">
+                    <NuxtImg src="/img/guida-ciclonica-mockup.png" alt="Ciclonica" class="banner-image d-lg-none"
+                        format="webp" sizes="xs:100vw sm:450px" loading="lazy" />
 
                     <NuxtLink to="https://www.ediciclo.it/libri/dettaglio/ciclonica-ciclovia-del-salento-ionico/" target="blank" class="btn btn-primary btn-lg btn-secondary d-inline-flex align-items-center gap-2">
                         <Icon name="bi:bag-fill" />
@@ -19,7 +20,8 @@
                 </div>
 
                 <div class="col-lg-6 d-none d-lg-flex order-1 justify-content-center">
-                    <img src="/img/guida-ciclonica-mockup.png" alt="Ciclonica" class="banner-image">
+                    <NuxtImg src="/img/guida-ciclonica-mockup.png" alt="Ciclonica" class="banner-image"
+                        format="webp" sizes="xs:100vw sm:450px" loading="lazy" />
                 </div>
             </div>
         </div>

@@ -18,7 +18,8 @@ defineProps({
     >
       <div class="row p-4">
         <div class="col-12 col-md-5 position-relative">
-          <img :src="immagine" class="w-100 rounded news-article-image" alt="">
+          <NuxtImg :src="immagine" class="w-100 rounded news-article-image" alt=""
+            format="webp" sizes="xs:100vw sm:540px md:400px" loading="lazy" />
           <div v-if="destinazioni.length" class="position-absolute top-0 start-1  d-flex flex-row flex-wrap gap-1">
             <span
               v-for="d in destinazioni"

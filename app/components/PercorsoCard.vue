@@ -17,7 +17,8 @@ defineProps({
     >
         <div class="row p-4">
             <div class="col-12 col-md-6 position-relative percorso-card-image-col">
-                <img :src="immagine" class="w-100 rounded percorso-card-image" alt="">
+                <NuxtImg :src="immagine" class="w-100 rounded percorso-card-image" alt=""
+                    format="webp" sizes="xs:100vw sm:540px md:480px" loading="lazy" />
                 <span class="position-absolute top-0 start-1 m-3 badge rounded-pill"
                     :style="{ backgroundColor: colore, color: 'var(--color-text-white)' }">
                     {{ tag }}

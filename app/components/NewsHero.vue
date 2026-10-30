@@ -4,6 +4,8 @@ defineProps({
   titolo: { type: String, required: true },
   colore: { type: String, required: true },
 })
+
+const img = useImage()
 </script>
 
 <template>
@@ -11,7 +13,7 @@ defineProps({
     <div class="container news-hero-inner">
       <div
         class="rounded-4 overflow-hidden news-hero-image"
-        :style="{ backgroundImage: `url(${immagine})` }"
+        :style="{ backgroundImage: `url(${img(immagine, { width: 1600, format: 'webp' })})` }"
       />
       <h2
         class="fw-bold mt-4 mb-0"

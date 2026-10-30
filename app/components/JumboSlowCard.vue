@@ -6,7 +6,8 @@
                     <!-- Logo -->
                     <div class="col-12 col-md-5 px-1">
                         <div class="logo-wrap w-100 d-flex align-items-center justify-content-center">
-                            <img src="/logo/SlowMao-logo.png" alt="Logo SlowMap" class="img-fluid p-2">
+                            <NuxtImg src="/logo/SlowMao-logo.png" alt="Logo SlowMap" class="img-fluid p-2"
+                                format="webp" densities="x1" loading="lazy" />
                         </div>
                     </div>
                     <!-- Content -->

@@ -21,6 +21,8 @@ const {
 
 const overlayOpacity = 0.6
 
+const img = useImage()
+
 const hexToRgba = (hex, opacity) => {
   const value = hex.replace('#', '')
 
@@ -41,7 +43,7 @@ const hexToRgba = (hex, opacity) => {
           ${hexToRgba(overlayColor, overlayOpacity)},
           ${hexToRgba(overlayColor, overlayOpacity)}
         ),
-        url(${image})
+        url(${img(image, { width: 1920, format: 'webp' })})
       `
     }"
   >

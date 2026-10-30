@@ -64,14 +64,17 @@ onUnmounted(() => {
           >
             <div class="percorso-image-wrapper position-relative rounded-4 overflow-hidden">
 
-              <img
+              <NuxtImg
                 v-for="(img, index) in immagini"
                 :key="img"
                 :src="img"
                 alt=""
                 class="percorso-carousel-image w-100 h-100 object-fit-cover"
                 :class="{ 'is-active': index === slideAttivo }"
-              >
+                format="webp"
+                sizes="xs:100vw sm:540px md:720px lg:900px"
+                loading="lazy"
+              />
 
               <!-- Overlay sfumato -->
               <div class="image-overlay"></div>

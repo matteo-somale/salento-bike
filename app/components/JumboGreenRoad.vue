@@ -7,7 +7,8 @@
                     <div class="col-12 col-md-5 px-0">
                         <div class="w-100 d-flex align-items-center justify-content-center"
                             style="aspect-ratio: 16 / 9;">
-                            <img src="/logo/LOGOGREENROADAWARD.png" alt="Green Road Award" class="img-fluid p-0 p-md-2" style="max-height: 200px; object-fit: contain;">
+                            <NuxtImg src="/logo/LOGOGREENROADAWARD.png" alt="Green Road Award" class="img-fluid p-0 p-md-2" style="max-height: 200px; object-fit: contain;"
+                                format="webp" width="600" densities="x1" loading="lazy" />
                         </div>
                     </div>
                     <!-- Content -->

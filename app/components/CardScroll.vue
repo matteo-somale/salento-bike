@@ -134,7 +134,8 @@ onBeforeUnmount(() => {
                         <div class="card-item rounded-md overflow-hidden p-4 "
                             :ref="(el) => setCardItemRef(el, index)"
                             :style="{ backgroundColor: cards.backgroundColor }">
-                            <img :src="card.immagine" alt="" class="card-image w-100 rounded-md mb-3">
+                            <NuxtImg :src="card.immagine" alt="" class="card-image w-100 rounded-md mb-3"
+                                format="webp" sizes="400px" />
                             <h3 class="text-center text-primary mt-4" v-html="card.titoloH3"></h3>
                             <p class="text-center eyebrow text-orange" v-html="card.titoloH5"></p>
                             <p class="text-primary d-none d-md-block body-regular" v-html="card.testo"></p>

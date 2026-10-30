@@ -26,7 +26,8 @@ const section = {
 
                 <div class="col-12 col-md-5" data-aos="fade-right" data-aos-delay="150">
                     <div class="rounded-4 position-relative app-visual" :style="{ backgroundColor: section.colore }">
-                        <img :src="section.immagine" class="rounded-4 app-visual-image" alt="">
+                        <NuxtImg :src="section.immagine" class="rounded-4 app-visual-image" alt=""
+                            format="webp" sizes="xs:100vw sm:540px md:550px" loading="lazy" />
                     </div>
                 </div>
 

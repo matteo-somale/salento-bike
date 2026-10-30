@@ -5,11 +5,14 @@
 
         <!-- Logo -->
         <div class="col-12 col-md-4 d-flex justify-content-center">
-          <img
+          <NuxtImg
             src="/logo/bike-link-sud.png"
             alt="Bike Link Sud"
             class="img-fluid banner-link-sud-logo"
-          >
+            format="webp"
+            densities="x1"
+            loading="lazy"
+          />
         </div>
 
         <!-- Contenuto -->

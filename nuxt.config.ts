@@ -12,5 +12,11 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
   ],
 
-  modules: ['@nuxt/icon', 'nuxt-swiper'],
+  modules: ['@nuxt/icon', 'nuxt-swiper', '@nuxt/image'],
+
+  image: {
+    quality: 80,
+    // breakpoint Bootstrap, così i prefissi in `sizes` coincidono con col-md/col-lg
+    screens: { xs: 320, sm: 576, md: 768, lg: 992, xl: 1200, xxl: 1400 },
+  },
 })

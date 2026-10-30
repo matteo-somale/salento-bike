@@ -13,6 +13,8 @@ const hero = {
 const overlayColor = '#255A52'
 const overlayOpacity = 0.9
 
+const img = useImage()
+
 const network = {
   image: '/img/galleria/ladriatica/11_ALESSANO_PALAZZOSANGIOVANNI_phRobertoGuido.jpg',
   columns: [
@@ -52,11 +54,14 @@ const hexToRgba = (hex, opacity) => {
         <div class="row g-4 align-items-stretch">
 
           <div class="col-12 col-lg-4 order-3 order-lg-1">
-            <img
+            <NuxtImg
               :src="network.image"
               alt=""
               class="network-image img-fluid rounded-4 w-100 h-100"
-            >
+              format="webp"
+              sizes="xs:100vw sm:540px md:900px"
+              loading="lazy"
+            />
           </div>
 
           <div
@@ -89,7 +94,7 @@ const hexToRgba = (hex, opacity) => {
               ${hexToRgba(overlayColor, overlayOpacity)},
               ${hexToRgba(overlayColor, overlayOpacity)}
             ),
-            url(${hero.image})
+            url(${img(hero.image, { width: 1600, format: 'webp' })})
           `,
         backgroundSize: 'cover',
         backgroundPosition: 'center'

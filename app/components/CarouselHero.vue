@@ -124,12 +124,14 @@ const swiper = useSwiper(containerRef, {
                     loop
                     playsinline
                   ></video>
-                  <img
+                  <NuxtImg
                     v-else
                     class="video-cover-media"
                     :src="slide.media.src"
                     :alt="slide.media.alt"
-                  >
+                    format="webp"
+                    sizes="xs:100vw sm:540px md:720px lg:660px"
+                  />
                 </div>
               </div>
             </div>
