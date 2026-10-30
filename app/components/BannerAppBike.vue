@@ -30,7 +30,7 @@
                         escursioni e i vostri viaggi.
                     </p>
 
-                    <NuxtLink to="https://bikesquare.web.app/home" target="blank" class="btn btn-primary btn-lg mb-4">
+                    <NuxtLink to="https://ciclovia-salento.web.app/home" target="blank" class="btn btn-primary btn-lg mb-4">
                         <Icon name="lucide:globe" />
                         WebApp
                     </NuxtLink>

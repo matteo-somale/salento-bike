@@ -38,7 +38,7 @@ const destinations = [
 const percorsi = [
     {
         immagine: '/img/percorsi/ciclonica/1-anello-ugento.png',
-        tag: 'Percoso 1',
+        tag: 'Percorso 1',
         destinazione: 'ciclonica',
         titolo: 'Passare da un entroterra autentico alla ciclabile sul mare',
         testo: 'Alla scoperta di borghi, bacini costieri e piccole marine',
@@ -47,7 +47,7 @@ const percorsi = [
     },
     {
         immagine: '/img/percorsi/ciclonica/2-anello-gallipoli.png',
-        tag: 'Percoso 2',
+        tag: 'Percorso 2',
         destinazione: 'ciclonica',
         titolo: 'Da Gallipoli alla scoperta di borghi e masserie della campagna salentina',
         testo: 'Avvicinarsi alla natura di Gallipoli e al Parco di Punta Pizzo',
@@ -56,7 +56,7 @@ const percorsi = [
     },
     {
         immagine: '/img/percorsi/ciclonica/3-anello-nardo.png',
-        tag: 'Percoso 3',
+        tag: 'Percorso 3',
         destinazione: 'ciclonica',
         titolo: 'Da Nardò verso Gallipoli tra muretti a secco e il mare',
         testo: 'Nella terra delle pajare e sulal costa dei tramonti',
@@ -65,7 +65,7 @@ const percorsi = [
     },
     {
         immagine: '/img/percorsi/ciclonica/4-anello-selvaggio.png',
-        tag: 'Percoso 4',
+        tag: 'Percorso 4',
         destinazione: 'ciclonica',
         titolo: 'Un mare di verde e di blu',
         testo: 'Tra Porto Cesareo e Nardò passando per Portoselvaggio e la Palude del Capitano',
@@ -74,7 +74,7 @@ const percorsi = [
     },
     {
         immagine: '/img/percorsi/ciclonica/5-anello-manduria.png',
-        tag: 'Percoso 5',
+        tag: 'Percorso 5',
         destinazione: 'ciclonica',
         titolo: 'Il tour intorno a Manduria alla scoperta delle risorgive e della Salina dei Monaci',
         testo: 'La terra del Primitivo tra spiagge selvagge e fenicotteri rosa',
@@ -84,7 +84,7 @@ const percorsi = [
     
     {
         immagine: '/img/percorsi/ladriatica/1-anello-finibus-terrae.png',
-        tag: 'Percoso 1',
+        tag: 'Percorso 1',
         destinazione: 'ladriatica',
         titolo: 'Pedalando sulle maestose scogliere di Finibus Terrae',
         testo: 'Escursione giornaliera ad anello fra i tesori di pietra del Capo di Leuca',
@@ -93,7 +93,7 @@ const percorsi = [
     },
     {
         immagine: '/img/percorsi/ladriatica/2-anello-leuca.png',
-        tag: 'Percoso 2',
+        tag: 'Percorso 2',
         destinazione: 'ladriatica',
         titolo: 'Da Alessano nel paesaggio rurale del Capo di Leuca',
         testo: 'Escursione giornaliera ad anello tra pajare e muretti a secco, a due passi dal mare.',
@@ -102,7 +102,7 @@ const percorsi = [
     },
     {
         immagine: '/img/percorsi/ladriatica/3-anello-parco.png',
-        tag: 'Percoso 3',
+        tag: 'Percorso 3',
         destinazione: 'ladriatica',
         titolo: 'Dal mare al gigante verde del Parco',
         testo: 'Escursione giornaliera ad anello da Andrano tra la costa e i borghi',
@@ -111,7 +111,7 @@ const percorsi = [
     },
     {
         immagine: '/img/percorsi/ladriatica/4-anello-marina.png',
-        tag: 'Percoso 4',
+        tag: 'Percorso 4',
         destinazione: 'ladriatica',
         titolo: 'Dalle terme alle grotte in splendide insenature',
         testo: 'Escursione giornaliera ad anello da Santa Cesarea tra storia e natura',
@@ -120,7 +120,7 @@ const percorsi = [
     },
     {
         immagine: '/img/percorsi/ladriatica/5-anello-selvaggio.png',
-        tag: 'Percoso 5',
+        tag: 'Percorso 5',
         destinazione: 'ladriatica',
         titolo: 'Sulla costa selvaggia e primitiva del Salento',
         testo: 'Escursione giornaliera ad anello da Porto Badisco alle radici',
@@ -129,7 +129,7 @@ const percorsi = [
     },
     {
         immagine: '/img/percorsi/ladriatica/6-anello-otranto.png',
-        tag: 'Percoso 6',
+        tag: 'Percorso 6',
         destinazione: 'ladriatica',
         titolo: 'Da Otranto sulla terra più a Est d’Italia',
         testo: 'Escursione giornaliera ad anello dal laghetto di bauxite ai dolmen e menhir',

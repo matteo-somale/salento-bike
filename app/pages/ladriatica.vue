@@ -66,7 +66,7 @@ const percorsi = [
   {
     sopratitolo: 'IL SALENTO orientale',
     titolo: 'Un percorso unico in 4 tappe o 6 anelli giornalieri',
-    testo: 'Ladriatica è un percorso ad anello alla portata di tutti che si sviluppa in poco più di 230 km, da suddividere in quattro tappe, per la maggior parte su strade secondarie e rurali. In alternativa 6 percorsi ad anello consentono di fare delle escursioni giornaliere.',
+    testo: 'Ladriatica è un percorso ad anello alla portata di tutti che si sviluppa in poco più di 240 km, da suddividere in quattro tappe, per la maggior parte su strade secondarie e rurali. In alternativa 6 percorsi ad anello consentono di fare delle escursioni giornaliere.',
     immagini: ['/img/galleria/ladriatica/20_CASTELLOOTRANTO_2_phRobertoGuido.jpg'],
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',

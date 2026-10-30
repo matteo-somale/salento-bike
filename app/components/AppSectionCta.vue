@@ -4,9 +4,9 @@ const section = {
     immagine: '/img/app/albero-secolare-segnaposto.png',
     sopratitolo: 'i punti di interesse',
     titolo: 'Un percorso unico',
-    testo: 'Si parte da Lecce e si arriva al mare seguendo un percorso ciclabile su strade a bassa intensità di traffico che attraversano il Salento ionico. Un viaggio in sei tappe tra spiagge selvagge e fitte pinete, centri storici, piccole frazioni e la rete dei parchi naturali che si affacciano sulla costa ionica.',
+    testo: 'Ciclonica e Ladriatica uniscono le piccole e le grande meraviglie del Salento seguendo percorsi ciclabili a bassa intensità di traffico che attraversano i parchi naturali della provincia di Lecce. Tra spiagge selvagge e fitte pinete, centri storici, borghi e piccole frazioni sono davvero tanti i punti di interesse lungo gli itinerari',
     bottoneTesto: 'Scopri di più',
-    bottoneLink: '/',
+    bottoneLink: 'https://ciclovia-salento.web.app/categoria-poi/0',
 }
 </script>
 

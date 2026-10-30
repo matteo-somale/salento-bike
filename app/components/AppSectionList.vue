@@ -11,7 +11,7 @@ const section = {
         { testo: 'scarica le tracce GPX da utilizzare in APP' }
     ],
     bottoneTesto: 'Scopri di più',
-    bottoneLink: '/',
+    bottoneLink: 'https://ciclovia-salento.web.app/mappa/around-me/0',
 }
 </script>
 

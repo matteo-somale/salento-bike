@@ -1,16 +1,16 @@
 <script setup>
 const contatti = [
     {
-        titolo: 'Contatti Ufficio Stampa',
-        sottotitolo: 'Freancesca Biffi',
-        telefono: '+39 0832 123456',
-        email: 'stampa@salento.bike',
+        titolo: 'Ufficio Stampa',
+        sottotitolo: 'Francesca Biffi',
+        telefono: '+39 333 2164430',
+        email: 'ufficiostampa@vivilitalia.it',
     },
     {
         titolo: 'Contatti',
         sottotitolo: 'Vivilitalia',
-        telefono: '+39 0832 654321',
-        email: 'comunicazione@salento.bike',
+        telefono: '06/86268324 - 06/4741245',
+        email: 'info@vivilitalia.it',
     },
 ]
 </script>

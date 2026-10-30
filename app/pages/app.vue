@@ -3,7 +3,7 @@
         <p class="eyebrow text-orange">SCARICA L’app Salento Bike</p>
         <h1 class="text-celeste">Il percorso nel tuo device</h1>
         <h3 class="mx-auto text-primary" style="max-width: 800px;">Puoi seguire il percorso dalla nostra app:
-            Ciclovia del Salento Ionico, disponibile su tutti gli store e&nbsp;online.</h3>
+            Salento.Bike, disponibile su tutti gli store e&nbsp;online.</h3>
     </div>
 
     <BannerAppBike></BannerAppBike>

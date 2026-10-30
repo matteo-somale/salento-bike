@@ -9,8 +9,8 @@ const cards = {
         {
             immagine: '/img/team/roberto-guido.jpg',
             titoloH3: 'Roberto Guido',
-            titoloH5: 'ideatore di ciclonica',
-            testo: 'Ho disegnato i percorsi delle due Ciclovie salentine cercando di far passare gli itinerari nei luoghi più segreti e preziosi, sfruttando le stradine meno trafficate e incrociando le aree protette della costa ionica. Ho scritto anche la guida alla Ciclonica e altre alla Puglia in bici.',
+            titoloH5: 'Ideatore di Ciclonica e Ladriatica',
+            testo: 'Ho disegnato i percorsi delle due Ciclovie salentine cercando di far passare gli itinerari nei luoghi più segreti e preziosi, sfruttando le stradine meno trafficate e incrociando le aree protette della costa ionica. Ho scritto la guida “Ciclonica” ma anche “Ciclovia dell’Acquedotto Pugliese”, “In bici sui mari del Salento” e “In bici sulla via dei Sassi e dei Trulli”, tutte edite da Ediciclo',
         },
         {
             immagine: '/img/team/sebastiano-venneri.jpg',
