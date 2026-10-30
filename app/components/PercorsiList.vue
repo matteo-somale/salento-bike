@@ -60,7 +60,7 @@ const percorsi = [
         destinazione: 'ciclonica',
         titolo: 'Da Nardò verso Gallipoli tra muretti a secco e il mare',
         testo: 'Nella terra delle pajare e sulal costa dei tramonti',
-        linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/porto-selvaggio-e-porto-cesareo-un-mare-di-verde-e-blu',
+        linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/da-nardo-verso-gallipoli-tra-muretti-a-secco-e-il-mare',
         linkGpx: '/gpx/ciclonica/3-anello-nardo.gpx',
     },
     {
@@ -69,8 +69,8 @@ const percorsi = [
         destinazione: 'ciclonica',
         titolo: 'Un mare di verde e di blu',
         testo: 'Tra Porto Cesareo e Nardò passando per Portoselvaggio e la Palude del Capitano',
-        linkPercorso: 'https://ebike.bikesquare.eu/ita/salento/percorso/porto-selvaggio-e-porto-cesareo-un-mare-di-verde-e-blu',
-        linkGpx: '/gpx/ciclonica/4-anello-selvaggioe.gpx',
+        linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/porto-selvaggio-e-porto-cesareo-un-mare-di-verde-e-blu',
+        linkGpx: '/gpx/ciclonica/4-anello-selvaggio.gpx',
     },
     {
         immagine: '/img/percorsi/ciclonica/5-anello-manduria.png',
@@ -78,7 +78,7 @@ const percorsi = [
         destinazione: 'ciclonica',
         titolo: 'Il tour intorno a Manduria alla scoperta delle risorgive e della Salina dei Monaci',
         testo: 'La terra del Primitivo tra spiagge selvagge e fenicotteri rosa',
-        linkPercorso: 'https://ebike.bikesquare.eu/ita/salento/percorso/il-tour-intorno-a-manduria-alla-scoperta-delle-risorgive-e-della-salina-dei-monaci',
+        linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/il-tour-intorno-a-manduria-alla-scoperta-delle-risorgive-e-della-salina-dei-monaci',
         linkGpx: '/gpx/ciclonica/5-anello-manduria.gpx',
     },
     
