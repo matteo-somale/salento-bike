@@ -61,9 +61,9 @@
 
 <script setup>
 const socials = [
-  { name: 'Facebook', icon: 'fa6-brands:facebook', url: '#' },// a ciclonica
-  { name: 'Instagram', icon: 'fa6-brands:instagram', url: '#' },//a ciclonica
-  { name: 'LinkedIn', icon: 'fa6-brands:linkedin', url: '#' },//a vivilitalia
+  { name: 'Facebook', icon: 'fa6-brands:facebook', url: 'https://www.facebook.com/profile.php?id=61574381807171' },// a ciclonica
+  { name: 'Instagram', icon: 'fa6-brands:instagram', url: 'https://www.instagram.com/ciclonica_bike/' },//a ciclonica
+  { name: 'LinkedIn', icon: 'fa6-brands:linkedin', url: 'https://www.linkedin.com/company/vivilitalia/home/' },//a vivilitalia
 ]
 </script>
 
