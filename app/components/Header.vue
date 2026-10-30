@@ -59,7 +59,7 @@
             <div class="header-action-inner d-inline-block position-relative">
 
               <NuxtLink
-                to="/contact"
+                to=""
                 class="btn btn-gray btn-lg fw-bold d-inline-flex align-items-center gap-2"
                 @click="closeMenu"
               >
