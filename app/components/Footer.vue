@@ -26,7 +26,7 @@
             <div class="col-12 col-md-6 col-lg-3">
               <div class="d-flex flex-column align-items-start text-start gap-2">
                 <h4 class="fw-bold mb-2 text-orange"> Risorse </h4>
-                <a href="https://www.ediciclo.it/libri/dettaglio/ciclonica-ciclovia-del-salento-ionico/" target="blank">da di Ciclonica</a>
+                <a href="https://www.ediciclo.it/libri/dettaglio/ciclonica-ciclovia-del-salento-ionico/" target="blank">La guida di Ciclonica</a>
                 <NuxtLink to="/app">App Salento.Bike</NuxtLink>
               </div>
             </div> <!-- Sezione 3 -->

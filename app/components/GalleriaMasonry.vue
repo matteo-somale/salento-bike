@@ -240,6 +240,8 @@ const destinazioni = [
 
 const SEED_MESCOLAMENTO = 42
 
+const img = useImage()
+
 function mescola(array, seed) {
     let stato = seed
     const random = () => {
@@ -258,6 +260,9 @@ const immagini = mescola(
     destinazioni.flatMap((destinazione) =>
         destinazione.immagini.map((immagine) => ({
             ...immagine,
+            // calcolato qui (anche lato server) e non nel lightbox, che è ClientOnly,
+            // così in prerender @nuxt/image genera anche queste varianti
+            urlLightbox: img(immagine.url, { width: 2560, format: 'webp', quality: 85 }),
             destinazione: destinazione.nome,
             colore: destinazione.colore,
             logo: destinazione.logo,
@@ -296,6 +301,12 @@ function sizesGalleria(immagine, indice) {
     return 'xs:100vw sm:360px lg:440px'
 }
 
+const immaginiCaricate = ref(new Set())
+
+function segnaCaricata(url) {
+    immaginiCaricate.value.add(url)
+}
+
 const immagineAttivaMobile = ref(null)
 
 const toggleImmagineMobile = (url) => {
@@ -307,7 +318,7 @@ const lightboxIndice = ref(0)
 
 const lightboxImmagini = computed(() =>
     immaginiFiltrate.value.map((immagine) => ({
-        src: immagine.url,
+        src: immagine.urlLightbox,
         title: immagine.didascalia,
         alt: immagine.alt,
     }))
@@ -330,13 +341,13 @@ function onClickImmagine(immagine) {
 }
 
 const grid = ref(null)
+const masonryPronta = ref(false)
 let masonry = null
 
+// le altezze degli item sono fissate dal CSS (aspect-ratio), quindi il primo
+// layout è già corretto senza aspettare il caricamento delle immagini
 onMounted(async () => {
-    const [{ default: Masonry }, { default: imagesLoaded }] = await Promise.all([
-        import('masonry-layout'),
-        import('imagesloaded'),
-    ])
+    const { default: Masonry } = await import('masonry-layout')
 
     masonry = new Masonry(grid.value, {
         itemSelector: '.grid-item',
@@ -344,10 +355,8 @@ onMounted(async () => {
         percentPosition: true,
     })
 
-    imagesLoaded(grid.value, () => {
-        masonry.layout()
-        AOS.refreshHard()
-    })
+    masonryPronta.value = true
+    AOS.refreshHard()
 })
 
 onBeforeUnmount(() => {
@@ -396,15 +405,17 @@ watch(immaginiFiltrate, async () => {
                 </button>
             </div>
 
-            <div ref="grid" class="masonry-grid">
+            <div ref="grid" class="masonry-grid" :class="{ 'is-pronta': masonryPronta }">
                 <div class="grid-sizer"></div>
                 <div v-for="(immagine, indice) in immaginiFiltrate" :key="immagine.url" class="grid-item"
                     :class="{ 'grid-item--wide': immagine.larga || indice === 0, 'grid-item--tall': immagine.alta }">
                     <div class="gallery-item-inner position-relative overflow-hidden rounded-4"
-                        :class="{ 'is-active': immagineAttivaMobile === immagine.url }"
+                        :class="{ 'is-active': immagineAttivaMobile === immagine.url, 'is-caricata': immaginiCaricate.has(immagine.url) }"
                         @click="onClickImmagine(immagine)">
                         <NuxtImg :src="immagine.url" :alt="immagine.alt" class="w-100 gallery-image"
-                            format="webp" :sizes="sizesGalleria(immagine, indice)" />
+                            format="webp" :sizes="sizesGalleria(immagine, indice)"
+                            :loading="indice < 3 ? 'eager' : 'lazy'"
+                            @load="segnaCaricata(immagine.url)" @error="segnaCaricata(immagine.url)" />
                         <div v-if="immagine.didascalia" class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end p-3"
                             :style="{ backgroundColor: immagine.colore + 'B3' }">
                             <img v-if="immagine.logo" :src="immagine.logo" :alt="`Logo ${immagine.destinazione}`"
@@ -438,6 +449,12 @@ watch(immaginiFiltrate, async () => {
 <style scoped>
 .masonry-grid {
     margin: 0 -8px;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.masonry-grid.is-pronta {
+    opacity: 1;
 }
 
 .grid-sizer,
@@ -477,9 +494,49 @@ watch(immaginiFiltrate, async () => {
     padding: 8px;
 }
 
+.gallery-item-inner {
+    background: linear-gradient(90deg, var(--bs-secondary-bg) 0%, var(--bs-tertiary-bg) 50%, var(--bs-secondary-bg) 100%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.gallery-item-inner.is-caricata {
+    animation: none;
+}
+
+@keyframes skeleton-shimmer {
+    from {
+        background-position: 100% 0;
+    }
+
+    to {
+        background-position: -100% 0;
+    }
+}
+
+/* le foto della galleria sono tutte 16:9: l'altezza è nota prima del caricamento
+   e masonry non le sovrappone. Una foto con altro rapporto verrebbe ritagliata */
 .gallery-image {
     display: block;
     height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+.is-caricata .gallery-image {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-item-inner {
+        animation: none;
+    }
+
+    .gallery-image {
+        transition: none;
+    }
 }
 
 .grid-item--wide .gallery-image {

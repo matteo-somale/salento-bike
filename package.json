@@ -14,7 +14,6 @@
     "@nuxt/image": "^2.2.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
-    "imagesloaded": "^5.0.0",
     "markdown-it": "^15.0.2",
     "masonry-layout": "^4.2.2",
     "nuxt": "^4.5.2",
