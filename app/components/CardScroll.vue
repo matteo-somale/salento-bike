@@ -75,6 +75,14 @@ const cards = {
     ],
 }
 
+const img = useImage()
+
+// calcolato qui (anche lato server) e non da NuxtImg, che è dentro ClientOnly,
+// così in prerender @nuxt/image genera anche queste varianti
+const immagini = cards.card.map((card) =>
+    img.getSizes(card.immagine, { sizes: '400px', modifiers: { format: 'webp', quality: img.options.quality } })
+)
+
 const cardItemRefs = ref([])
 
 function setCardItemRef(el, index) {
@@ -134,8 +142,8 @@ onBeforeUnmount(() => {
                         <div class="card-item rounded-md overflow-hidden p-4 "
                             :ref="(el) => setCardItemRef(el, index)"
                             :style="{ backgroundColor: cards.backgroundColor }">
-                            <NuxtImg :src="card.immagine" alt="" class="card-image w-100 rounded-md mb-3"
-                                format="webp" sizes="400px" />
+                            <img :src="immagini[index].src" :srcset="immagini[index].srcset"
+                                :sizes="immagini[index].sizes" alt="" class="card-image w-100 rounded-md mb-3" />
                             <h3 class="text-center text-primary mt-4" v-html="card.titoloH3"></h3>
                             <p class="text-center eyebrow text-orange" v-html="card.titoloH5"></p>
                             <p class="text-primary d-none d-md-block body-regular" v-html="card.testo"></p>

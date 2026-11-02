@@ -31,6 +31,19 @@ const slides = [
   }
 ]
 
+const img = useImage()
+
+// calcolato qui (anche lato server) e non da NuxtImg, che è dentro ClientOnly,
+// così in prerender @nuxt/image genera anche queste varianti
+const immagini = slides.map((slide) =>
+  slide.media.type === 'image'
+    ? img.getSizes(slide.media.src, {
+        sizes: 'xs:100vw sm:540px md:720px lg:660px',
+        modifiers: { format: 'webp', quality: img.options.quality },
+      })
+    : null
+)
+
 const containerRef = ref(null)
 const swiper = useSwiper(containerRef, {
   loop: true,
@@ -124,13 +137,13 @@ const swiper = useSwiper(containerRef, {
                     loop
                     playsinline
                   ></video>
-                  <NuxtImg
+                  <img
                     v-else
                     class="video-cover-media"
-                    :src="slide.media.src"
+                    :src="immagini[index].src"
+                    :srcset="immagini[index].srcset"
+                    :sizes="immagini[index].sizes"
                     :alt="slide.media.alt"
-                    format="webp"
-                    sizes="xs:100vw sm:540px md:720px lg:660px"
                   />
                 </div>
               </div>
