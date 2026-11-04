@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch, onBeforeUnmount } from 'vue'
 
 const slides = [
   {
@@ -9,7 +9,13 @@ const slides = [
     button: 'Guarda il video completo',
     buttonLink: '#pedalaConCiclonica',
     buttonIcon: 'fluent:filmstrip-play-24-filled',
-    media: { type: 'video', src: '/videos/ciclonica-video-wide-teaser.mp4', alt: 'Video cicloturismo nel Salento' }
+    media: {
+      type: 'video',
+      src: '/videos/video-hero-salento-EXTRA_SHORT.mp4',
+      // video mostrato nella lightbox al click, se assente si usa src
+      lightboxSrc: '/videos/ciclonica-video-wide-teaser.mp4',
+      alt: 'Video cicloturismo nel Salento'
+    }
   },
   {
     eyebrow: 'Il Salento',
@@ -54,6 +60,36 @@ const swiper = useSwiper(containerRef, {
       pagination: { enabled: false },
     },
   },
+})
+
+// lightbox solo per i media di tipo video
+const lightboxMedia = ref(null)
+
+function apriLightbox(media) {
+  if (media.type !== 'video') return
+  lightboxMedia.value = { src: media.lightboxSrc ?? media.src, alt: media.alt }
+}
+
+function chiudiLightbox() {
+  lightboxMedia.value = null
+}
+
+function onKeydown(event) {
+  if (event.key === 'Escape') chiudiLightbox()
+}
+
+watch(lightboxMedia, (media) => {
+  document.body.style.overflow = media ? 'hidden' : ''
+  if (media) {
+    window.addEventListener('keydown', onKeydown)
+  } else {
+    window.removeEventListener('keydown', onKeydown)
+  }
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', onKeydown)
+  document.body.style.overflow = ''
 })
 </script>
 
@@ -127,16 +163,22 @@ const swiper = useSwiper(containerRef, {
             <div class="col-12 col-lg-6">
               <div class="ratio ratio-1x1">
                 <div class="video-cover rounded-4">
-                  <video
+                  <button
                     v-if="slide.media.type === 'video'"
-                    class="video-cover-media"
-                    :src="slide.media.src"
-                    :aria-label="slide.media.alt"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                  ></video>
+                    type="button"
+                    class="video-cover-trigger"
+                    :aria-label="`Guarda il video: ${slide.media.alt}`"
+                    @click="apriLightbox(slide.media)"
+                  >
+                    <video
+                      class="video-cover-media"
+                      :src="slide.media.src"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                    ></video>
+                  </button>
                   <img
                     v-else
                     class="video-cover-media"
@@ -154,6 +196,33 @@ const swiper = useSwiper(containerRef, {
       </swiper-slide>
 
       </swiper-container>
+
+      <Teleport to="body">
+        <div
+          v-if="lightboxMedia"
+          class="video-lightbox"
+          role="dialog"
+          aria-modal="true"
+          :aria-label="lightboxMedia.alt"
+          @click.self="chiudiLightbox"
+        >
+          <button
+            type="button"
+            class="video-lightbox-close"
+            aria-label="Chiudi video"
+            @click="chiudiLightbox"
+          >
+            <Icon name="lucide:x" />
+          </button>
+          <video
+            class="video-lightbox-media"
+            :src="lightboxMedia.src"
+            controls
+            autoplay
+            playsinline
+          ></video>
+        </div>
+      </Teleport>
     </ClientOnly>
   </section>
 </template>
@@ -188,6 +257,52 @@ const swiper = useSwiper(containerRef, {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.video-cover-trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* sopra l'header (z-index 1030) */
+.video-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.video-lightbox-media {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 1rem;
+}
+
+.video-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-neutral-white);
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 /* Su schermi grandi lo sfondo grigio non copre più tutta la section,

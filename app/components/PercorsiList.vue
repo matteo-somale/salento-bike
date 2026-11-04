@@ -159,7 +159,7 @@ watch(percorsiFiltrati, async () => {
     <section class="py-5">
         <div class="container">
 
-            <div class="d-flex flex-wrap justify-content-center gap-1 gap-md-3 mb-3 mb-lg-5 pb-lg-5" style="position: relative; z-index: 999;">
+            <div class="d-flex flex-nowrap gap-1 gap-md-3 mb-3 mb-lg-5 pb-lg-5 filtri-scroll filtri-centrati" style="position: relative; z-index: 999;">
                 <button v-for="(destination, index) in destinations" :key="index" type="button"
                     class="btn btn-lg btn-filter d-inline-flex align-items-center gap-2"
                     :class="{ 'is-active': selectedDestinazione === destination.destinazione }"
@@ -234,6 +234,14 @@ watch(percorsiFiltrati, async () => {
 </template>
 
 <style scoped>
+/* centratura con margini auto invece di justify-content: center, così se la riga sfora il primo bottone resta raggiungibile con lo scroll */
+.filtri-centrati > :first-child {
+    margin-left: auto;
+}
+.filtri-centrati > :last-child {
+    margin-right: auto;
+}
+
 .percorsi-swiper swiper-slide {
     padding-bottom: 2.5rem;
     box-sizing: border-box;
