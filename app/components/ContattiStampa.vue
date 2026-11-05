@@ -9,7 +9,7 @@ const contatti = [
     {
         titolo: 'Contatti',
         sottotitolo: 'Vivilitalia',
-        telefono: '06/86268324 - 06/4741245',
+        telefono: '06/4741245',
         email: 'info@vivilitalia.it',
     },
 ]
