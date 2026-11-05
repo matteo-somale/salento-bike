@@ -41,6 +41,18 @@
 </template>
 
 <script setup>
+const titolo = 'Pedalare nella meraviglia del Salento'
+const descrizione = 'Ciclonica e Ladriatica: due ciclovie ad anello tra mare, parchi naturali, masserie e borghi barocchi. Percorsi, app e video per scoprire il Salento in bicicletta.'
+
+useSeoMeta({
+  title: titolo,
+  description: descrizione,
+  ogTitle: `${titolo} | Salento.bike`,
+  ogDescription: descrizione,
+  ogImage: 'https://www.salento.bike/img/foto-bike-hero.jpeg',
+  ogType: 'website',
+})
+
 const youtubeLinks = [
   'https://www.youtube.com/embed/yRV_RfbSl8k?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K&enablejsapi=1',
   'https://www.youtube.com/embed/VWKEaJizJKc?list=PLVEJssP1vh2Y9s1WmoRJz4-09JK9O515K&enablejsapi=1',

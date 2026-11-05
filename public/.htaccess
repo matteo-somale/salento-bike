@@ -1,0 +1,27 @@
+# Configurazione Apache per l'hosting Aruba (sito statico generato con `nuxt generate`).
+# Ogni blocco è dentro <IfModule>: se un modulo non è attivo la regola viene ignorata.
+
+# --- Compressione ---------------------------------------------------------
+# Aruba comprime già HTML e CSS ma non i .js (text/javascript).
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript application/javascript application/x-javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# --- Cache ----------------------------------------------------------------
+<IfModule mod_headers.c>
+  # immagini, video, font, tracce: 30 giorni
+  <FilesMatch "\.(jpe?g|png|gif|webp|avif|svg|ico|mp4|webm|woff2?|gpx)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # pagine e payload: sempre ricontrollati, così un nuovo deploy si vede subito
+  <FilesMatch "\.(html|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # /_nuxt/ contiene solo file con hash nel nome (cambia a ogni build): un anno.
+  # <If> viene applicato dopo <FilesMatch>, quindi qui vince su tutto il resto.
+  <If "%{REQUEST_URI} =~ m#^/_nuxt/#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+</IfModule>

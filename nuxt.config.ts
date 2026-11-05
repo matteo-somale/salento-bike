@@ -3,6 +3,21 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  app: {
+    head: {
+      htmlAttrs: { lang: 'it' },
+      // le pagine impostano solo il proprio titolo, il suffisso arriva da qui
+      titleTemplate: '%s | Salento.bike',
+      title: 'Salento in bici',
+      meta: [
+        {
+          name: 'description',
+          content: 'Salento.bike: ciclovie, percorsi e consigli per scoprire il Salento in bicicletta, tra la costa ionica di Ciclonica e quella adriatica di Ladriatica.',
+        },
+      ],
+    },
+  },
+
   css: [
     '~/assets/css/reset.css',
     'bootstrap/dist/css/bootstrap.min.css',
@@ -13,6 +28,13 @@ export default defineNuxtConfig({
   ],
 
   modules: ['@nuxt/icon', 'nuxt-swiper', '@nuxt/image'],
+
+  // icone dai pacchetti @iconify-json/* locali, incluse nel bundle client:
+  // nessuna richiesta a runtime verso api.iconify.design
+  icon: {
+    serverBundle: 'local',
+    clientBundle: { scan: true },
+  },
 
   image: {
     quality: 80,

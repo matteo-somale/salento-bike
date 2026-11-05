@@ -1,5 +1,21 @@
 <script setup>
-import { ref, watch, onBeforeUnmount } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
+// stessi file (stesso URL con hash) referenziati da fonts.css
+import fontTitolo from '~/assets/fonts/BricolageGrotesque/BricolageGrotesque_48pt-ExtraBold.woff2?url'
+import fontParagrafo from '~/assets/fonts/OpenSans/OpenSans-Light.woff2?url'
+
+const img = useImage()
+
+// poster ritagliato quadrato e ridimensionato al build da @nuxt/image (il box
+// della hero è 1:1 e al massimo ~640px): lo stesso URL serve a <img>, preload
+// e attributo poster del video, quindi viene scaricato una volta sola
+const posterHero = img('/videos/hero-poster.webp', {
+  width: 720,
+  height: 720,
+  fit: 'cover',
+  format: 'webp',
+  quality: 75,
+})
 
 const slides = [
   {
@@ -11,8 +27,13 @@ const slides = [
     buttonIcon: 'fluent:filmstrip-play-24-filled',
     media: {
       type: 'video',
-      src: '/videos/video-hero-salento-EXTRA_SHORT.mp4',
-      // video mostrato nella lightbox al click, se assente si usa src
+      // primo frame del video, mostrato subito (anche nell'HTML statico)
+      poster: posterHero,
+      // il browser usa la prima sorgente che supporta
+      sources: [
+        { src: '/videos/video-hero-salento-EXTRA_SHORT_COMPRESSED.mp4', type: 'video/mp4' },
+      ],
+      // video mostrato nella lightbox al click, se assente si usa l'ultima sorgente
       lightboxSrc: '/videos/ciclonica-video-wide-teaser.mp4',
       alt: 'Video cicloturismo nel Salento'
     }
@@ -28,7 +49,7 @@ const slides = [
   },
   {
     eyebrow: 'salento.bike',
-    title: 'Salento, naturalmente ciclabile ',
+    title: 'Salento, naturalmente ciclabile ',
     text: 'Prevalentemente pianeggiante o con dislivelli accessibili, il Salento è la meta ideale per il cicloturista. Grazie a una rete infinita di stradine a basso impatto veicolare, per più dell’80% asfaltate, il territorio è totalmente ciclabile. ',
     button: 'I percorsi principali',
     buttonLink: '/percorsi',
@@ -37,7 +58,17 @@ const slides = [
   }
 ]
 
-const img = useImage()
+// Risorse sopra la piega chieste subito al browser, senza aspettare il CSS:
+// il poster (elemento più grande) e i font di h1 e paragrafo della hero
+// (.lead di Bootstrap ha peso 300 → Open Sans Light).
+// I font richiedono crossorigin, altrimenti il browser li scarica due volte.
+useHead({
+  link: [
+    { rel: 'preload', as: 'image', type: 'image/webp', href: posterHero, fetchpriority: 'high' },
+    { rel: 'preload', as: 'font', type: 'font/woff2', href: fontTitolo, crossorigin: 'anonymous' },
+    { rel: 'preload', as: 'font', type: 'font/woff2', href: fontParagrafo, crossorigin: 'anonymous' },
+  ],
+})
 
 // calcolato qui (anche lato server) e non da NuxtImg, che è dentro ClientOnly,
 // così in prerender @nuxt/image genera anche queste varianti
@@ -62,12 +93,28 @@ const swiper = useSwiper(containerRef, {
   },
 })
 
+// Il video parte solo a pagina caricata, così non ruba banda a CSS, JS e
+// immagini del primo caricamento. Fino ad allora si vede il poster.
+// Con "riduci movimento" o risparmio dati resta il poster.
+const videoAttivo = ref(false)
+
+function attivaVideo() {
+  const riduciMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const risparmioDati = navigator.connection?.saveData === true
+  if (!riduciMovimento && !risparmioDati) videoAttivo.value = true
+}
+
+onMounted(() => {
+  if (document.readyState === 'complete') attivaVideo()
+  else window.addEventListener('load', attivaVideo, { once: true })
+})
+
 // lightbox solo per i media di tipo video
 const lightboxMedia = ref(null)
 
 function apriLightbox(media) {
   if (media.type !== 'video') return
-  lightboxMedia.value = { src: media.lightboxSrc ?? media.src, alt: media.alt }
+  lightboxMedia.value = { src: media.lightboxSrc ?? media.sources.at(-1).src, alt: media.alt }
 }
 
 function chiudiLightbox() {
@@ -88,113 +135,28 @@ watch(lightboxMedia, (media) => {
 })
 
 onBeforeUnmount(() => {
+  window.removeEventListener('load', attivaVideo)
   window.removeEventListener('keydown', onKeydown)
   document.body.style.overflow = ''
 })
 </script>
 
 <template>
-  <section
-    id="heroCarousel"
-    class="background-lighter-gray pt-4"
-    data-aos="fade"
-    data-aos-duration="800"
-  >
+  <!-- niente data-aos qui: è sopra la piega e resterebbe invisibile finché AOS non parte -->
+  <section id="heroCarousel" class="background-lighter-gray pt-4">
     <ClientOnly>
       <swiper-container ref="containerRef" :init="false" class="hero-swiper">
-
-      <!-- Slide -->
-      <swiper-slide
-        v-for="(slide, index) in slides"
-        :key="index"
-      >
-        <div class="container py-3">
-          <div class="row align-items-center g-5 min-vh-80">
-
-            <!-- Colonna sinistra -->
-            <div class="col-12 col-lg-6 mt-2">
-              <div class="d-flex flex-column align-items-start">
-
-                <p class="text-orange eyebrow fw-semibold mb-2">
-                  {{ slide.eyebrow }}
-                </p>
-
-                <h1 v-html="slide.title " class="fw-bold mb-4 text-primary"></h1>
-
-                <p class="lead mb-4">
-                  {{ slide.text }}
-                </p>
-
-                <NuxtLink
-                  :to="slide.buttonLink"
-                  class="btn btn-orange btn-lg mb-0 mb-md-5 hero-cta-btn d-inline-flex align-items-center justify-content-center gap-2"
-                >
-                  <Icon :name="slide.buttonIcon" />
-                  {{ slide.button }}
-                </NuxtLink>
-
-                <!-- Navigazione -->
-                <div class="d-none d-lg-flex gap-2" id="arrows">
-
-                  <button
-                    class="btn btn-lg btn-outline-primary carousel-arrow-btn d-inline-flex align-items-center justify-content-center"
-                    type="button"
-                    aria-label="Slide precedente"
-                    @click="swiper.prev()"
-                  >
-                    <Icon name="lucide:arrow-left" />
-                  </button>
-
-                  <button
-                    class="btn btn-lg btn-outline-primary carousel-arrow-btn d-inline-flex align-items-center justify-content-center"
-                    type="button"
-                    aria-label="Slide successiva"
-                    @click="swiper.next()"
-                  >
-                    <Icon name="lucide:arrow-right" />
-                  </button>
-
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Colonna destra -->
-            <div class="col-12 col-lg-6">
-              <div class="ratio ratio-1x1">
-                <div class="video-cover rounded-4">
-                  <button
-                    v-if="slide.media.type === 'video'"
-                    type="button"
-                    class="video-cover-trigger"
-                    :aria-label="`Guarda il video: ${slide.media.alt}`"
-                    @click="apriLightbox(slide.media)"
-                  >
-                    <video
-                      class="video-cover-media"
-                      :src="slide.media.src"
-                      autoplay
-                      muted
-                      loop
-                      playsinline
-                    ></video>
-                  </button>
-                  <img
-                    v-else
-                    class="video-cover-media"
-                    :src="immagini[index].src"
-                    :srcset="immagini[index].srcset"
-                    :sizes="immagini[index].sizes"
-                    :alt="slide.media.alt"
-                  />
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </swiper-slide>
-
+        <swiper-slide v-for="(slide, index) in slides" :key="index">
+          <HeroSlide
+            :slide="slide"
+            :immagine="immagini[index]"
+            :video-attivo="videoAttivo"
+            :lazy="index > 0"
+            @prev="swiper.prev()"
+            @next="swiper.next()"
+            @apri="apriLightbox"
+          />
+        </swiper-slide>
       </swiper-container>
 
       <Teleport to="body">
@@ -223,50 +185,25 @@ onBeforeUnmount(() => {
           ></video>
         </div>
       </Teleport>
+
+      <!-- HTML statico della prima slide (con il poster al posto del video),
+           visibile prima che il JavaScript carichi lo swiper -->
+      <template #fallback>
+        <div class="hero-fallback">
+          <HeroSlide :slide="slides[0]" :immagine="immagini[0]" />
+        </div>
+      </template>
     </ClientOnly>
   </section>
 </template>
 
 <style scoped>
-.hero-swiper swiper-slide {
+/* il fallback statico replica il padding delle slide: niente salto di layout
+   quando lo swiper prende il suo posto */
+.hero-swiper swiper-slide,
+.hero-fallback {
   padding-bottom: 3rem;
   box-sizing: border-box;
-}
-
-.hero-cta-btn {
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .hero-cta-btn {
-    width: auto;
-  }
-}
-
-.carousel-arrow-btn {
-  width: 3.5rem;
-  height: 3.5rem;
-  padding: 0;
-  border-radius: 50%;
-}
-
-.video-cover {
-  overflow: hidden;
-}
-.video-cover-media {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.video-cover-trigger {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
 }
 
 /* sopra l'header (z-index 1030) */

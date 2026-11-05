@@ -58,14 +58,12 @@
 
             <div class="header-action-inner d-inline-block position-relative">
 
-              <NuxtLink
-                to=""
-                class="btn btn-gray btn-lg fw-bold d-inline-flex align-items-center gap-2"
-                @click="closeMenu"
-              >
+              <!-- non è un link finché la versione inglese non esiste:
+                   un <a href=""> viene segnalato come link non scansionabile -->
+              <span class="btn btn-gray btn-lg fw-bold d-inline-flex align-items-center gap-2">
                 <Icon name="bi:chat-fill" />
                 ENG
-              </NuxtLink>
+              </span>
 
               <span class="coming-soon body-small">coming soon</span>
 

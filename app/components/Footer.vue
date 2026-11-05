@@ -42,7 +42,7 @@
               <div class="d-flex flex-column align-items-start text-start gap-2">
                 <h4 class="fw-bold mb-2 text-orange"> Contatti </h4>
                 <a href="mailto:info@vivilitalia.it">info@vivilitalia.it</a>
-                <a href="tel:+390686268324">06/86268324</a>
+                <a href="+39 06 4741245">06/4741245</a>
                 <div class="d-flex flex-wrap gap-3 mt-2">
                   <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank" rel="noopener noreferrer" :aria-label="social.name" class="social-link text-orange">
                     <Icon :name="social.icon" size="20" />
