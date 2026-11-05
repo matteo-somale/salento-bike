@@ -15,6 +15,11 @@ export default defineNuxtConfig({
           content: 'Salento.bike: ciclovie, percorsi e consigli per scoprire il Salento in bicicletta, tra la costa ionica di Ciclonica e quella adriatica di Ladriatica.',
         },
       ],
+      // favicon dichiarata esplicitamente: Google la legge dal <link> della home
+      // per mostrarla nei risultati di ricerca (256x256, quadrata, sopra i 48px consigliati)
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
     },
   },
 
