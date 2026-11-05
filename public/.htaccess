@@ -1,6 +1,11 @@
 # Configurazione Apache per l'hosting Aruba (sito statico generato con `nuxt generate`).
 # Ogni blocco è dentro <IfModule>: se un modulo non è attivo la regola viene ignorata.
 
+# --- Pagina 404 -----------------------------------------------------------
+# `nuxt generate` produce /404.html: Apache lo serve (con status 404) per ogni URL
+# inesistente, poi il router lato client mostra app/error.vue.
+ErrorDocument 404 /404.html
+
 # --- Compressione ---------------------------------------------------------
 # Aruba comprime già HTML e CSS ma non i .js (text/javascript).
 <IfModule mod_deflate.c>
