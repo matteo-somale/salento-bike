@@ -17,7 +17,7 @@
     <!-- Visibile solo con ?destination=ciclonica -->
     <JumboGreenRoad v-if="isDestinazione('ciclonica')"></JumboGreenRoad>
 
-    <JumboSlowCard></JumboSlowCard>
+    <JumboSlowCard v-if="isDestinazione('ciclonica')"></JumboSlowCard>
 
 </template>
 

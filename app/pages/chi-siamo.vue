@@ -13,7 +13,6 @@
     button-link="/percorso"
   ></MainVideo>
 
-  <JumboSlowCard></JumboSlowCard>
 </template>
 
 <script setup>

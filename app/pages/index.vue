@@ -36,7 +36,6 @@
 
     <CheckArticles></CheckArticles>
 
-    <JumboSlowCard></JumboSlowCard>
   </div>
 </template>
 
