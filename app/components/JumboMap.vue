@@ -16,8 +16,18 @@ const {
   coloreTitoloTesto: { type: String, default: 'var(--color-primary)' },
   immagine: { type: String, required: true },
   coloreSfondo: { type: String, required: true },
+  // ogni bottone: { testo, link, classe, icona?, blank?, download? }
+  // - icona: nome icona a sinistra del testo (default 'lucide:bike')
+  // - blank: true per aprire il link in una nuova scheda
+  // - download: true per scaricare il file, oppure una stringa con il nome del file scaricato
   bottoni: { type: Array, default: () => [] }
 })
+
+// l'attributo download vuole '' (o il nome file): con true Vue scriverebbe download="true"
+const attributoDownload = (bottone) => {
+  if (!bottone.download) return undefined
+  return bottone.download === true ? '' : bottone.download
+}
 </script>
 
 <template>
@@ -36,9 +46,12 @@ const {
                     v-for="(bottone, index) in bottoni"
                     :key="index"
                     :to="bottone.link"
+                    :target="bottone.blank ? '_blank' : undefined"
+                    :external="bottone.download ? true : undefined"
+                    :download="attributoDownload(bottone)"
                     :class="['btn btn-lg', bottone.classe]"
                 >
-                    <Icon name="lucide:bike" class="me-2" />{{ bottone.testo }}
+                    <Icon :name="bottone.icona || 'lucide:bike'" class="me-2" />{{ bottone.testo }}
                 </NuxtLink>
             </div>
         </div>

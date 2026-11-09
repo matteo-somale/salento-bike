@@ -14,7 +14,8 @@ const destinations = [
             testo: 'Dalle spiagge dorate ai borghi del Barocco, dalle antiche masserie alla natura selvaggia dei parchi naturali: 305 km di pura bellezza tra i profumi della macchia mediterranea.',
             immagine: '/maps/santento-map_ciclonica.svg',
             bottoni: [
-                { testo: 'Scopri il percorso completo', classe: 'btn-primary', link: 'https://ebike.bikesquare.eu/salento/percorso/ciclonica-la-ciclovia-del-salento-ionico' },
+                { testo: 'Scopri il percorso completo', classe: 'btn-primary', icona: 'lucide:bike', blank: true, download: false, link: 'https://ebike.bikesquare.eu/salento/percorso/ciclonica-la-ciclovia-del-salento-ionico' },
+                { testo: 'Scarica GPX', classe: 'btn-orange', icona: 'lucide:download', blank: false, download: true, link: '/gpx/ciclonica/ciclonica-percorso-completo.gpx' },
             ],
         },
     },
@@ -29,7 +30,8 @@ const destinations = [
             testo: 'Pedalare sul balcone del Mediterraneo, tra scogliere maestose e calette dalle acque cristalline, all\'ombra del faro più a est d\'Italia e l\'emozione di arrivare a <i>Finibus Terrae</i>.',
             immagine: '/maps/santento-map_ladriatica.svg',
             bottoni: [
-                { testo: 'Scopri il percorso completo', classe: 'btn-primary', link: 'https://ebike.bikesquare.eu/salento/percorso/ladriatica-ciclovia-del-salento-orientale' },
+                { testo: 'Scopri il percorso completo', classe: 'btn-primary', icona: 'lucide:bike', blank: true, download: false, link: 'https://ebike.bikesquare.eu/salento/percorso/ladriatica-ciclovia-del-salento-orientale' },
+                { testo: 'Scarica GPX', classe: 'btn-orange', icona: 'lucide:download', blank: false, download: true, link: '/gpx/ladriatica/ladriatica-percorso-completo.gpx' },
             ],
         },
     },
@@ -43,7 +45,7 @@ const percorsi = [
         titolo: 'Passare da un entroterra autentico alla ciclabile sul mare',
         testo: 'Alla scoperta di borghi, bacini costieri e piccole marine',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/pedalare-da-ugento-verso-le-sue-lunghe-spiagge',
-        linkGpx: '/gpx/ciclonica/1-anello-ugento.gpx',
+        linkGpx: '/gpx/ciclonica/anelli/1-anello-ugento.gpx',
     },
     {
         immagine: '/img/percorsi/ciclonica/2-anello-gallipoli.png',
@@ -52,7 +54,7 @@ const percorsi = [
         titolo: 'Da Gallipoli alla scoperta di borghi e masserie della campagna salentina',
         testo: 'Avvicinarsi alla natura di Gallipoli e al Parco di Punta Pizzo',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/da-gallipoli-alla-scoperta-di-borghi-e-masserie-dell-entroterra-salentino',
-        linkGpx: '/gpx/ciclonica/2-anello-gallipoli.gpx',
+        linkGpx: '/gpx/ciclonica/anelli/2-anello-gallipoli.gpx',
     },
     {
         immagine: '/img/percorsi/ciclonica/3-anello-nardo.png',
@@ -61,7 +63,7 @@ const percorsi = [
         titolo: 'Da Nardò verso Gallipoli tra muretti a secco e il mare',
         testo: 'Nella terra delle pajare e sulal costa dei tramonti',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/da-nardo-verso-gallipoli-tra-muretti-a-secco-e-il-mare',
-        linkGpx: '/gpx/ciclonica/3-anello-nardo.gpx',
+        linkGpx: '/gpx/ciclonica/anelli/3-anello-nardo.gpx',
     },
     {
         immagine: '/img/percorsi/ciclonica/4-anello-selvaggio.png',
@@ -70,7 +72,7 @@ const percorsi = [
         titolo: 'Un mare di verde e di blu',
         testo: 'Tra Porto Cesareo e Nardò passando per Portoselvaggio e la Palude del Capitano',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/porto-selvaggio-e-porto-cesareo-un-mare-di-verde-e-blu',
-        linkGpx: '/gpx/ciclonica/4-anello-selvaggio.gpx',
+        linkGpx: '/gpx/ciclonica/anelli/4-anello-selvaggio.gpx',
     },
     {
         immagine: '/img/percorsi/ciclonica/5-anello-manduria.png',
@@ -79,7 +81,7 @@ const percorsi = [
         titolo: 'Il tour intorno a Manduria alla scoperta delle risorgive e della Salina dei Monaci',
         testo: 'La terra del Primitivo tra spiagge selvagge e fenicotteri rosa',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/il-tour-intorno-a-manduria-alla-scoperta-delle-risorgive-e-della-salina-dei-monaci',
-        linkGpx: '/gpx/ciclonica/5-anello-manduria.gpx',
+        linkGpx: '/gpx/ciclonica/anelli/5-anello-manduria.gpx',
     },
     
     {
@@ -89,7 +91,7 @@ const percorsi = [
         titolo: 'Pedalando sulle maestose scogliere di Finibus Terrae',
         testo: 'Escursione giornaliera ad anello fra i tesori di pietra del Capo di Leuca',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/pedalando-sulle-maestose-scogliere-di-finibusterrae',
-        linkGpx: '/gpx/ladriatica/1-anello-finibus-terrae.gpx',
+        linkGpx: '/gpx/ladriatica/anelli/1-anello-finibus-terrae.gpx',
     },
     {
         immagine: '/img/percorsi/ladriatica/2-anello-leuca.png',
@@ -98,7 +100,7 @@ const percorsi = [
         titolo: 'Da Alessano nel paesaggio rurale del Capo di Leuca',
         testo: 'Escursione giornaliera ad anello tra pajare e muretti a secco, a due passi dal mare.',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/da-alessano-nel-paesaggio-rurale-del-capo-di-leuca',
-        linkGpx: '/gpx/ladriatica/2-anello-leuca.gpx',
+        linkGpx: '/gpx/ladriatica/anelli/2-anello-leuca.gpx',
     },
     {
         immagine: '/img/percorsi/ladriatica/3-anello-parco.png',
@@ -107,7 +109,7 @@ const percorsi = [
         titolo: 'Dal mare al gigante verde del Parco',
         testo: 'Escursione giornaliera ad anello da Andrano tra la costa e i borghi',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/dal-mare-al-gigante-verde-del-parco',
-        linkGpx: '/gpx/ladriatica/3-anello-parco.gpx',
+        linkGpx: '/gpx/ladriatica/anelli/3-anello-parco.gpx',
     },
     {
         immagine: '/img/percorsi/ladriatica/4-anello-marina.png',
@@ -116,7 +118,7 @@ const percorsi = [
         titolo: 'Dalle terme alle grotte in splendide insenature',
         testo: 'Escursione giornaliera ad anello da Santa Cesarea tra storia e natura',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/dalle-terme-alle-grotte-in-splendide-insenature',
-        linkGpx: '/gpx/ladriatica/4-anello-marina.gpx',
+        linkGpx: '/gpx/ladriatica/anelli/4-anello-marina.gpx',
     },
     {
         immagine: '/img/percorsi/ladriatica/5-anello-selvaggio.png',
@@ -125,7 +127,7 @@ const percorsi = [
         titolo: 'Sulla costa selvaggia e primitiva del Salento',
         testo: 'Escursione giornaliera ad anello da Porto Badisco alle radici',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/sulla-costa-selvaggia-e-primitiva-del-salento',
-        linkGpx: '/gpx/ladriatica/5-anello-selvaggio.gpx',
+        linkGpx: '/gpx/ladriatica/anelli/5-anello-selvaggio.gpx',
     },
     {
         immagine: '/img/percorsi/ladriatica/6-anello-otranto.png',
@@ -134,7 +136,7 @@ const percorsi = [
         titolo: 'Da Otranto sulla terra più a Est d’Italia',
         testo: 'Escursione giornaliera ad anello dal laghetto di bauxite ai dolmen e menhir',
         linkPercorso: 'https://ebike.bikesquare.eu/salento/percorso/da-otranto-sulla-terra-piu-a-est-d-italia',
-        linkGpx: '/gpx/ladriatica/6-anello-otranto.gpx',
+        linkGpx: '/gpx/ladriatica/anelli/6-anello-otranto.gpx',
     },
 ]
 

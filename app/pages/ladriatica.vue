@@ -5,7 +5,7 @@
       logo="/logo/logo-ladriatica-vert-white.svg"
       title="Scopri il Salento Orientale in bici"
       text="Un fantastico viaggio a pedali sul balcone del Mediterraneo, tra piccole e grandi meraviglie della natura in riva al mare nel Parco Otranto - SantaMaria di Leuca e Bosco di Tricase"
-      button-text="Scopri ladriatica"
+      button-text="Vai ai percorsi"
       button-link="/percorsi?destination=ladriatica"
       button-variant="btn-celeste"
     ></SinglePercorsoHero>
@@ -71,7 +71,7 @@ const percorsi = [
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',
     altLayout: false,
-    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: 'https://ebike.bikesquare.eu/percorsi?destinations=salento&tags=ladriatica', icona: 'lucide:bike' }],
+    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: '/percorsi', icona: 'lucide:bike' }],
   },
   {
     sopratitolo: 'IL SALENTO orientale',
@@ -81,7 +81,7 @@ const percorsi = [
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',
     altLayout: true,
-    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: 'https://ebike.bikesquare.eu/percorsi?destinations=salento&tags=ladriatica', icona: 'lucide:bike' }],
+    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: '/percorsi', icona: 'lucide:bike' }],
   },
   {
     sopratitolo: 'lungo il percorso',
@@ -94,7 +94,7 @@ const percorsi = [
     logo: '/logo/logo-ladriatica-simple.svg',
     coloreSfondo: '#007FC3',
     altLayout: false,
-    bottoni: [{ testoBottone: 'Scopri i punti di interesse', linkBottone: 'https://ebike.bikesquare.eu/pois?destination=salento&tags=ladriatica&categorie=da-vedere,parco-area-naturalistica,informazioni-turistiche,spiagge', icona: 'fluent:image-search-24-filled' }],
+    bottoni: [{ testoBottone: 'Scopri i punti di interesse', linkBottone: 'https://ebike.bikesquare.eu/pois?destination=salento&tags=ladriatica&categorie=da-vedere,parco-area-naturalistica,informazioni-turistiche,spiagge', icona: 'fluent:image-search-24-filled', targetBlank: true }],
   },
   /* {
     sopratitolo: 'BAROCCO E TRADIZIONE',

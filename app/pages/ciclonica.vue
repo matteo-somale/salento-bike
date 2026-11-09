@@ -5,7 +5,7 @@
       logo="/logo/logo-ciclonica-vert-white.svg"
       title="Scopri il Salento Ionico in bici"
       text="La straordinaria avventura di pedalare nelle terre del Salento tra parchi costieri, borghi e spiagge selvagge"
-      button-text="Vedi i percorsi"
+      button-text="Vai ai percorsi"
       button-link="/percorsi?destination=ciclonica"
       button-variant="btn-secondary"
     ></SinglePercorsoHero>
@@ -81,7 +81,7 @@ Un viaggio in sei tappe,  o in 5 anelli giornalieri, tra spiagge selvagge e fit
     logo: '/logo/logo-ciclonica-simple.svg',
     coloreSfondo: '#119660',
     altLayout: false,
-    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: 'https://ebike.bikesquare.eu/percorsi?destinations=salento&tags=ciclonica', icona: 'lucide:bike' }],
+    bottoni: [{ testoBottone: 'Scopri i percorsi', linkBottone: '/percorsi', icona: 'lucide:bike' }],
   },
   {
     sopratitolo: 'Barocco e tradizione',
@@ -95,7 +95,7 @@ Gallipoli e quelle di Ugento, la costa intatta di Portoselvaggio e le piccole ma
     logo: '/logo/logo-ciclonica-simple.svg',
     coloreSfondo: '#119660',
     altLayout: true,
-    bottoni: [{ testoBottone: 'Scopri i punti di interesse', linkBottone: 'https://ebike.bikesquare.eu/pois?destination=salento&tags=ciclonica&categorie=da-vedere,informazioni-turistiche,spiagge,parco-area-naturalistica', icona: 'fluent:image-search-24-filled' }],
+    bottoni: [{ testoBottone: 'Scopri i punti di interesse', linkBottone: 'https://ebike.bikesquare.eu/pois?destination=salento&tags=ciclonica&categorie=da-vedere,informazioni-turistiche,spiagge,parco-area-naturalistica', icona: 'fluent:image-search-24-filled', targetBlank: true }],
   },
   {
     sopratitolo: 'lungo il percorso',
@@ -105,7 +105,7 @@ Gallipoli e quelle di Ugento, la costa intatta di Portoselvaggio e le piccole ma
     logo: '/logo/logo-ciclonica-simple.svg',
     coloreSfondo: '#119660',
     altLayout: false,
-    bottoni: [{ testoBottone: 'Scopri le location', linkBottone: 'https://ebike.bikesquare.eu/pois?destination=salento&tags=ciclonica&categorie=enogastronomia,noleggio-e-bike,mangiare,dormire,esperienze-benessere,informazioni-turistiche', icona: 'ph:map-pin-fill' }],
+    bottoni: [{ testoBottone: 'Scopri le location', linkBottone: 'https://ebike.bikesquare.eu/pois?destination=salento&tags=ciclonica&categorie=enogastronomia,noleggio-e-bike,mangiare,dormire,esperienze-benessere,informazioni-turistiche', icona: 'ph:map-pin-fill', targetBlank: true }],
   },
 ]
 </script>

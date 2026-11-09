@@ -34,7 +34,7 @@
               <div class="d-flex flex-column align-items-start text-start gap-2">
                 <h4 class="fw-bold mb-2 text-orange"> Su di noi </h4>
                 <NuxtLink to="/chi-siamo">Chi siamo</NuxtLink>
-                <a href="https://cicloturismo.puglia.it/it/diventa-partner/" target="blank">Diventa parthner</a>
+                <a href="https://cicloturismo.puglia.it/it/diventa-partner/" target="blank">Diventa partner</a>
                 <NuxtLink to="/area-stampa">Area stampa</NuxtLink>
               </div>
             </div> <!-- Sezione 4 -->

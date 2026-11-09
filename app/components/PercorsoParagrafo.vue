@@ -26,6 +26,8 @@ const {
   sopratitolo: { type: String, required: true },
   titolo: { type: String, required: true },
   testo: { type: String, required: true },
+  // ogni bottone: { testoBottone, linkBottone, icona?, targetBlank? }
+  // targetBlank: true apre il link in una nuova scheda
   bottoni: { type: Array, default: () => [] }
 })
 
@@ -118,7 +120,8 @@ onUnmounted(() => {
                   :key="index"
                   :to="bottone.linkBottone"
                   class="btn btn-primary btn-lg percorso-btn d-inline-flex align-items-center justify-content-center gap-2"
-                  target="blank"
+                  :target="bottone.targetBlank ? '_blank' : undefined"
+                  :rel="bottone.targetBlank ? 'noopener noreferrer' : undefined"
                   >
                   <Icon v-if="bottone.icona" :name="bottone.icona" />
                   {{ bottone.testoBottone }}
