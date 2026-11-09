@@ -14,7 +14,7 @@
                     <div class="col-12 col-md-7 mt-3 mt-md-5">
                         <div class="d-flex flex-column align-items-start gap-4">
                             <h2 class="fw-bold mb-0 text-orange">Con la slowcard tante offerte lungo la
-                                Ciclonica e Ladriatica</h2>
+                                Ciclonica</h2>
                             <NuxtLink to="https://slowmap.tours/travel-planner/ciclonica/" target="blank" class="btn btn-primary btn-lg jumbo-cta">Scopri di più su SlowMap.tours
                             </NuxtLink>
                         </div>
