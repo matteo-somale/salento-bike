@@ -7,7 +7,7 @@ const hero = {
 }
 
 const overlayColor = '#1D2839'
-const overlayOpacity = 0.9
+const overlayOpacity = 0.7
 
 const img = useImage()
 
