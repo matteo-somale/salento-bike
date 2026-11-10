@@ -86,7 +86,13 @@ const attributoDownload = (bottone) => {
 
 @media (min-width: 990px) and (max-width: 1199.98px) {
     .testo-limitato {
-        max-width: 55ch;
+        max-width: 50ch;
+    }
+}
+
+@media (min-width: 1400px) {
+    .testo-limitato {
+        max-width: 70ch;
     }
 }
 
