@@ -48,6 +48,7 @@ const attributoDownload = (bottone) => {
                     :to="bottone.link"
                     :target="bottone.blank ? '_blank' : undefined"
                     :external="bottone.download ? true : undefined"
+                    :trailing-slash="bottone.download ? 'remove' : undefined"
                     :download="attributoDownload(bottone)"
                     :class="['btn btn-lg', bottone.classe]"
                 >

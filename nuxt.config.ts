@@ -32,9 +32,24 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
   ],
 
-  modules: ['@nuxt/icon', 'nuxt-swiper', '@nuxt/image', '@nuxtjs/sitemap', '@nuxtjs/sitemap'],
+  modules: ['@nuxt/icon', 'nuxt-swiper', '@nuxt/image', '@nuxtjs/sitemap'],
 
-  site: { url: 'https://salento.bike' },
+  // stesso host e stessa forma degli URL serviti da Aruba: salento.bike fa 301
+  // verso www, e Apache aggiunge lo slash finale alle cartelle (/chi-siamo -> /chi-siamo/).
+  // Così la sitemap elenca solo URL che rispondono 200, senza redirect.
+  site: { url: 'https://www.salento.bike', trailingSlash: true },
+
+  // i link interni puntano già all'URL finale con lo slash, niente 301 per i crawler
+  experimental: {
+    defaults: {
+      nuxtLink: { trailingSlash: 'append' },
+    },
+  },
+
+  // niente foglio di stile XSL (/__sitemap__/style.xsl): serve solo a rendere
+  // leggibile la sitemap nel browser, Google lo ignora, e il file manager
+  // dell'hosting ne blocca il caricamento
+  sitemap: { xsl: false },
 
   // icone dai pacchetti @iconify-json/* locali, incluse nel bundle client:
   // nessuna richiesta a runtime verso api.iconify.design
