@@ -58,7 +58,8 @@
 
 <script setup>
 const youtubeLinks = [
-  'https://www.youtube.com/embed/xji1bGCTPmw'
+  'https://www.youtube.com/embed/xji1bGCTPmw',
+  'https://youtu.be/w5cCD-X4o7I'
 ]
 
 const percorsi = [
