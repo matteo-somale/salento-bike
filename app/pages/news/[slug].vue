@@ -19,6 +19,12 @@ useHead({ title: item.titolo })
   <section class="pb-5">
     <div class="container news-body" v-html="item.corpoHtml" />
   </section>
+  <section>
+    <div class="container news-body">
+      <CheckOtherArticles :slug-corrente="item.slug" />
+    </div>
+  </section>
+  
 </template>
 
 <style scoped>
