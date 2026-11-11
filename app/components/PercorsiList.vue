@@ -245,7 +245,7 @@ const percorsi = [
     },
     {
         // TODO immagine segnaposto (identica a quella della tappa 4): sostituire con quella di Leuca
-        immagine: '/img/percorsi/ladriatica/tappe/3-immagine-segnaposto.png',
+        immagine: '/img/percorsi/ladriatica/tappe/3-tappa-ladriatica-maria-leuca.png',
         tag: 'Tappa 3',
         destinazione: 'ladriatica',
         tipo: 'tappa',
