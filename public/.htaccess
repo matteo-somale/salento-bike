@@ -6,6 +6,17 @@
 # inesistente, poi il router lato client mostra app/error.vue.
 ErrorDocument 404 /404.html
 
+# --- Redirect 301 (vecchi URL) -------------------------------------------
+# Indirizzi del vecchio sito spostati in modo permanente: i motori di ricerca
+# trasferiscono il posizionamento sulla nuova pagina.
+# Redirect confronta il prefisso del percorso, quindi copre anche le sottopagine
+# (es. /ciclo-news/articolo -> /news/articolo).
+<IfModule mod_alias.c>
+  Redirect 301 /itinerari /percorsi
+  Redirect 301 /contatti /chi-siamo
+  Redirect 301 /ciclo-news /news
+</IfModule>
+
 # --- Compressione ---------------------------------------------------------
 # Aruba comprime già HTML e CSS ma non i .js (text/javascript).
 <IfModule mod_deflate.c>

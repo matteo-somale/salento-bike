@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/icon": "^2.5.1",
     "@nuxt/image": "^2.2.0",
+    "@nuxtjs/sitemap": "^9.1.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
     "markdown-it": "^15.0.2",

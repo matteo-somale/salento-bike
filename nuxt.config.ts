@@ -32,7 +32,9 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
   ],
 
-  modules: ['@nuxt/icon', 'nuxt-swiper', '@nuxt/image'],
+  modules: ['@nuxt/icon', 'nuxt-swiper', '@nuxt/image', '@nuxtjs/sitemap', '@nuxtjs/sitemap'],
+
+  site: { url: 'https://salento.bike' },
 
   // icone dai pacchetti @iconify-json/* locali, incluse nel bundle client:
   // nessuna richiesta a runtime verso api.iconify.design
