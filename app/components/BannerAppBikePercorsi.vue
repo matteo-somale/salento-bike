@@ -31,16 +31,16 @@
                     </p>
 
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="https://ebike.bikesquare.eu/percorsi?destinations=salento" target="_blank" rel="noopener"
+                        <a href="https://ebike.bikesquare.eu/ita/map/salento" target="_blank" rel="noopener"
                             class="btn btn-orange btn-lg d-inline-flex align-items-center justify-content-center gap-2">
                             <Icon name="lucide:bike" />
-                            Esplora i percorsi
+                            Trova tutti punti di interesse&nbsp;online
                         </a>
 
                         <NuxtLink to="/app"
                             class="btn btn-primary btn-lg d-inline-flex align-items-center justify-content-center gap-2">
-                            <Icon name="lucide:download" />
-                            Vai all'App
+                            <Icon name="lucide:globe" />
+                            Vai alla WebApp
                         </NuxtLink>
                     </div>
                 </div>
